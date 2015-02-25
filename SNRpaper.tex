@@ -1,0 +1,84 @@
+\documentclass[12pt,preprint]{emulateapj}
+%\citestyle{aa}
+%\bibliographystyle{apj_w_etal}
+\shorttitle{SNRs at 145\,MHz with PAPER}
+\shortauthors{Saunders et al.}
+\usepackage{color}
+\begin{document}
+
+\title{A Search for Supernova Remnants at 145\,MHz with PAPER}
+
+\author{Will Saunders\altaffilmark{1,$\dagger$}}
+\author{Saul A. Kohn\altaffilmark{1,$\dagger$}}
+\author{James E. Aguirre\altaffilmark{1}}
+\author{et al.\altaffilmark{2}}
+
+%\email{william.saunders01@gmail.com}
+\email{saulkohn@sas.upenn.edu (corresponding author)}
+
+\altaffiltext{1}{Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA 19104}
+\altaffiltext{$\dagger$}{These authors contributed equally to this work.}
+\altaffiltext{2}{a lot of other places}
+
+\begin{abstract}
+Present astrophysical understanding of high-mass stars allows for predictions of their formation rates.  High-mass stars explode in supernovae, which leave behind Supernova Remnants (SNRs) that serve as records of the stars; however the 274 observed SNRs is far below the $>1000$ predicted.  This gap, hereafter known as the SNR Defect, could implicate the understanding of high-mass stars if confirmed. This study reports on a search for Galactic SNRs using low-frequency radio maps produced by the Precision Array for Probing the Epoch of Reionization (PAPER), a radio telescope that operates at 145\,MHz.  
+%An original program created a list of objects with emissions above a threshold. The candidates were cross-referenced with SIMBAD and NED databases and survey maps from the MGPS, NVSS, and GLIMPSE.  
+%The search found one object (7.40, -1.80) that can be labeled an SNR with high certainty.  Furthermore, twelve other possible SNR candidates were found that require more information to be declared SNRS.  
+Mathematical predictions {\color{red}[CITE!!]} of the number of observable SNRs based on known limitations showed that the SNR Defect may be made up by a complete survey.  This shows that the SNR Defect is likely due to selection effects: difficulties in detecting SNRs given their location and size, and not due to a fundamental misunderstanding in star formation rates.
+\end{abstract}
+\keywords{ISM: - molecular clouds -- stars: formation -- high mass -- millimeter continuum}
+
+\section{Introduction}
+
+The major classification difference between high-mass ($M > 8M_{\odot}$ ) and low-mass ($M < 8 M_\odot$) stars is the end of their life, for which the latter explode in supernovae (SNe), which is precipitated by accumulated inert iron in the core \citep{Arnett.73}.  
+The subsequent collapse of the core creates the supernova explosion, which ejects the entirety of the star’s outer layers, forming a supernova remnant (SNR).  The SNR consists of the expanding supernova shock wave, the ejected outer material of the star, and any dust or gas it picks up while expanding.  
+The remnant slowly expands until its density becomes near that of the surrounding interstellar medium (ISM) making it effectively indistinguishable, and ending its existence as an SNR, which typically occurs around $10^6$ years [{\color{red}CITE!!}].  
+The SNR shock releases high-velocity particles, including a barrage of electrons that produce non-thermal emissions; these relativistic electrons are accelerated and spiraled by the magnetic fields of the SNR and produce synchrotron radiation as a result making SNRs easily-detectable radio sources \citep[e.g.][]{Burbidge.56,stupar11}.
+
+%Supernovae are classified according to spectral features into two types: Type I have no hydrogen in their spectra while Type II have hydrogen present; furthermore, Type I are classified into Ia, which are actually white dwarf supernovae, not stellar supernovae, Ib, which contain helium in their spectra, and Ic, which do not contain helium \citep{mms13}.
+{\color{red}[DOES THIS CONTRIBUTE TO THE OVERALL PAPER?]}
+SNRs are categorized, based on their morphology, into two traditional classes: 
+\begin{itemize}
+\item[(i)] shell-like, which have a complete shell resulting from the SNR shock;
+\item[(ii)] plerionic or ``crab-type,'' which have centrally located pulsars, also known as plerions, \citep{weiler78}
+\end{itemize} 
+Recent observations {\color{red}[CITE!!!]} have extended the classification system to include: 
+\begin{itemize}
+\item[(iii)] composite, which may contain both a shell or partial shell and central pulsar; and
+\item[(iv)] mixed-morphology, which contain a combination of standard SNR features and unusual characteristics including non-ejecta material and/or interactions with molecular or HI clouds \citep{rho98}
+\end{itemize}
+
+SNRs are relatively short-lived ($\sim10^5$ yr), which means that they can serve as a record of recent star formation rates of high-mass stars, since stars of high mass has shorter lifetimes {\color{red}[CITE!!!]}.  
+By counting remnants, one can expect to learn about recent star formation ($<10^6$ yr) \citep[e.g.][]{brogan06}.  
+Measuring the star formation rates through Fe abundance allows for a reasonable prediction of the number of galactic SNRs; however, these predictions imply that there should be far more SNRs than currently detected (Brogan et al. 2006).  
+To date, 274 SNRs have been catalogued \citep{green09} [{\color{red}NEEDS UPDATING}] despite the prediction based on star formation rates that $\sim1000$ galactic SNRs exist \citep{li91}.  
+Assuming a rate of two SNe per century, $\sim2000$ SNRs are predicted in the galaxy \citep{pavlovic13}.  
+Additionally, \citet{brogan06}, were able to make assumptions based on known limitations of VLA surveys in order to predict the number of SNRs that are observable at all. {\color{red}[Under what assumptions?]}
+The study yielded a result of 460 observable SNRs; this is still less than half of the observed value, which leaves many SNRs unaccounted for. 
+This “SNR Defect” has thus far been attributed to selection effects, a general grouping of difficulties in observing SNRs that includes: 
+\begin{itemize}
+\item[(i)] SNRs occur in dusty regions, where the dust may absorb and/or deflect SNR emissions traveling toward earth;
+\item[(ii)] since the vast majority of stars are located along the galactic plane, so are most SNRs,, increasing potential source confusion \citep[e.g.][]{gao11c};
+\item[(iii)] due to the inverse square law of observed luminosity, doubling the distance to an object reduces its apparent brightness by one-fourth  \citep{green91}. The light from SNRs located 50,000 ly away, for example, is diminished by a factor of $\sim$300;
+\item[(iv)] superpositioning along the Earth’s line of sight, by which nearby, young  and inherently dense SNRs block or severely inhibit the entire field of view behind them, making surveys of the SNR population more difficult {\color{red}[CITE?]}. 
+\end{itemize}
+
+It has long been known {\color{red}[CITE!!!]} that some larger SNRs, such as W28 and W30 {\color{red}[GIVE POSITIONS]}, have positioned within them \ion{H}{2} regions and other sources of thermal emissions, which increase the likelihood of misidentification \citep{andrews85}.  \cite{brogan06} showed that the small likelihood of actual proximity notwithstanding, the apparent proximity interferes with detection of SNRs.  As a result, much has been invested in finding a method to mitigate the selection effects. 
+
+Radio surveys have typically been used to observe shell-like SNRs and are successful because of the emission spectra and morphology of those SNRs \citep{bandiera01}.  {\color{red}[NEEDS MORE EXPLANATION]}
+
+Young SNRs, which are physically compact and have close-to-blackbody emission spectra are more easily detected by high-resolution surveys, whereas older SNRs, which are physically spread out and emit mostly low frequencies, are better detected with radio surveys. \citet{stupar11} searched for H$\alpha$ emission coming from known SNRs in order to better visualize specific structures within the remnants with greater resolution than radio or optical.  Recent X-ray surveys {\color{red}[CITE!!!]} have also been successful in observing SNRs, but usually require supplemental information due to known limitations {\color{red}[for example...?]} \citep{bandiera01}. 
+
+While radio mitigates {\color{red}[messy phrasing]} most of the confusion when observing the galactic plane, \ion{H}{2} regions pose a more significant problem.  \ion{H}{2} regions, opposed to SNRs, emit thermal emissions from heating causing by a nearby high-mass stars (usually main-sequence O or B).  Recent discoveries {\color{red}[CITE!!!]} that some SNRs were actually galactic \ion{H}{2} regions have increased the push for surveys to better differentiate them.  For example, SNR G166.2+2.5 was discovered to be an \ion{H}{2} region heated by O7.5V star BD+41 1144 \citep{foster06}.  In order to distinguish between SNRs and \ion{H}{2} regions, infra-red (IR) light around 8\,$\mu$m can be used \citep{price01}, such as the Galactic Legacy Infrared Mid-Plane Survey Extraordinaire (GLIMPSE) with \textit{Spitzer} {\color{red}[CITE!!!]}.  
+
+This work presents the findings of a search for Supernova Remnants using the Precision Array for Probing the Epoch of Reionization (PAPER), a low-frequency radio telescope operated in South Africa ({\color{red}[CITE!!!, and give Long and Lat for PAPER]}).
+In order to determine the identity of the objects in the PAPER map with greater certainty, online databases including SIMBAD (the Set of Identifications, Measurements, and Bibliography for Astronomical Data) and NED (NASA’s Extragalactic Database) were used.  
+Additional collected data is presented on the SNR candidates from other surveys of the galactic plane at various frequencies, including the Molonglo Galactic Plane Survey (MGPS) at 843 MHz %using the Molonglo Observatory Synthesis Telescope (MOST) \citep{murphy07c}, the NRAO VLA Sky Survey (NVSS) at 1.4 GHz using the Very Large Array (VLA) (Kaplan et al. 1998), and GLIMPSE at 3.6, 4.5, 5.8, and 8.0 μm wavelengths \citep{churchwell09}  
+The public data from these surveys provided for higher resolution morphological and spectra imaging that worked toward this study’s goal of finding novel SNRs in the PAPER maps of the galactic plane. %Additionally, this paper presents the key step of differentiation of \ion{H}{2} regions \citep{tian08}, to which end NVSS and GLIMPSE were specifically used. 
+This paper discusses the effects of the study on the SNR Defect, with specific reference to the likelihood of its causality by either selection effects or a misunderstanding of star formation rates. {\color{red}[Give the layout of the paper in Sections]}
+
+\clearpage
+\bibliographystyle{apj}
+\bibliography{snrbib.bib}{}
+
+\end{document}

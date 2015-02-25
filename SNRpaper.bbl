@@ -1,4 +1,130 @@
-\begin{thebibliography}{}
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Andrews} et~al.(1985){Andrews}, {Basart}, and {Lamb}]{Andrews.85}
+M.~D. {Andrews}, J.~P. {Basart}, and R.~C. {Lamb}.
+\newblock {Observations of the radio source G6.6-0.1 positionally coincident
+  with the W28 SNR}.
+\newblock \emph{\aj}, 90:\penalty0 310--314, February 1985.
+\newblock \doi{10.1086/113732}.
+
+\bibitem[{Arnett} and {Schramm}(1973)]{Arnett.73}
+W.~D. {Arnett} and D.~N. {Schramm}.
+\newblock {Origin of Cosmic Rays, Atomic Nuclei, and Pulsars in Explosions of
+  Massive Stars}.
+\newblock \emph{ApJL}, 184:\penalty0 L47, September 1973.
+\newblock \doi{10.1086/181286}.
+
+\bibitem[{Bandiera}(2001)]{Bandiera.01}
+R.~{Bandiera}.
+\newblock {Supernova remnants: A review}.
+\newblock In F.~{Giovannelli} and G.~{Mannocchi}, editors, \emph{Frontier
+  Objects in Astrophysics and Particle Physics}, page 225, 2001.
+
+\bibitem[{Brogan} et~al.(2006){Brogan}, {Gelfand}, {Gaensler}, {Kassim}, and
+  {Lazio}]{Brogan.06}
+C.~L. {Brogan}, J.~D. {Gelfand}, B.~M. {Gaensler}, N.~E. {Kassim}, and T.~J.~W.
+  {Lazio}.
+\newblock {Discovery of 35 New Supernova Remnants in the Inner Galaxy}.
+\newblock \emph{\apjl}, 639:\penalty0 L25--L29, March 2006.
+\newblock \doi{10.1086/501500}.
+
+\bibitem[{Burbidge}(1956)]{Burbidge.56}
+G.~R. {Burbidge}.
+\newblock {On Synchrotron Radiation from Messier 87.}
+\newblock \emph{ApJ}, 124:\penalty0 416, September 1956.
+\newblock \doi{10.1086/146237}.
+
+\bibitem[{Egan} et~al.(2003){Egan}, {Price}, {Kraemer}, {Mizuno}, {Carey},
+  {Wright}, {Engelke}, {Cohen}, and {Gugliotti}]{Egan.03}
+M.~P. {Egan}, S.~D. {Price}, K.~E. {Kraemer}, D.~R. {Mizuno}, S.~J. {Carey},
+  C.~O. {Wright}, C.~W. {Engelke}, M.~{Cohen}, and M.~G. {Gugliotti}.
+\newblock {VizieR Online Data Catalog: MSX6C Infrared Point Source Catalog. The
+  Midcourse Space Experiment Point Source Catalog Version 2.3 (October 2003)}.
+\newblock \emph{VizieR Online Data Catalog}, 5114:\penalty0 0, 2003.
+
+\bibitem[{Foster} et~al.(2006){Foster}, {Kothes}, {Sun}, {Reich}, and
+  {Han}]{Foster.06}
+T.~{Foster}, R.~{Kothes}, X.~H. {Sun}, W.~{Reich}, and J.~L. {Han}.
+\newblock {10$^{51}$ erg less: the Galactic H II region OA 184}.
+\newblock \emph{\aap}, 454:\penalty0 517--526, August 2006.
+\newblock \doi{10.1051/0004-6361:20064881}.
+
+\bibitem[{Gao} et~al.(2011{\natexlab{a}}){Gao}, {Han}, {Reich}, {Reich}, {Sun},
+  and {Xiao}]{Gao_v.11}
+X.~Y. {Gao}, J.~L. {Han}, W.~{Reich}, P.~{Reich}, X.~H. {Sun}, and L.~{Xiao}.
+\newblock {A Sino-German {$\lambda$}6 cm polarization survey of the Galactic
+  plane. V. Large supernova remnants}.
+\newblock \emph{\aap}, 529:\penalty0 A159, May 2011{\natexlab{a}}.
+\newblock \doi{10.1051/0004-6361/201016311}.
+
+\bibitem[{Gao} et~al.(2011{\natexlab{b}}){Gao}, {Sun}, {Han}, {Reich}, {Reich},
+  and {Wielebinski}]{Gao_vi.11}
+X.~Y. {Gao}, X.~H. {Sun}, J.~L. {Han}, W.~{Reich}, P.~{Reich}, and
+  R.~{Wielebinski}.
+\newblock {A Sino-German {$\lambda$}6 cm polarization survey of the Galactic
+  plane. VI. Discovery of supernova remnants G178.2-4.2 and G25.1-2.3}.
+\newblock \emph{\aap}, 532:\penalty0 A144, August 2011{\natexlab{b}}.
+\newblock \doi{10.1051/0004-6361/201117179}.
+
+\bibitem[{Green}(1991)]{Green.91}
+D.~A. {Green}.
+\newblock {Limitations imposed on statistical studies of Galactic supernova
+  remnants by observational selection effects}.
+\newblock \emph{\pasp}, 103:\penalty0 209--220, February 1991.
+\newblock \doi{10.1086/132810}.
+
+\bibitem[{Green}(2014)]{DAGreen.14}
+D.~A. {Green}.
+\newblock {A catalogue of 294 Galactic supernova remnants}.
+\newblock \emph{Bulletin of the Astronomical Society of India}, 42:\penalty0
+  47--58, June 2014.
+
+\bibitem[{Li} et~al.(1991){Li}, {Wheeler}, {Bash}, and {Jefferys}]{Li.91}
+Z.~{Li}, J.~C. {Wheeler}, F.~N. {Bash}, and W.~H. {Jefferys}.
+\newblock {A statistical study of the correlation of Galactic supernova
+  remnants and spiral arms}.
+\newblock \emph{\apj}, 378:\penalty0 93--105, September 1991.
+\newblock \doi{10.1086/170409}.
+
+\bibitem[{Paladini} et~al.(2003){Paladini}, {Burigana}, {Davies}, {Maino},
+  {Bersanelli}, {Cappellini}, {Platania}, and {Smoot}]{Paladini.03}
+R.~{Paladini}, C.~{Burigana}, R.~D. {Davies}, D.~{Maino}, M.~{Bersanelli},
+  B.~{Cappellini}, P.~{Platania}, and G.~{Smoot}.
+\newblock {A radio catalog of Galactic HII regions for applications from
+  decimeter to millimeter wavelengths}.
+\newblock \emph{\aap}, 397:\penalty0 213--226, January 2003.
+\newblock \doi{10.1051/0004-6361:20021466}.
+
+\bibitem[{Pavlovi{\'c}} et~al.(2013){Pavlovi{\'c}}, {Uro{\v s}evi{\'c}},
+  {Vukoti{\'c}}, {Arbutina}, and {G{\"o}ker}]{Pavlovic.13}
+M.~Z. {Pavlovi{\'c}}, D.~{Uro{\v s}evi{\'c}}, B.~{Vukoti{\'c}}, B.~{Arbutina},
+  and {\"U}.~D. {G{\"o}ker}.
+\newblock {The Radio Surface-brightness-to-Diameter Relation for Galactic
+  Supernova Remnants: Sample Selection and Robust Analysis with Various Fitting
+  Offsets}.
+\newblock \emph{\apjs}, 204:\penalty0 4, January 2013.
+\newblock \doi{10.1088/0067-0049/204/1/4}.
+
+\bibitem[{Rho} and {Petre}(1998)]{Rho.98}
+J.~{Rho} and R.~{Petre}.
+\newblock {Mixed-Morphology Supernova Remnants}.
+\newblock \emph{\apjl}, 503:\penalty0 L167--L170, August 1998.
+\newblock \doi{10.1086/311538}.
+
+\bibitem[{Stupar} and {Parker}(2011)]{Stupar_cat.11}
+M.~{Stupar} and Q.~A. {Parker}.
+\newblock {Catalogue of known Galactic SNRs uncovered in H{$\alpha$} light}.
+\newblock \emph{\mnras}, 414:\penalty0 2282--2296, July 2011.
+\newblock \doi{10.1111/j.1365-2966.2011.18547.x}.
+
+\bibitem[{Weiler} and {Panagia}(1978)]{Weiler_crab.78}
+K.~W. {Weiler} and N.~{Panagia}.
+\newblock {Are Crab-type Supernova Remnants (Plerions) Short-lived?}
+\newblock \emph{\aap}, 70:\penalty0 419, November 1978.
 
 \end{thebibliography}

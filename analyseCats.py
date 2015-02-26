@@ -20,7 +20,7 @@ Paladini = hdulist4[1].data
 hdulist5 = pyfits.open('catalogs_matched/MGPS_vs_PyBDSM.fits')
 MGPS = hdulist5[1].data
 #MASK MGPS to compact sources only (<5') and flux > X mJy
-MASK = (MGPS['MajAxis']<=300.)*(MGPS['St'] >= 5)
+MASK = (MGPS['MajAxis']<=300.)*(MGPS['St'] >= 5.)
 
 MGPS = MGPS[MASK]
 
@@ -33,13 +33,21 @@ MSX_vs_PyBDSM = hdulist7[1].data
 
 """
 #---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---
+
 Also worth thinking about: all the different SGPS surveys
 
-HI clouds in Southern Galactic Plane Survey (Kavars+, 2005) = http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=J/ApJ/626/887/table2&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa
-H2O Southern Galactic Plane Survey (HOPS) (Walsh+, 2011) = http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=J/MNRAS/416/1764&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa
-H2O Southern Galactic Plane Survey, HOPS. II (Purcell+, 2012) = http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=J/MNRAS/426/1972&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa
-Atlas of HI absorption toward HII regions in SGPS I (Brown+, 2014) = http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=J/ApJS/211/29&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa
-HI clouds in Southern Galactic Plane Survey (Kavars+, 2005) = http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=J/ApJ/626/887&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa
+HI clouds in Southern Galactic Plane Survey (Kavars+, 2005) =
+http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=J/ApJ/626/887/table2&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa
+
+H2O Southern Galactic Plane Survey (HOPS) (Walsh+, 2011) =
+http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=J/MNRAS/416/1764&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa
+
+H2O Southern Galactic Plane Survey, HOPS. II (Purcell+, 2012) =
+http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=J/MNRAS/426/1972&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa
+
+Atlas of HI absorption toward HII regions in SGPS I (Brown+, 2014) =
+http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=J/ApJS/211/29&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa
+
 #---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---
 """
 
@@ -82,14 +90,20 @@ for ID in Us['Gaus_id']:
         toWill*=False
     else: tempstring +=' N'
 
-print tempstring
-if toWill == True: toWill_list.append(ID)
+    print tempstring
+    if toWill == True: toWill_list.append(ID)
 
 print "These need to go to Will:"
 print toWill_list
 print 'Num:',len(toWill_list)
-
+"""
 print '#ID  RA_deg  DEC_deg FLUX_Jy    SEMI-MAJOR-AXIS_deg '
 for i in range(Us['Gaus_id'].shape[0]):
     if Us['Gaus_id'][i] in toWill_list:
         print Us['Gaus_id'][i],Us['XY2RA'][i],Us['XY2DEC'][i],Us['Total_flux'][i],Us['Maj'][i]
+"""
+
+print '#ID  RA_deg  DEC_deg SEMI-MAJOR-AXIS_deg '
+for i in range(Us['Gaus_id'].shape[0]):
+    if Us['Gaus_id'][i] in toWill_list:
+        print Us['Gaus_id'][i],Us['XY2RA'][i],Us['XY2DEC'][i],Us['Maj'][i]

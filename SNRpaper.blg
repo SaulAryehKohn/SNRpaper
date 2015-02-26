@@ -4,44 +4,44 @@ The top-level auxiliary file: SNRpaper.aux
 The style file: plainnat.bst
 Database file #1: SNRpaperNotes.bib
 Database file #2: snrbib.bib
-You've used 17 entries,
+You've used 19 entries,
             2773 wiz_defined-function locations,
-            729 strings with 8297 characters,
-and the built_in function-call counts, 8835 in all, are:
-= -- 759
-> -- 618
-< -- 9
-+ -- 209
-- -- 191
-* -- 795
-:= -- 1415
-add.period$ -- 64
-call.type$ -- 17
-change.case$ -- 114
-chr.to.int$ -- 16
-cite$ -- 34
-duplicate$ -- 359
-empty$ -- 638
-format.name$ -- 216
-if$ -- 1816
+            745 strings with 8686 characters,
+and the built_in function-call counts, 9985 in all, are:
+= -- 858
+> -- 705
+< -- 10
++ -- 238
+- -- 218
+* -- 902
+:= -- 1597
+add.period$ -- 71
+call.type$ -- 19
+change.case$ -- 129
+chr.to.int$ -- 18
+cite$ -- 38
+duplicate$ -- 400
+empty$ -- 717
+format.name$ -- 247
+if$ -- 2053
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 17
-newline$ -- 106
-num.names$ -- 70
-pop$ -- 191
+missing$ -- 19
+newline$ -- 117
+num.names$ -- 78
+pop$ -- 216
 preamble$ -- 1
-purify$ -- 97
+purify$ -- 110
 quote$ -- 0
-skip$ -- 268
+skip$ -- 301
 stack$ -- 0
-substring$ -- 262
-swap$ -- 42
+substring$ -- 308
+swap$ -- 46
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 187
+type$ -- 209
 warning$ -- 0
-while$ -- 66
+while$ -- 74
 width$ -- 0
-write$ -- 254
+write$ -- 282

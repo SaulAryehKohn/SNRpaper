@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -91,6 +91,15 @@ Z.~{Li}, J.~C. {Wheeler}, F.~N. {Bash}, and W.~H. {Jefferys}.
 \newblock \emph{\apj}, 378:\penalty0 93--105, September 1991.
 \newblock \doi{10.1086/170409}.
 
+\bibitem[{Murphy} et~al.(2007){Murphy}, {Mauch}, {Green}, {Hunstead},
+  {Piestrzynska}, {Kels}, and {Sztajer}]{Murphy.07}
+T.~{Murphy}, T.~{Mauch}, A.~{Green}, R.~W. {Hunstead}, B.~{Piestrzynska}, A.~P.
+  {Kels}, and P.~{Sztajer}.
+\newblock {The second epoch Molonglo Galactic Plane Survey: compact source
+  catalogue}.
+\newblock \emph{\mnras}, 382:\penalty0 382--392, November 2007.
+\newblock \doi{10.1111/j.1365-2966.2007.12379.x}.
+
 \bibitem[{Paladini} et~al.(2003){Paladini}, {Burigana}, {Davies}, {Maino},
   {Bersanelli}, {Cappellini}, {Platania}, and {Smoot}]{Paladini.03}
 R.~{Paladini}, C.~{Burigana}, R.~D. {Davies}, D.~{Maino}, M.~{Bersanelli},
@@ -126,5 +135,10 @@ M.~{Stupar} and Q.~A. {Parker}.
 K.~W. {Weiler} and N.~{Panagia}.
 \newblock {Are Crab-type Supernova Remnants (Plerions) Short-lived?}
 \newblock \emph{\aap}, 70:\penalty0 419, November 1978.
+
+\bibitem[{Whiteoak} and {Green}(1996)]{Whiteoak.96}
+J.~B.~Z. {Whiteoak} and A.~J. {Green}.
+\newblock {The MOST supernova remnant catalogue (MSC).}
+\newblock \emph{\aaps}, 118:\penalty0 329--380, August 1996.
 
 \end{thebibliography}

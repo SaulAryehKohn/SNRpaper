@@ -6,6 +6,8 @@
 \shorttitle{The SGP at 145\,MHz with PAPER}
 \shortauthors{Kohn et al.}
 
+\newcommand {\aplt} {\ {\raise-.5ex\hbox{$\buildrel<\over\sim$}}\ }
+
 \begin{document}
 
 \title{Measurements of the Southern Galactic Plane at 145\,MHz with PAPER}
@@ -25,12 +27,12 @@
 \altaffiltext{4}{a lot of other places}
 
 \begin{abstract}
-Present astrophysical understanding of high-mass stars allows for predictions of their formation rates.  High-mass stars explode in supernovae, which leave behind Supernova Remnants (SNRs) that serve as records of the stars; however the 274 observed SNRs is far below the $>1000$ predicted.  This gap, hereafter known as the \textit{SNR Defect}, could implicate the understanding of high-mass stars if confirmed. This study reports on a search for Galactic SNRs using low-frequency radio maps produced by the Precision Array for Probing the Epoch of Reionization (PAPER), a radio telescope that operates at 145\,MHz.  
-%An original program created a list of objects with emissions above a threshold. The candidates were cross-referenced with SIMBAD and NED databases and survey maps from the MGPS, NVSS, and GLIMPSE.  
-%The search found one object (7.40, -1.80) that can be labeled an SNR with high certainty.  Furthermore, twelve other possible SNR candidates were found that require more information to be declared SNRS.  
-Mathematical predictions {\color{red}[CITE!!]} of the number of observable SNRs based on known limitations showed that the SNR Defect may be made up by a complete survey.  This shows that the SNR Defect is likely due to selection effects: difficulties in detecting SNRs given their location and size, and not due to a fundamental misunderstanding in star formation rates.
+Present astrophysical understanding of high-mass stars allows for predictions of their formation rates.  High-mass stars explode in supernovae, which leave behind Supernova Remnants (SNRs) that serve as records of the stars; however the $\sim$300 observed SNRs is far fewer than the $>1000$ predicted.  This gap could implicate the understanding of high-mass stars if confirmed. 
+Meanwhile, there is presently a dearth of low-frequency radio measurements ($\nu\aplt$200\,MHz) of sources in the Southern Galactic Plane (SGP).
+This study reports on a search for SNRs as well as measurements of sources in the SGP using low-frequency radio maps produced at 145\,MHz by Precision Array for Probing the Epoch of Reionization (PAPER).
+%Mathematical predictions {\color{red}[CITE!!]} of the number of observable SNRs based on known limitations showed that the SNR Defect may be made up by a complete survey.  This shows that the SNR Defect is likely due to selection effects: difficulties in detecting SNRs given their location and size, and not due to a fundamental misunderstanding in star formation rates.
 \end{abstract}
-\keywords{ISM: - molecular clouds -- stars: formation -- high mass -- millimeter continuum}
+\keywords{ISM: - molecular clouds -- stars: formation}
 
 \section{Introduction}
 
@@ -73,14 +75,12 @@ Radio surveys have typically been used to observe shell-like SNRs and are succes
 
 Young SNRs, which are physically compact and have close-to-blackbody emission spectra are more easily detected by high-resolution surveys, whereas older SNRs, which are physically spread out and emit mostly low frequencies, are better detected with radio surveys. \cite{Stupar_cat.11} searched for H$\alpha$ emission coming from known SNRs in order to better visualize specific structures within the remnants with greater resolution than radio or optical.  Recent X-ray surveys {\color{red}[CITE!!!]} have also been successful in observing SNRs, but usually require supplemental information due to known limitations {\color{red}[for example...?]} \citep{Bandiera.01}. 
 
-While radio mitigates {\color{red}[messy phrasing]} most of the confusion when observing the galactic plane, \ion{H}{2} regions pose a more significant problem.  \ion{H}{2} regions, opposed to SNRs, emit thermal emissions from heating causing by a nearby high-mass stars (usually main-sequence O or B).  Recent discoveries {\color{red}[CITE!!!]} that some SNRs were actually galactic \ion{H}{2} regions have increased the push for surveys to better differentiate them.  For example, SNR G166.2+2.5 was discovered to be an \ion{H}{2} region heated by O7.5V star BD+41 1144 \citep{Foster.06}.  %In order to distinguish between SNRs and \ion{H}{2} regions, infra-red (IR) light around 8\,$\mu$m can be used \citep{price01}, such as the Galactic Legacy Infrared Mid-Plane Survey Extraordinaire (GLIMPSE) with \textit{Spitzer} {\color{red}[CITE!!!]}.  
+While radio mitigates {\color{red}[messy phrasing]} most of the confusion when observing the galactic plane, \ion{H}{2} regions pose a more significant problem.  \ion{H}{2} regions, opposed to SNRs, emit thermal emissions from heating causing by a nearby high-mass stars (usually main-sequence O or B).  Recent discoveries {\color{red}[CITE!!!]} that some SNRs were actually galactic \ion{H}{2} regions have increased the push for surveys to better differentiate them.  For example, SNR G166.2+2.5 was discovered to be an \ion{H}{2} region heated by O7.5V star BD+41 1144 \citep{Foster.06}.  
 
-This work presents the findings of a search for Supernova Remnants using the Precision Array for Probing the Epoch of Reionization (PAPER), a low-frequency radio telescope operated in South Africa ({\color{red}[CITE!!!, and give Long and Lat for PAPER]}).
-%In order to determine the identity of the objects in the PAPER map with greater certainty, online databases including SIMBAD (the Set of Identifications, Measurements, and Bibliography for Astronomical Data) and NED (NASA’s Extragalactic Database) were used.  
-Additional collected data is presented on SNR candidates from other surveys of the galactic plane at various frequencies, including the Molonglo Galactic Plane Survey (MGPS) [CITE] and the Molonglo Observatory Synthesis Telescope SNR Catalog (MOSTSNRCAT) [CITE] at 843\,MHz, the Midcourse Space Experiment \citep[MSX][operating at 8.28--21.3\,$\mu$m (36.23--14.08\,THz)]{Egan.03}, as well as synthetic catalogs of SNRs at 1\,GHz \citep{DAGreen.14} and \ion{H}{2} regions at 2.7\,GHz \citep{Paladini.03}. 
+This work presents measurements of sources in the Southern Galactic Plane (SGP) using the Precision Array for Probing the Epoch of Reionization (PAPER), a low-frequency radio telescope operated in South Africa (-30:43:17.5 N, 21:25:41.9 E).
 
-%using the Molonglo Observatory Synthesis Telescope (MOST) \citep{murphy07c}, the NRAO VLA Sky Survey (NVSS) at 1.4 GHz using the Very Large Array (VLA) (Kaplan et al. 1998), and GLIMPSE at 3.6, 4.5, 5.8, and 8.0 μm wavelengths \citep{churchwell09}  
-%The public data from these surveys provided for higher resolution morphological and spectra imaging that worked toward this study’s goal of finding novel SNRs in the PAPER maps of the galactic plane. %Additionally, this paper presents the key step of differentiation of \ion{H}{2} regions \citep{tian08}, to which end NVSS and GLIMPSE were specifically used. 
+Additional collected data is presented on SNR candidates from other surveys of the SGP at various frequencies, including the Molonglo Galactic Plane Survey \citep[MGPS][]{Murphy.07} and the Molonglo Observatory Synthesis Telescope SNR Catalog \citep[MOSTSNRCAT][]{Whiteoak.96} at 843\,MHz, the synthetic catalogs of SNRs at 1\,GHz \citep{DAGreen.14} and \ion{H}{2} regions at 2.7\,GHz \citep{Paladini.03}, and the infrared measurements of the Midcourse Space Experiment \citep[MSX][operating at 8.28--21.3\,$\mu$m (36.23--14.08\,THz)]{Egan.03}.
+
 This paper discusses the effects of the study on the SNR Defect, with specific reference to the likelihood of its causality by either selection effects or a misunderstanding of star formation rates. {\color{red}[Give the layout of the paper in Sections]}
 
 \clearpage

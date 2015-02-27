@@ -1,9 +1,22 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{22}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Ali} et~al.(2015){Ali}, {Parsons}, {Zheng}, {Pober}, {Liu},
+  {Aguirre}, {Bradley}, {Bernardi}, {Carilli}, {Cheng}, {DeBoer}, {Dexter},
+  {Grobbelaar}, {Horrell}, {Jacobs}, {Klima}, {MacMahon}, {Maree}, {Moore},
+  {Razavi}, {Stefan}, {Walbrugh}, and {Walker}]{Ali.15}
+Z.~S. {Ali}, A.~R. {Parsons}, H.~{Zheng}, J.~C. {Pober}, A.~{Liu}, J.~E.
+  {Aguirre}, R.~F. {Bradley}, G.~{Bernardi}, C.~L. {Carilli}, C.~{Cheng}, D.~R.
+  {DeBoer}, M.~R. {Dexter}, J.~{Grobbelaar}, J.~{Horrell}, D.~C. {Jacobs},
+  P.~{Klima}, D.~H.~E. {MacMahon}, M.~{Maree}, D.~F. {Moore}, N.~{Razavi},
+  I.~I. {Stefan}, W.~P. {Walbrugh}, and A.~{Walker}.
+\newblock {PAPER-64 Constraints on Reionization: The 21cm Power Spectrum at
+  z=8.4}.
+\newblock \emph{ArXiv e-prints}, February 2015.
 
 \bibitem[{Andrews} et~al.(1985){Andrews}, {Basart}, and {Lamb}]{Andrews.85}
 M.~D. {Andrews}, J.~P. {Basart}, and R.~C. {Lamb}.
@@ -84,12 +97,33 @@ D.~A. {Green}.
 \newblock \emph{Bulletin of the Astronomical Society of India}, 42:\penalty0
   47--58, June 2014.
 
+\bibitem[{Jacobs} et~al.(2014){Jacobs}, {Pober}, {Parsons}, {Aguirre}, {Ali},
+  {Bowman}, {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Klima},
+  {Liu}, {MacMahon}, {Manley}, {Moore}, {Stefan}, and {Walbrugh}]{Jacobs.14}
+D.~C. {Jacobs}, J.~C. {Pober}, A.~R. {Parsons}, J.~E. {Aguirre}, Z.~{Ali},
+  J.~{Bowman}, R.~F. {Bradley}, C.~L. {Carilli}, D.~R. {DeBoer}, M.~R.
+  {Dexter}, N.~E. {Gugliucci}, P.~{Klima}, A.~{Liu}, D.~H.~E. {MacMahon}, J.~R.
+  {Manley}, D.~F. {Moore}, I.~I. {Stefan}, and W.~P. {Walbrugh}.
+\newblock {Multi-redshift limits on the 21cm power spectrum from PAPER}.
+\newblock \emph{ArXiv e-prints}, August 2014.
+
 \bibitem[{Li} et~al.(1991){Li}, {Wheeler}, {Bash}, and {Jefferys}]{Li.91}
 Z.~{Li}, J.~C. {Wheeler}, F.~N. {Bash}, and W.~H. {Jefferys}.
 \newblock {A statistical study of the correlation of Galactic supernova
   remnants and spiral arms}.
 \newblock \emph{\apj}, 378:\penalty0 93--105, September 1991.
 \newblock \doi{10.1086/170409}.
+
+\bibitem[{Moore} et~al.(2015){Moore}, {Aguirre}, {Parsons}, {Ali}, {Bradley},
+  {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {Klima}, {Liu},
+  {MacMahon}, {Manley}, {Pober}, {Stefan}, and {Walbrugh}]{Moore.15}
+D.~{Moore}, J.~E. {Aguirre}, A.~{Parsons}, Z.~{Ali}, R.~{Bradley},
+  C.~{Carilli}, D.~{DeBoer}, M.~{Dexter}, N.~{Gugliucci}, D.~{Jacobs},
+  P.~{Klima}, A.~{Liu}, D.~{MacMahon}, J.~{Manley}, J.~{Pober}, I.~{Stefan},
+  and W.~{Walbrugh}.
+\newblock {New Limits on Polarized Power Spectra at 126 and 164 MHz: Relevance
+  to Epoch of Reionization Measurements}.
+\newblock \emph{ArXiv e-prints}, February 2015.
 
 \bibitem[{Murphy} et~al.(2007){Murphy}, {Mauch}, {Green}, {Hunstead},
   {Piestrzynska}, {Kels}, and {Sztajer}]{Murphy.07}
@@ -109,6 +143,18 @@ R.~{Paladini}, C.~{Burigana}, R.~D. {Davies}, D.~{Maino}, M.~{Bersanelli},
 \newblock \emph{\aap}, 397:\penalty0 213--226, January 2003.
 \newblock \doi{10.1051/0004-6361:20021466}.
 
+\bibitem[{Parsons} et~al.(2014){Parsons}, {Liu}, {Aguirre}, {Ali}, {Bradley},
+  {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {Klima}, {MacMahon},
+  {Manley}, {Moore}, {Pober}, {Stefan}, and {Walbrugh}]{Parsons.14}
+A.~R. {Parsons}, A.~{Liu}, J.~E. {Aguirre}, Z.~S. {Ali}, R.~F. {Bradley}, C.~L.
+  {Carilli}, D.~R. {DeBoer}, M.~R. {Dexter}, N.~E. {Gugliucci}, D.~C. {Jacobs},
+  P.~{Klima}, D.~H.~E. {MacMahon}, J.~R. {Manley}, D.~F. {Moore}, J.~C.
+  {Pober}, I.~I. {Stefan}, and W.~P. {Walbrugh}.
+\newblock {New Limits on 21 cm Epoch of Reionization from PAPER-32 Consistent
+  with an X-Ray Heated Intergalactic Medium at z = 7.7}.
+\newblock \emph{ApJ}, 788:\penalty0 106, June 2014.
+\newblock \doi{10.1088/0004-637X/788/2/106}.
+
 \bibitem[{Pavlovi{\'c}} et~al.(2013){Pavlovi{\'c}}, {Uro{\v s}evi{\'c}},
   {Vukoti{\'c}}, {Arbutina}, and {G{\"o}ker}]{Pavlovic.13}
 M.~Z. {Pavlovi{\'c}}, D.~{Uro{\v s}evi{\'c}}, B.~{Vukoti{\'c}}, B.~{Arbutina},
@@ -119,22 +165,22 @@ M.~Z. {Pavlovi{\'c}}, D.~{Uro{\v s}evi{\'c}}, B.~{Vukoti{\'c}}, B.~{Arbutina},
 \newblock \emph{\apjs}, 204:\penalty0 4, January 2013.
 \newblock \doi{10.1088/0067-0049/204/1/4}.
 
-\bibitem[{Rho} and {Petre}(1998)]{Rho.98}
-J.~{Rho} and R.~{Petre}.
-\newblock {Mixed-Morphology Supernova Remnants}.
-\newblock \emph{\apjl}, 503:\penalty0 L167--L170, August 1998.
-\newblock \doi{10.1086/311538}.
+\bibitem[{Stefan} et~al.(2013){Stefan}, {Carilli}, {Green}, {Ali}, {Aguirre},
+  {Bradley}, {DeBoer}, {Dexter}, {Gugliucci}, {Harris}, {Jacobs}, {Klima},
+  {MacMahon}, {Manley}, {Moore}, {Parsons}, {Pober}, and {Walbrugh}]{Stefan.13}
+I.~I. {Stefan}, C.~L. {Carilli}, D.~A. {Green}, Z.~{Ali}, J.~E. {Aguirre},
+  R.~F. {Bradley}, D.~{DeBoer}, M.~{Dexter}, N.~E. {Gugliucci}, D.~E. {Harris},
+  D.~C. {Jacobs}, P.~{Klima}, D.~{MacMahon}, J.~{Manley}, D.~F. {Moore}, A.~R.
+  {Parsons}, J.~C. {Pober}, and W.~P. {Walbrugh}.
+\newblock {Imaging on PAPER: Centaurus A at 148 MHz}.
+\newblock \emph{\mnras}, 432:\penalty0 1285--1293, June 2013.
+\newblock \doi{10.1093/mnras/stt548}.
 
 \bibitem[{Stupar} and {Parker}(2011)]{Stupar_cat.11}
 M.~{Stupar} and Q.~A. {Parker}.
 \newblock {Catalogue of known Galactic SNRs uncovered in H{$\alpha$} light}.
 \newblock \emph{\mnras}, 414:\penalty0 2282--2296, July 2011.
 \newblock \doi{10.1111/j.1365-2966.2011.18547.x}.
-
-\bibitem[{Weiler} and {Panagia}(1978)]{Weiler_crab.78}
-K.~W. {Weiler} and N.~{Panagia}.
-\newblock {Are Crab-type Supernova Remnants (Plerions) Short-lived?}
-\newblock \emph{\aap}, 70:\penalty0 419, November 1978.
 
 \bibitem[{Whiteoak} and {Green}(1996)]{Whiteoak.96}
 J.~B.~Z. {Whiteoak} and A.~J. {Green}.

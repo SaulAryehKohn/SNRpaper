@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -97,6 +97,16 @@ D.~A. {Green}.
 \newblock \emph{Bulletin of the Astronomical Society of India}, 42:\penalty0
   47--58, June 2014.
 
+\bibitem[{Jacobs} et~al.(2011){Jacobs}, {Aguirre}, {Parsons}, {Pober},
+  {Bradley}, {Carilli}, {Gugliucci}, {Manley}, {van der Merwe}, {Moore}, and
+  {Parashare}]{Jacobs.11}
+D.~C. {Jacobs}, J.~E. {Aguirre}, A.~R. {Parsons}, J.~C. {Pober}, R.~F.
+  {Bradley}, C.~L. {Carilli}, N.~E. {Gugliucci}, J.~R. {Manley}, C.~{van der
+  Merwe}, D.~F. {Moore}, and C.~R. {Parashare}.
+\newblock {New 145 MHz Source Measurements by PAPER in the Southern Sky}.
+\newblock \emph{\apjl}, 734:\penalty0 L34, June 2011.
+\newblock \doi{10.1088/2041-8205/734/2/L34}.
+
 \bibitem[{Jacobs} et~al.(2014){Jacobs}, {Pober}, {Parsons}, {Aguirre}, {Ali},
   {Bowman}, {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Klima},
   {Liu}, {MacMahon}, {Manley}, {Moore}, {Stefan}, and {Walbrugh}]{Jacobs.14}
@@ -107,12 +117,24 @@ D.~C. {Jacobs}, J.~C. {Pober}, A.~R. {Parsons}, J.~E. {Aguirre}, Z.~{Ali},
 \newblock {Multi-redshift limits on the 21cm power spectrum from PAPER}.
 \newblock \emph{ArXiv e-prints}, August 2014.
 
+\bibitem[{Large} et~al.(1981){Large}, {Mills}, {Little}, {Crawford}, and
+  {Sutton}]{Large.81}
+M.~I. {Large}, B.~Y. {Mills}, A.~G. {Little}, D.~F. {Crawford}, and J.~M.
+  {Sutton}.
+\newblock {The Molonglo Reference Catalogue of Radio Sources}.
+\newblock \emph{\mnras}, 194:\penalty0 693, February 1981.
+
 \bibitem[{Li} et~al.(1991){Li}, {Wheeler}, {Bash}, and {Jefferys}]{Li.91}
 Z.~{Li}, J.~C. {Wheeler}, F.~N. {Bash}, and W.~H. {Jefferys}.
 \newblock {A statistical study of the correlation of Galactic supernova
   remnants and spiral arms}.
 \newblock \emph{\apj}, 378:\penalty0 93--105, September 1991.
 \newblock \doi{10.1086/170409}.
+
+\bibitem[{Mohan} and {Rafferty}(2015)]{PyBDSM.15}
+Niruj {Mohan} and David {Rafferty}.
+\newblock {PyBDSM: Python Blob Detection and Source Measurement}.
+\newblock Astrophysics Source Code Library, February 2015.
 
 \bibitem[{Moore} et~al.(2015){Moore}, {Aguirre}, {Parsons}, {Ali}, {Bradley},
   {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {Klima}, {Liu},
@@ -142,6 +164,26 @@ R.~{Paladini}, C.~{Burigana}, R.~D. {Davies}, D.~{Maino}, M.~{Bersanelli},
   decimeter to millimeter wavelengths}.
 \newblock \emph{\aap}, 397:\penalty0 213--226, January 2003.
 \newblock \doi{10.1051/0004-6361:20021466}.
+
+\bibitem[{Parsons} et~al.(2012){Parsons}, {Pober}, {McQuinn}, {Jacobs}, and
+  {Aguirre}]{Parsons.12}
+A.~{Parsons}, J.~{Pober}, M.~{McQuinn}, D.~{Jacobs}, and J.~{Aguirre}.
+\newblock {A Sensitivity and Array-configuration Study for Measuring the Power
+  Spectrum of 21 cm Emission from Reionization}.
+\newblock \emph{\apj}, 753:\penalty0 81, July 2012.
+\newblock \doi{10.1088/0004-637X/753/1/81}.
+
+\bibitem[{Parsons} et~al.(2010){Parsons}, {Backer}, {Foster}, {Wright},
+  {Bradley}, {Gugliucci}, {Parashare}, {Benoit}, {Aguirre}, {Jacobs},
+  {Carilli}, {Herne}, {Lynch}, {Manley}, and {Werthimer}]{Parsons.10}
+A.~R. {Parsons}, D.~C. {Backer}, G.~S. {Foster}, M.~C.~H. {Wright}, R.~F.
+  {Bradley}, N.~E. {Gugliucci}, C.~R. {Parashare}, E.~E. {Benoit}, J.~E.
+  {Aguirre}, D.~C. {Jacobs}, C.~L. {Carilli}, D.~{Herne}, M.~J. {Lynch}, J.~R.
+  {Manley}, and D.~J. {Werthimer}.
+\newblock {The Precision Array for Probing the Epoch of Re-ionization: Eight
+  Station Results}.
+\newblock \emph{\aj}, 139:\penalty0 1468--1480, April 2010.
+\newblock \doi{10.1088/0004-6256/139/4/1468}.
 
 \bibitem[{Parsons} et~al.(2014){Parsons}, {Liu}, {Aguirre}, {Ali}, {Bradley},
   {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {Klima}, {MacMahon},

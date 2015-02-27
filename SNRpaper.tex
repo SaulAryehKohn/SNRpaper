@@ -86,7 +86,7 @@ This work presents measurements of sources in the SGP using the Precision Array 
 \section{Observations}
 \label{sec:obs}
 
-The Precision Array for Probing the Epoch of Reionization (PAPER) is an experiment designed to set the strongest limits on, and possibly detect, the 21\,cm signal of neutral hydrogen at redshifts $z \geq 7.5$. It is operated in the Karoo, South Africa (-30:43:17.5 N, 21:25:41.9 E). To be able to set the strong limits it has to date \citep[][Cheng et al. in prep., Kohn et al. in prep.?]{Parsons.14, Jacobs.14, Ali.15, Moore.15}, it requires a highly redundant configuration to maximise its sensitivity to a few discrete uvw voxels. However, in July and September 2011 the array was briefly reconfigured into an imaging array in order to do image-based analysis of the low-frequency radio sky \citep[e.g.][]{Stefan.13}. The imaging configuration and its instantaneous uv coverage is shown in Figure~\ref{fig:config}.
+The Precision Array for Probing the Epoch of Reionization (PAPER) is an experiment designed to set the strongest limits on, and possibly detect, the 21\,cm signal of neutral hydrogen at redshifts $z \geq 7.5$. It is operated in the Karoo, South Africa (-30:43:17.5 N, 21:25:41.9 E). To be able to set the strong limits it has to date \citep[][Cheng et al. in prep., Kohn et al. in prep.?]{Parsons.14, Jacobs.14, Ali.15, Moore.15}, it requires a highly redundant configuration to maximise its sensitivity to a few discrete uvw voxels \citep[e.g.][]{Parsons.12}. However, in July and September 2011 the array was briefly reconfigured into an imaging array in order to do image-based analysis of the low-frequency radio sky \citep[e.g.][]{Stefan.13}. The imaging configuration and its instantaneous uv coverage is shown in Figure~\ref{fig:config}.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{psa64imageconfig.png}
@@ -96,13 +96,23 @@ The Precision Array for Probing the Epoch of Reionization (PAPER) is an experime
 \end{figure}
 
 In this work we present measurements made overnight July 4--5th 2011.
-{\color{blue}[JEA] $\rightarrow$}Map details: zenith, FoV, cuts made etc.
+{\color{blue}[JEA] $\rightarrow$}Map details: DECONVOLUTION, (CALIBRATION?), zenith, FoV, cuts made etc.
 
 \section{Results}
 \label{sec:res}
 
+Our map of the SGP is shown in Figure~{\color{red}[NUMBER]... DETAILS}.
+
+Source identification and extraction was performed using PyBDSM\footnote{\url{http://www.lofar.org/wiki/doku.php?id=public:user software:pybdsm}}, which identified all sources $\geq3\sigma$ above their local background, accounting for possible sidelobe confusion \citep{PyBDSM.15}. To each detected source we fit a two-dimensional, 20' FWHM Gaussian to approximate the PAPER beam \citep{Parsons.10} in order to extract the source flux. We detected $446$ {\color{red} [NOT QUITE UNIQUE -- NEED TO TIDY UP]} individual sources, the properties of which are shown in Table~{\color{red}[NUMBER]... DETAILS}. 
+
+Mention Molonglo Reference Catalogue of Radio Sources \citep[MRC][]{Large.81} .
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{us_and_danny_cal.png}
+\caption{A comparison of the fluxes of extragalactic MRC sources measured by \cite{Jacobs.11} at 145\,MHz, compared to our own. The measurements are consistent within 20\% of one another {\color{red}[HOW MUCH DOES BEAM MISMATCH BUY US? The proportionality hops up to 90\% if I include the largest fluxes]}}
+\end{figure}
+
 \begin{itemize}
-\item Source finding: PyBDSM.
 \item pretty pictures: countour map of SGP, overlaid with... something? Green, Paladini, MSCAT, etc. Could also have background image, if we want.
 \item more pretty pictures: zoom-in of an interesting region that looks to be nicely-cleaned, just our image, no contours [e.g. Vela]
 \item Tables: 
@@ -116,6 +126,10 @@ In this work we present measurements made overnight July 4--5th 2011.
 		\item others
 		\end{itemize}
 	\end{itemize}	
+\item Graphs:
+	\begin{itemize}
+	\item Comparison of the Jacobs+2011 fluxes to the ones in our field
+	\end{itemize}
 \item Spectral indices?
 \end{itemize}
 
@@ -135,10 +149,39 @@ In this work we present measurements made overnight July 4--5th 2011.
 \item Summarize findings
 \item Brag about being the first low-freq measurements
 \item Throw-out to polarized sky survey (Nunhokee et al. in prep.) and a future polarized galactic plane survey (Aguirre et al. in prep?).
-\item Throw out to imaging capabilities of HERA.
+\item Throw out to imaging capabilities of HERA\footnote{\url{www.reionization.org}}.
 \end{itemize}
 
 %\clearpage
+\appendix
+
+\section{Catalogs}
+
+\begin{deluxetable}{lllll}
+\tabletypesize{\scriptsize}
+%\rotate
+\tablecaption{Detected properties of sources in the SGP (abridged) \label{tab:PyBDSM}}
+%
+\tablewidth{0pt}
+\tablehead{																					
+\colhead{Source Number} & \colhead{RA} & \colhead{Dec} & \colhead{S$_{145}$} & \colhead{Semi-major axis}    \\
+\colhead{}&\colhead{deg}&\colhead{deg}&\colhead{Jy}&\colhead{arcmin} 
+} 		
+\startdata                         
+0 & 91.701652 & 8.6792533 & 4$\pm$2 & 22$\pm$6 \\
+1 & 93.979553 & 9.3652856 & 10$\pm$2 & 39$\pm$18 \\
+2 & 94.297523 & 9.8516745 & 8$\pm$2 & 27$\pm$8 \\
+3 & 94.417152 & 8.6335312 & 10$\pm$2 & 32$\pm$9 \\
+4 & 95.988954 & 10.269745 & 1$\pm$2 & 12$\pm$2 \\
+5 & 96.505227 & 4.3765538 & 44$\pm$1 & 75$\pm$19 \\
+6 & 97.007929 & 10.371556 & 5$\pm$2 & 21$\pm$4 \\
+7 & 98.43141 & 11.608658 & 12$\pm$2 & 39$\pm$12 \\
+8 & 98.551229 & 10.667595 & 0$\pm$1 & 5$\pm$0 \\
+9 & 98.554268 & 10.396245 & 68$\pm$1 & 88$\pm$16 \\
+10 & 98.808621 & 10.587542 & 1$\pm$1 & 8$\pm$0 \\
+\enddata
+\end{deluxetable}
+\clearpage
 \bibliographystyle{plainnat}
 \bibliography{snrbib}{}
 

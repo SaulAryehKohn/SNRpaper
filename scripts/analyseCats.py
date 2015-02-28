@@ -2,32 +2,32 @@ import pyfits
 import numpy as np
 #import pylab
 
-hdulist0=pyfits.open('PyBDSM_catalog.fits')
+hdulist0=pyfits.open('../PyBDSM_catalog.fits')
 Us = hdulist0[1].data
 
-hdulist=pyfits.open('catalogs_matched/Green_vs_PyBDSM.fits')
+hdulist=pyfits.open('../catalogs_matched/Green_vs_PyBDSM.fits')
 Green = hdulist[1].data
 
-hdulist2=pyfits.open('catalogs_matched/Jacobs_vs_PyBDSM.fits')
+hdulist2=pyfits.open('../catalogs_matched/Jacobs_vs_PyBDSM.fits')
 Jacobs = hdulist2[1].data
 
-hdulist3 = pyfits.open('catalogs_matched/MOSTSNRCAT_vs_PyBDSM.fits')
+hdulist3 = pyfits.open('../catalogs_matched/MOSTSNRCAT_vs_PyBDSM.fits')
 MSCAT = hdulist3[1].data
 
-hdulist4 = pyfits.open('catalogs_matched/Paladini_vs_PyBDSM.fits')
+hdulist4 = pyfits.open('../catalogs_matched/Paladini_vs_PyBDSM.fits')
 Paladini = hdulist4[1].data
 
-hdulist5 = pyfits.open('catalogs_matched/MGPS_vs_PyBDSM.fits')
+hdulist5 = pyfits.open('../catalogs_matched/MGPS_vs_PyBDSM.fits')
 MGPS = hdulist5[1].data
 #MASK MGPS to compact sources only (<5') and flux > X mJy
 MASK = (MGPS['MajAxis']<=300.)*(MGPS['St'] >= 5.)
 
 MGPS = MGPS[MASK]
 
-hdulist6 = pyfits.open('catalogs_matched/MGPS-Green_vs_PyBDSM.fits')
+hdulist6 = pyfits.open('../catalogs_matched/MGPS-Green_vs_PyBDSM.fits')
 A_Green = hdulist6[1].data
 
-hdulist7 = pyfits.open('catalogs_matched/MSX_vs_PyBDSM.fits')
+hdulist7 = pyfits.open('../catalogs_matched/MSX_vs_PyBDSM.fits')
 MSX_vs_PyBDSM = hdulist7[1].data
 
 

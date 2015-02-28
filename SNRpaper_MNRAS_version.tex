@@ -1,31 +1,29 @@
-\documentclass[preprint2,epsf,epsfig,graphics]{emulateapj}
-\usepackage[draft]{hyperref}
+\documentclass[useAMS,usenatbib]{mn2e}
+%%%%% AUTHORS - PLACE YOUR OWN MACROS HERE %%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}
+\usepackage{epstopdf}
+\epstopdfsetup{outdir=./}
 \usepackage{color}
-\usepackage{natbib}
-\shorttitle{The SGP at 145\,MHz with PAPER}
-\shortauthors{Kohn et al.}
-
+%\usepackage{floatpag}
+\usepackage[pdftex, hidelinks, draft]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand {\aplt} {\ {\raise-.5ex\hbox{$\buildrel<\over\sim$}}\ }
 
+\title[The SGP at 145\,MHz with PAPER]{Measurements of the Southern Galactic Plane at 145\,MHz with PAPER}
+
+\author[S. A. Kohn et al.]{S.~A. Kohn,$^{1,\dagger}$\thanks{E-mail: saulkohn@sas.upenn.edu} J.~E. Aguirre,$^{1,\dagger}$ W. Saunders,$^{1,\dagger}$
+A.~Parsons,$^{2,3}$
+\newauthor et al.$^4$\\
+$^{1}$ Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA 19104\\
+$^{2}$ Astronomy Dept., U. California, Berkeley CA\\
+$^{3}$ Radio Astronomy Lab., U. California, Berkeley CA\\
+$^{4}$ a lot of other places\\
+}
 \begin{document}
+\date{}
 
-\title{Measurements of the Southern Galactic Plane at 145\,MHz with PAPER}
-
-\author{Saul A. Kohn\altaffilmark{1,$\dagger$}}
-\author{James E. Aguirre\altaffilmark{1,$\dagger$}}
-\author{Will Saunders\altaffilmark{1,$\dagger$}}
-\author{Aaron Parsons\altaffilmark{2,3}}
-\author{et al.\altaffilmark{4}}
-
-\email{saulkohn@sas.upenn.edu (corresponding author)}
-
-\altaffiltext{1}{Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA 19104}
-\altaffiltext{$\dagger$}{These authors contributed equally to this work.}
-\altaffiltext{2}{Astronomy Dept., U. California, Berkeley CA}
-\altaffiltext{3}{Radio Astronomy Lab., U. California, Berkeley CA}
-\altaffiltext{4}{a lot of other places}
-
+\pubyear{2015}
+\maketitle
 \begin{abstract}
 Present astrophysical understanding of high-mass stars allows for predictions of their formation rates.  High-mass stars explode in supernovae, which leave behind Supernova Remnants (SNRs) that serve as records of the stars; however the $\sim$300 observed SNRs is far fewer than the $>1000$ predicted.  This gap could implicate the understanding of high-mass stars if confirmed. 
 Meanwhile, there is presently a dearth of low-frequency radio measurements ($\nu\aplt$200\,MHz) of sources in the Southern Galactic Plane (SGP).
@@ -34,9 +32,13 @@ This study reports on a search for SNRs as well as measurements of sources in th
 {\color{blue} CAN WE ARGUE FOR GOOD POINTS OF LOW-RES?}
 %Mathematical predictions {\color{red}[CITE!!]} of the number of observable SNRs based on known limitations showed that the SNR Defect may be made up by a complete survey.  This shows that the SNR Defect is likely due to selection effects: difficulties in detecting SNRs given their location and size, and not due to a fundamental misunderstanding in star formation rates.
 \end{abstract}
-\keywords{ISM: - molecular clouds -- stars: formation}
+
+\begin{keywords}
+ISM: molecular clouds -- stars: formation
+\end{keywords}
 
 \section{Introduction}
+\let\thefootnote\relax\footnote{$^{\dagger}$These authors contributed equally to this work.}
 
 The major classification difference between high-mass ($M > 8M_{\odot}$ ) and low-mass ($M < 8 M_\odot$) stars is the end of their life, for which the latter explode in supernovae (SNe), which is precipitated by accumulated inert iron in the core \citep{Arnett.73}.  
 The subsequent collapse of the core creates the supernova explosion, which ejects the entirety of the star’s outer layers, forming a supernova remnant (SNR).  The SNR consists of the expanding supernova shock wave, the ejected outer material of the star, and any dust or gas it picks up while expanding.  
@@ -68,21 +70,21 @@ This “SNR Defect” has thus far been attributed to selection effects, a gener
 \begin{itemize}
 \item[(i)] SNRs occur in dusty regions, where the dust may absorb and/or deflect SNR emissions traveling toward earth;
 \item[(ii)] since the vast majority of stars are located along the galactic plane, so are most SNRs, increasing potential source confusion \citep[e.g.][]{Gao_v.11,Gao_vi.11};
-\item[(iii)] due to the inverse square law of observed luminosity, doubling the distance to an object reduces its apparent brightness by one-fourth  \citep{Green.91}. The light from SNRs located 50,000 ly away, for example, is diminished by a factor of $\sim$300;
+\item[(iii)] due to the inverse square law of observed luminosity, doubling the distance to an object reduces its apparent brightness by one-fourth. The light from SNRs located 50,000 ly away, for example, is diminished by a factor of $\sim$300  \citep{Green.91};
 \item[(iv)] superpositioning along the Earth’s line of sight, by which nearby, young  and inherently dense SNRs block or severely inhibit the entire field of view behind them, making surveys of the SNR population more difficult {\color{red}[CITE?]}. 
 \end{itemize}
 {\color{red}[NOW WE NEED TO SAY SOMETHING ABOUT HOW LOW-FREQ CAN HELP WITH THIS?]}
 
-It has long been known {\color{red}[CITE!!!]} that some larger SNRs, such as W28 and W30 {\color{red}[GIVE POSITIONS]}, have positioned within them \ion{H}{2} regions and other sources of thermal emissions, which increase the likelihood of misidentification \citep{Andrews.85}.  \cite{Brogan.06} showed that the small likelihood of actual proximity notwithstanding, the apparent proximity interferes with detection of SNRs.  As a result, much has been invested in finding a method to mitigate the selection effects. 
+It has long been known {\color{red}[CITE!!!]} that some larger SNRs, such as W28 and W30 {\color{red}[GIVE POSITIONS]}, have positioned within them H{\sc ii} regions and other sources of thermal emissions, which increase the likelihood of misidentification \citep{Andrews.85}.  \cite{Brogan.06} showed that the small likelihood of actual proximity notwithstanding, the apparent proximity interferes with detection of SNRs.  As a result, much has been invested in finding a method to mitigate the selection effects. 
 
 Radio surveys have typically been used to observe shell-like SNRs %and are successful 
 because of the emission spectra and morphology of those SNRs \citep{Bandiera.01}.  {\color{red}[NEEDS MORE EXPLANATION -- this is a conference talk, we should cite a resultant publication]}
 
-Young SNRs, which are compact and have close-to-blackbody emission spectra are more easily detected by high-resolution {\color{red}[WAVELENGTH?]} surveys, whereas older SNRs, which are more diffuse and emit mostly low frequencies, are better detected with radio surveys {\color{red}[CITE!!!]}. \cite{Stupar_cat.11} searched for H$\alpha$ emission coming from known SNRs in order to better identify specific structures {\color{red}[need more detail here]} within the remnants with greater resolution than radio or optical.  Recent X-ray surveys {\color{red}[CITE!!!]} have also been successful in observing SNRs, but usually require supplemental information due to known limitations {\color{red}[for example...?]} \citep{Bandiera.01}. While observing at radio frequencies mitigates most of the confusion when observing the Galactic plane {\color{red}[how true is this?]}, \ion{H}{2} regions pose a more significant problem.  \ion{H}{2} regions, opposed to SNRs, thermally emit from heating causing by a nearby high-mass stars (usually main-sequence O or B).  Recent discoveries {\color{red}[CITE!!!]} that some SNRs were actually galactic \ion{H}{2} regions have increased the push for surveys to better differentiate them {\color{red}[for example (survey, rather than single one below)?]}.  For example, SNR G166.2+2.5 was discovered to be an \ion{H}{2} region heated by O7.5V star BD+41 1144 \citep{Foster.06}.  
+Young SNRs, which are compact and have close-to-blackbody emission spectra are more easily detected by high-resolution {\color{red}[WAVELENGTH?]} surveys, whereas older SNRs, which are more diffuse and emit mostly low frequencies, are better detected with radio surveys {\color{red}[CITE!!!]}. \cite{Stupar_cat.11} searched for H$\alpha$ emission coming from known SNRs in order to better identify specific structures {\color{red}[need more detail here]} within the remnants with greater resolution than radio or optical.  Recent X-ray surveys {\color{red}[CITE!!!]} have also been successful in observing SNRs, but usually require supplemental information due to known limitations {\color{red}[for example...?]} \citep{Bandiera.01}. While observing at radio frequencies mitigates most of the confusion when observing the Galactic plane {\color{red}[how true is this?]}, H{\sc ii} regions pose a more significant problem.  H{\sc ii} regions, opposed to SNRs, thermally emit from heating causing by a nearby high-mass stars (usually main-sequence O or B).  Recent discoveries {\color{red}[CITE!!!]} that some SNRs were actually galactic H{\sc ii} regions have increased the push for surveys to better differentiate them {\color{red}[for example (survey, rather than single one below)?]}.  For example, SNR G166.2+2.5 was discovered to be an H{\sc ii} region heated by O7.5V star BD+41 1144 \citep{Foster.06}.  
 
-The Southern Galactic Plane (SGP) has been measured at various radio frequencies, including the Molonglo Galactic Plane Survey \citep[MGPS][]{Murphy.07} and the Molonglo Observatory Synthesis Telescope SNR Catalog \citep[MOSTSNRCAT][]{Whiteoak.96} at 843\,MHz, the synthetic catalogs of SNRs at 1\,GHz \citep{DAGreen.14} and \ion{H}{2} regions at 2.7\,GHz \citep{Paladini.03}. {\color{red} I don't like this paragraph, but it'll do for now.} Infrared measurements of the SGP were made by, e.g., the Midcourse Space Experiment \citep[MSX][operating at 8.28--21.3\,$\mu$m (36.23--14.08\,THz)]{Egan.03}. However, there is a dearth of measurements of the SGP at very low radio frequencies ($\nu\aplt$200\,MHz).
+The Southern Galactic Plane (SGP) has been measured at various radio frequencies, including the Molonglo Galactic Plane Survey \citep[MGPS][]{Murphy.07} and the Molonglo Observatory Synthesis Telescope SNR Catalog \citep[MOSTSNRCAT][]{Whiteoak.96} at 843\,MHz, the synthetic catalogs of SNRs at 1\,GHz \citep{DAGreen.14} and H{\sc ii} regions at 2.7\,GHz \citep{Paladini.03}. {\color{red} I don't like this paragraph, but it'll do for now.} Infrared measurements of the SGP were made by, e.g., the Midcourse Space Experiment \citep[MSX][operating at 8.28--21.3\,$\mu$m (36.23--14.08\,THz)]{Egan.03}. However, there is a dearth of measurements of the SGP at very low radio frequencies ($\nu\aplt$200\,MHz).
 
-This work presents measurements of sources in the SGP using the Precision Array for Probing the Epoch of Reionization (PAPER), a low-frequency radio telescope that observes at a central frequency of 145\,MHz. The paper is laid out as follows. In section~\ref{sec:obs} we discuss the acquisition and reduction of PAPER's measurements of the SGP. Section~\ref{sec:res} presents our map of the SGP, with detections of SNRs, \ion{H}{2} regions and extragalactic sources cross-matched with the many of the catalogs listed above. We investigate those sources which do not match with any of the catalogs. In Section~\ref{sec:disc} we {\color{red} DISCUSS THINGS}. We summarize and conclude our study in Section~\ref{sec:conc}, with an eye towards future imaging surveys with PAPER and its successor, the Hydrogen Epoch of Reionization Array (HERA).
+This work presents measurements of sources in the SGP using the Precision Array for Probing the Epoch of Reionization (PAPER), a low-frequency radio telescope that observes at a central frequency of 145\,MHz. The paper is laid out as follows. In section~\ref{sec:obs} we discuss the acquisition and reduction of PAPER's measurements of the SGP. Section~\ref{sec:res} presents our map of the SGP, with detections of SNRs, H{\sc ii} regions and extragalactic sources cross-matched with the many of the catalogs listed above. We investigate those sources which do not match with any of the catalogs. In Section~\ref{sec:disc} we {\color{red} DISCUSS THINGS}. We summarize and conclude our study in Section~\ref{sec:conc}, with an eye towards future imaging surveys with PAPER and its successor, the Hydrogen Epoch of Reionization Array (HERA).
 
 \section{Observations}
 \label{sec:obs}
@@ -106,17 +108,17 @@ Our map of the SGP is shown in Figure~{\color{red}[NUMBER]... DETAILS}.
 
 Source identification and extraction was performed using PyBDSM\footnote{\url{http://www.lofar.org/wiki/doku.php?id=public:user software:pybdsm}}, which identified all sources $\geq3\sigma$ above their local background, accounting for possible sidelobe confusion \citep{PyBDSM.15}. To each detected source we fit a two-dimensional, 20' FWHM Gaussian to approximate the PAPER beam \citep{Parsons.10} in order to extract the source flux. We detected $446$ {\color{red} [NOT QUITE UNIQUE -- NEED TO TIDY UP]} individual sources, the properties of which are shown in Table~{\color{red}[NUMBER]... DETAILS}. 
 
-Mention Molonglo Reference Catalogue of Radio Sources \citep[MRC][]{Large.81} .
+{\color{blue}Mention Molonglo Reference Catalogue of Radio Sources \citep[MRC][]{Large.81} somewhere}.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{us_and_danny_cal.png}
-\caption{A comparison of the fluxes of extragalactic MRC sources measured by \cite{Jacobs.11} at 145\,MHz, compared to our own. The measurements are consistent to within 1$\sigma$. A line of best fit is shown (solid line) along with $\pm1\sigma$ on the best fit parameters (shaded region).}
+\caption{A comparison of the fluxes of extragalactic MRC sources measured by \protect\cite{Jacobs.11} at 145\,MHz, compared to our own. The measurements are consistent to within 1$\sigma$. A line of best fit is shown (solid line) along with $\pm1\sigma$ on the best fit parameters (shaded region).}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\columnwidth]{vela_cubehelix.png}
-\caption{The Vela and Puppis SNRs}
-\end{figure}
+%\begin{figure}
+%\includegraphics[width=\columnwidth]{vela_cubehelix.png}
+%\caption{The Vela and Puppis SNRs}
+%\end{figure}
 
 \begin{itemize}
 \item Figures:
@@ -130,7 +132,7 @@ Mention Molonglo Reference Catalogue of Radio Sources \citep[MRC][]{Large.81} .
 	\item comparison to other catalogs:
 		\begin{itemize}
 		\item SNRs
-		\item \ion{H}{2} regions
+		\item H{\sc ii} regions
 		\item galaxies
 		\item others
 		\end{itemize}
@@ -164,35 +166,11 @@ Mention Molonglo Reference Catalogue of Radio Sources \citep[MRC][]{Large.81} .
 
 %\clearpage
 \appendix
-
 \section{Catalogs}
+Put tables here?
 
-\begin{deluxetable}{cllll}
-\tabletypesize{\scriptsize}
-%\rotate
-\tablecaption{Detected properties of sources in the SGP (abridged) \label{tab:PyBDSM}}
-%
-\tablewidth{0pt}
-\tablehead{																					
-\colhead{Source} & \colhead{RA} & \colhead{Dec} & \colhead{S$_{145}$} & \colhead{Semi-major axis}    \\
-\colhead{Number}&\colhead{deg}&\colhead{deg}&\colhead{Jy}&\colhead{arcmin} 
-} 		
-\startdata                         
-0 & 91.701652 & 8.6792533 & 4$\pm$2 & 22$\pm$6 \\
-1 & 93.979553 & 9.3652856 & 10$\pm$2 & 39$\pm$18 \\
-2 & 94.297523 & 9.8516745 & 8$\pm$2 & 27$\pm$8 \\
-3 & 94.417152 & 8.6335312 & 10$\pm$2 & 32$\pm$9 \\
-4 & 95.988954 & 10.269745 & 1$\pm$2 & 12$\pm$2 \\
-5 & 96.505227 & 4.3765538 & 44$\pm$1 & 75$\pm$19 \\
-6 & 97.007929 & 10.371556 & 5$\pm$2 & 21$\pm$4 \\
-7 & 98.43141 & 11.608658 & 12$\pm$2 & 39$\pm$12 \\
-8 & 98.551229 & 10.667595 & 0$\pm$1 & 5$\pm$0 \\
-9 & 98.554268 & 10.396245 & 68$\pm$1 & 88$\pm$16 \\
-10 & 98.808621 & 10.587542 & 1$\pm$1 & 8$\pm$0 \\
-\enddata
-\end{deluxetable}
 \clearpage
 \bibliographystyle{plainnat}
-\bibliography{snrbib}{}
+\bibliography{snrbib_MNRAS_version}{}
 
 \end{document}

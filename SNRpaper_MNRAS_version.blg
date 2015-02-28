@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2014/MacPorts 2014_4)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: SNRpaper_MNRAS_version.aux
+The style file: plainnat.bst
+Database file #1: snrbib_MNRAS_version.bib
+You've used 27 entries,
+            2773 wiz_defined-function locations,
+            790 strings with 12139 characters,
+and the built_in function-call counts, 18627 in all, are:
+= -- 1464
+> -- 1872
+< -- 9
++ -- 627
+- -- 599
+* -- 1840
+:= -- 3082
+add.period$ -- 99
+call.type$ -- 27
+change.case$ -- 280
+chr.to.int$ -- 26
+cite$ -- 54
+duplicate$ -- 561
+empty$ -- 982
+format.name$ -- 634
+if$ -- 3694
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 26
+newline$ -- 161
+num.names$ -- 110
+pop$ -- 509
+preamble$ -- 1
+purify$ -- 253
+quote$ -- 0
+skip$ -- 514
+stack$ -- 0
+substring$ -- 351
+swap$ -- 62
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 297
+warning$ -- 0
+while$ -- 99
+width$ -- 0
+write$ -- 390

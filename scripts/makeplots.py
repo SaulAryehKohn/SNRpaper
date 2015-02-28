@@ -15,9 +15,9 @@ Green_matched = hdu[1].data
 
 
 hist=False
-scat=False
-linfit=True
-table = True
+scat=True
+if scat==True: linfit=True
+table = False
 ###
 ###FLUX HISTOGRAMS
 ###
@@ -31,7 +31,7 @@ if hist==True:
     pylab.show()
 
 if scat==True:
-    MASK = Jacobs_matched['S145']<50.
+    MASK = Jacobs_matched['S145']<100.
     us = Jacobs_matched['Total_flux'][MASK]
     us_err = Jacobs_matched['E_Total_flux'][MASK]
     danny = Jacobs_matched['S145'][MASK]
@@ -59,7 +59,13 @@ if scat==True:
         pylab.plot(us,fitFunc(us,fitParams[0]+sigma[0],fitParams[1]+sigma[1]),'k:')
         pylab.plot(us,fitFunc(us,fitParams[0]-sigma[0],fitParams[1]-sigma[1]),'k:')
 
-        pylab.text(5,32,r'$S_{\rm{Jacobs\,et\,al.}} \propto (0.7\pm0.1)\,S_{\rm{This\,work}}$',fontsize=16)#,bbox=dict(facecolor='red', alpha=0.5))
+        y1 = (fitParams[0]+sigma[0])*np.sort(us) + fitParams[1]+sigma[1]
+        y2 = (fitParams[0]-sigma[0])*np.sort(us) + fitParams[1]-sigma[1]
+
+        pylab.fill_between(np.sort(us),y2,y1,color='black',alpha=0.3)
+
+        pylab.text(5,32,r'$S^{145\,\rm{MHz}}_{\rm{Jacobs\,et\,al.}} \propto (0.9\pm0.2)\,S^{145\,\rm{MHz}}_{\rm{This\,work}}$',fontsize=16)#,bbox=dict(facecolor='red', alpha=0.5))
+
         pylab.xlim(2.5,30.)
         pylab.ylim(2.4,37.)
     pylab.xlabel('This Work (Jy)',size=15)

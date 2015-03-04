@@ -30,6 +30,10 @@ if hist==True:
     pylab.ylabel('Count')
     pylab.show()
 
+###
+###FLUX SCATTER
+###
+
 if scat==True:
     MASK = Jacobs_matched['S145']<100.
     us = Jacobs_matched['Total_flux'][MASK]

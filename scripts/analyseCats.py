@@ -110,7 +110,9 @@ print 'These are HII regions that we appear to detect:'
 print interest_list
 print 'Num:',len(interest_list)
 
-print '#ID  RA_deg  DEC_deg SEMI-MAJOR-AXIS_deg '
+#print '#ID  RA_deg  DEC_deg SEMI-MAJOR-AXIS_deg Total_flux_JypBm'
+print '#RA_deg  DEC_deg SEMI-MAJOR-AXIS_deg Total_flux_JypBm'
 for i in range(Us['Gaus_id'].shape[0]):
     if Us['Gaus_id'][i] in interest_list:
-        print Us['Gaus_id'][i],Us['PyRA'][i],Us['PyDEC'][i],Us['Maj'][i]
+        #print Us['Gaus_id'][i],Us['PyRA'][i],Us['PyDEC'][i],Us['Maj'][i],Us['E_Maj'][i],Us['Total_flux'][i],Us['E_Total_flux'][i]
+        print Us['PyRA'][i],Us['PyDEC'][i],Us['Maj'][i],Us['E_Maj'][i],Us['Total_flux'][i],Us['E_Total_flux'][i]

@@ -2,7 +2,7 @@ import pyfits
 import numpy as np
 #import pylab
 
-hdulist0=pyfits.open('../PyBDSM_catalog.fits')
+hdulist0=pyfits.open('../catalogs_plain/PyBDSM_catalog.fits')
 Us = hdulist0[1].data
 
 hdulist=pyfits.open('../catalogs_matched/Green_vs_PyBDSM.fits')
@@ -31,6 +31,7 @@ hdulist7 = pyfits.open('../catalogs_matched/MSX_vs_PyBDSM.fits')
 MSX_vs_PyBDSM = hdulist7[1].data
 
 
+
 """
 #---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---#---
 
@@ -55,6 +56,7 @@ http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=J/ApJS/211/29&-out.max=50&-o
 print '#PyBDSMID	IN_GREEN?	IN_MOSTSNRCAT?   IN_A_Green?   IN_JACOBS?  IN_MGPS_compact?    IN_PALADINI?'
 
 toWill_list = []
+interest_list=[]
 for ID in Us['Gaus_id']:
     toWill = True
     tempstring = ''
@@ -92,18 +94,23 @@ for ID in Us['Gaus_id']:
 
     print tempstring
     if toWill == True: toWill_list.append(ID)
+    if 'N N N N N Y' in tempstring: interest_list.append(ID)
+
 
 print "These need to go to Will:"
 print toWill_list
 print 'Num:',len(toWill_list)
-"""
-print '#ID  RA_deg  DEC_deg FLUX_Jy    SEMI-MAJOR-AXIS_deg '
-for i in range(Us['Gaus_id'].shape[0]):
-    if Us['Gaus_id'][i] in toWill_list:
-        print Us['Gaus_id'][i],Us['XY2RA'][i],Us['XY2DEC'][i],Us['Total_flux'][i],Us['Maj'][i]
-"""
 
 print '#ID  RA_deg  DEC_deg SEMI-MAJOR-AXIS_deg '
 for i in range(Us['Gaus_id'].shape[0]):
     if Us['Gaus_id'][i] in toWill_list:
-        print Us['Gaus_id'][i],Us['XY2RA'][i],Us['XY2DEC'][i],Us['Maj'][i]
+        print Us['Gaus_id'][i],Us['PyRA'][i],Us['PyDEC'][i],Us['Maj'][i]
+
+print 'These are HII regions that we appear to detect:'
+print interest_list
+print 'Num:',len(interest_list)
+
+print '#ID  RA_deg  DEC_deg SEMI-MAJOR-AXIS_deg '
+for i in range(Us['Gaus_id'].shape[0]):
+    if Us['Gaus_id'][i] in interest_list:
+        print Us['Gaus_id'][i],Us['PyRA'][i],Us['PyDEC'][i],Us['Maj'][i]

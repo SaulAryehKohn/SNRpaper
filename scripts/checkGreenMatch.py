@@ -2,7 +2,7 @@ import pyfits
 import numpy as np
 #import pylab
 
-hdulist0=pyfits.open('../PyBDSM_catalog.fits')
+hdulist0=pyfits.open('../catalogs_plain/PyBDSM_catalog.fits')
 Us = hdulist0[1].data
 
 hdulist=pyfits.open('../catalogs_matched/Green_vs_PyBDSM.fits')
@@ -20,12 +20,13 @@ for i in range(Green['SNR'].shape[0]):
     dec= Green['_DEJ2000'][i]
     maj= Green['MajDiam'][i]
     #S_1GHz = Green['S_1GHz_'][i]
-    #u_S_1GHz=Green['u_S_1GHz_'][i]
+    u_S_1GHz=Green['u_S_1GHz_'][i]
     #SpIndex =Green['Sp-Index'][i]
     #u_SpIndex=Green['u_Sp-Index'][i]
 
     if Green_name in GreenVus['SNR']: continue
     else:
-        c+=1
-        print Green_name,ra,dec,maj#,S_1GHz,u_S_1GHz,SpIndex,u_SpIndex
+        if u_S_1GHz!='?':
+            c+=1
+            print Green_name,ra,dec,maj,u_S_1GHz#,S_1GHz,u_S_1GHz,SpIndex,u_SpIndex
 print c

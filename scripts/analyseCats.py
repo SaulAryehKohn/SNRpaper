@@ -111,8 +111,7 @@ print interest_list
 print 'Num:',len(interest_list)
 
 #print '#ID  RA_deg  DEC_deg SEMI-MAJOR-AXIS_deg Total_flux_JypBm'
-print '#RA_deg  DEC_deg SEMI-MAJOR-AXIS_deg Total_flux_JypBm'
-for i in range(Us['Gaus_id'].shape[0]):
-    if Us['Gaus_id'][i] in interest_list:
-        #print Us['Gaus_id'][i],Us['PyRA'][i],Us['PyDEC'][i],Us['Maj'][i],Us['E_Maj'][i],Us['Total_flux'][i],Us['E_Total_flux'][i]
-        print Us['PyRA'][i],Us['PyDEC'][i],Us['Maj'][i],Us['E_Maj'][i],Us['Total_flux'][i],Us['E_Total_flux'][i]
+print '#PalName RA_deg  DEC_deg PAPER_Maj_arcmin Pal_Maj_arcmin Total_flux_Jy e_Total_flux_Jy Flux_2.7GHz e_Flux_2.7GHz'
+for i in range(Paladini['Gaus_id'].shape[0]):
+    if Paladini['Gaus_id'][i] in interest_list:
+        print Paladini['Gname'][i],'&',Paladini['XY2RA'][i],'&',Paladini['XY2DEC'][i],'&',round(Paladini['Maj'][i]*60.,0),'$\pm$',round(Paladini['E_Maj'][i]*60.,0),round(Paladini['theta'][i],0),'$\pm$',round(Paladini['e_theta'][i],0),'&',round(Paladini['Total_flux'][i],3),'$\pm$',round(Paladini['E_Total_flux'][i],3),'&',Paladini['S2_7GHz'][i],'$\pm$',Paladini['e_S2_7GHz'][i],'\\\\'

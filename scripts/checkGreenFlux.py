@@ -20,7 +20,7 @@ for i in range(GreenVus['SNR'].shape[0]):
 
     #if u_S_1GHz=='?' or u_SpIndex=='?' or maj>5.: continue #i.e. throw out uncertain or diffuse data
     if u_S_1GHz=='?' or u_SpIndex=='?': continue
-    expected.append(S_1GHz*(1.E9/145.E6)**(-1*SpIndex))
+    expected.append(S_1GHz*(1.E9/145.E6)**(SpIndex))
     measured.append(GreenVus['Total_flux'][i])
 
 
@@ -34,9 +34,16 @@ print c
 expected = np.array(expected)
 measured = np.array(measured)
 
-n, bins, patches = pylab.hist(expected/measured, 20, histtype='stepfilled')
+n, bins, patches = pylab.hist(expected/measured, 50, histtype='stepfilled')
 pylab.setp(patches, 'facecolor', 'g', 'alpha', 0.75)
 pylab.xlabel(r'Expected S$_{145\,\rm{MHz}}$ / Measured S$_{145\,\rm{MHz}}$',size=15)
 pylab.ylabel('Count',size=15)
 
+pylab.show()
+pylab.close()
+
+pylab.plot(measured,expected,'bo')
+pylab.plot(np.arange(1000),np.arange(1000),'k-')
+pylab.xlabel('measured')
+pylab.ylabel('expected')
 pylab.show()

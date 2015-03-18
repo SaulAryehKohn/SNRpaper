@@ -1,6 +1,6 @@
 import pyfits
 import numpy as np
-#import pylab
+import pylab
 
 hdulist0=pyfits.open('../catalogs_plain/PyBDSM_catalog.fits')
 Us = hdulist0[1].data
@@ -110,8 +110,24 @@ print 'These are HII regions that we appear to detect:'
 print interest_list
 print 'Num:',len(interest_list)
 
+latex = True
+expected = []
+measured = []
+diameter = []
 #print '#ID  RA_deg  DEC_deg SEMI-MAJOR-AXIS_deg Total_flux_JypBm'
 print '#PalName RA_deg  DEC_deg PAPER_Maj_arcmin Pal_Maj_arcmin Total_flux_Jy e_Total_flux_Jy Flux_2.7GHz e_Flux_2.7GHz'
 for i in range(Paladini['Gaus_id'].shape[0]):
     if Paladini['Gaus_id'][i] in interest_list:
-        print Paladini['Gname'][i],'&',Paladini['XY2RA'][i],'&',Paladini['XY2DEC'][i],'&',round(Paladini['Maj'][i]*60.,0),'$\pm$',round(Paladini['E_Maj'][i]*60.,0),round(Paladini['theta'][i],0),'$\pm$',round(Paladini['e_theta'][i],0),'&',round(Paladini['Total_flux'][i],3),'$\pm$',round(Paladini['E_Total_flux'][i],3),'&',Paladini['S2_7GHz'][i],'$\pm$',Paladini['e_S2_7GHz'][i],'\\\\'
+        if latex: print Paladini['Gname'][i],'&',Paladini['XY2RA'][i],'&',Paladini['XY2DEC'][i],'&',round(Paladini['Maj'][i]*60.,0),'$\pm$',round(Paladini['E_Maj'][i]*60.,0),'&',round(Paladini['theta'][i]/2.,1),'$\pm$',round(Paladini['e_theta'][i]/2.,1),'&',round(Paladini['Total_flux'][i],1),'$\pm$',round(Paladini['E_Total_flux'][i],1),'&',Paladini['S2_7GHz'][i],'$\pm$',Paladini['e_S2_7GHz'][i],'\\\\'
+        diameter.append(Paladini['theta'][i])
+        measured.append(Paladini['Total_flux'][i])
+        expected.append(Paladini['S2_7GHz'][i]*(2.7E9/145.E6)**(0.1))
+
+pylab.scatter(measured,expected,s=2*np.array(diameter),c='yellow')
+pylab.plot(np.arange(100),np.arange(100),'k-')
+pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$')
+pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$')
+pylab.xlim(0,150)
+pylab.ylim(0,150)
+pylab.show()
+pylab.close()

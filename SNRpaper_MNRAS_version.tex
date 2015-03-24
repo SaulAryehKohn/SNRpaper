@@ -11,10 +11,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\title[The SGP at 145\,MHz with PAPER]{Measurements of the Southern Galactic Plane at 145\,MHz with PAPER: evidence of synchrotron self-absorption?}
+\title[The SGP at 145\,MHz with PAPER]{Measurements of the Southern Galactic Plane at 145\,MHz with PAPER}
 
 \author[S. A. Kohn et al.]{S.~A. Kohn,$^{1}$\thanks{E-mail: saulkohn@sas.upenn.edu} J.~E. Aguirre,$^{1}$ W. Saunders,$^{1}$
-A.~Parsons,$^{2,3}$
+A.~R. Parsons,$^{2,3}$
 \newauthor et al.$^4$\\
 $^{1}$ Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA 19104\\
 $^{2}$ Astronomy Dept., U. California, Berkeley CA\\
@@ -30,7 +30,7 @@ $^{4}$ a lot of other places\\
 Present astrophysical understanding of high-mass stars allows for predictions of their formation rates.  High-mass stars explode in supernovae, which leave behind Supernova Remnants (SNRs) that serve as records of the stars; however the $\sim$300 observed SNRs is far fewer than the $>1000$ predicted.  This gap could implicate the understanding of high-mass stars if confirmed. 
 Meanwhile, there is presently a dearth of low-frequency radio measurements ($\nu\aplt$200\,MHz) of sources in the Southern Galactic Plane (SGP).
 This study reports on a search for SNRs as well as measurements of sources in the SGP using low-frequency radio maps produced at 145\,MHz by Precision Array for Probing the Epoch of Reionization (PAPER).
-{\color{red} VERY BRIEF SUMMARY OF FINDINGS.}
+{\color{red} VERY BRIEF SUMMARY OF FINDINGS:} For several known SNR positions we do not detect significant flux above background, suggesting a synchrotron self-absorption mechanism at play for these particular SNRs. The implications of our SNR detection rate is discussed with a focus on the SNR Defect. We also detect several H{\sc ii} regions, which are largely unexpected at low frequencies due to the sharp spectral fall-off of free-free emission.
 {\color{blue} CAN WE ARGUE FOR GOOD POINTS OF LOW-RES?}
 %Mathematical predictions {\color{red}[CITE!!]} of the number of observable SNRs based on known limitations showed that the SNR Defect may be made up by a complete survey.  This shows that the SNR Defect is likely due to selection effects: difficulties in detecting SNRs given their location and size, and not due to a fundamental misunderstanding in star formation rates.
 \end{abstract}
@@ -132,7 +132,7 @@ Our map of the SGP is shown in Figure~{\color{red}[NUMBER]... DETAILS}.
 
 Source identification and extraction was performed using PyBDSM\footnote{\url{http://www.lofar.org/wiki/doku.php?id=public:user software:pybdsm}}, which identified all sources $\geq3\sigma$ above their local background, accounting for possible sidelobe confusion \citep{PyBDSM.15}. To each detected source we fit a two-dimensional, 20' FWHM Gaussian to approximate the PAPER beam \citep{Parsons.10} in order to extract the source flux. 
 
-We detected $393$ individual sources, the properties of which are shown in Table~{\color{red}[NUMBER]... DETAILS}. In order to identify each detected source, we checked if any known sources were within the 20' PAPER beam at that position in the Galactic radio catalogues described in the introduction: MGPS, MOSTSNRCAT, the \cite{DAGreen.14} SNR catalogue and the \cite{Paladini.03} H{\sc ii} region catalogue. We also matched to the MRC sources detected in \cite{Jacobs.11}, a few of which (35) overlapped with our SGP cut. For the detected sources that were not within 20' of any objects in these catalogues (53), we queried the SIMBAD astronomical database \citep{Wegner.00} for any other SNRs,  H{\sc ii} regions, OB stars or undetected radio sources within the semi-major axis of the source.
+We detected $393$ individual sources, the properties of which are shown in Table~{\color{red}[NUMBER]... DETAILS}. In order to identify each detected source, we checked if any known sources were within the 20' PAPER beam at that position in the Galactic radio catalogues described in the introduction: MGPS, MOSTSNRCAT, the \cite{DAGreen.14} SNR catalogue and the \cite{Paladini.03} H{\sc ii} region catalogue. We also matched to the MRC sources detected in \cite{Jacobs.11}, a few of which (35) overlapped with our SGP cut. For the detected sources that were not within 20' of any objects in these catalogues (53), we queried the SIMBAD astronomical database \citep{Wegner.00} for any other SNRs,  H{\sc ii} regions, {\color{red}OB stars} or undetected radio sources within the semi-major axis of the source.
 
 
 
@@ -163,7 +163,16 @@ synchrotron self-absorption??  Need to look at the expected flux at
 150\,MHz relative to detection threshold.  
 
 \subsection{Detection of {H\sc{ii}} regions at low frequencies}
-We detect 13 {H\sc{ii}} regions that are listed in \cite{Paladini.03} at positions that do not appear in any other surveys we position-matched to. This is surprising, given that the expected emission mechanism, bremsstrahlung radiation, should be negligible at these frequencies...
+We detect 13 {H\sc{ii}} regions that are listed in \cite{Paladini.03} at positions that do not appear in any other surveys we position-matched to. This is surprising, given that the expected emission mechanism, bremsstrahlung radiation, should be negligible at these frequencies... See Table~\ref{tab:hii}
+
+
+\begin{figure*}
+\centering
+\includegraphics[scale=.4]{GreenScatter.png}
+\includegraphics[scale=.4]{PaladiniScatter.png}
+\caption{\textbf{Left:} The SNR fluxes that we measure compared to those expected at 145\,MHz given the \protect\citealt{DAGreen.14} 1\,GHz fluxes and spectral indices. \textbf{Right:} The same comparison as on the left, but for the H{\sc{ii}} region fluxes reported by \protect\citealt{Paladini.03} and using a typical spectral index for free-free emission $\alpha=0.1$. In both plots, the size of the point is illustrative of the diameter of the region (as reported by their respective studies, not PAPER), and a black line showing a 1:1 relation is overlaid.}
+\label{fig:comparisonscatters}
+\end{figure*}
 
 \begin{table*}
 \caption{Measured properties of {H\sc{ii}} regions}

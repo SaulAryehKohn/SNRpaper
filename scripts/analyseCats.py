@@ -110,7 +110,8 @@ print 'These are HII regions that we appear to detect:'
 print interest_list
 print 'Num:',len(interest_list)
 
-latex = True
+latex = False
+
 expected = []
 measured = []
 diameter = []
@@ -119,10 +120,10 @@ print '#PalName RA_deg  DEC_deg PAPER_Maj_arcmin Pal_Maj_arcmin Total_flux_Jy e_
 for i in range(Paladini['Gaus_id'].shape[0]):
     if Paladini['Gaus_id'][i] in interest_list:
         if latex: print Paladini['Gname'][i],'&',Paladini['XY2RA'][i],'&',Paladini['XY2DEC'][i],'&',round(Paladini['Maj'][i]*60.,0),'$\pm$',round(Paladini['E_Maj'][i]*60.,0),'&',round(Paladini['theta'][i]/2.,1),'$\pm$',round(Paladini['e_theta'][i]/2.,1),'&',round(Paladini['Total_flux'][i],1),'$\pm$',round(Paladini['E_Total_flux'][i],1),'&',Paladini['S2_7GHz'][i],'$\pm$',Paladini['e_S2_7GHz'][i],'\\\\'
-        diameter.append(Paladini['theta'][i])
-        measured.append(Paladini['Total_flux'][i])
-        expected.append(Paladini['S2_7GHz'][i]*(2.7E9/145.E6)**(0.1))
-
+        #diameter.append(Paladini['theta'][i])
+        #measured.append(Paladini['Total_flux'][i])
+        #expected.append(Paladini['S2_7GHz'][i]*(2.7E9/145.E6)**(0.1))
+"""
 pylab.scatter(measured,expected,s=2*np.array(diameter),c='yellow')
 pylab.plot(np.arange(100),np.arange(100),'k-')
 pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$')
@@ -131,3 +132,4 @@ pylab.xlim(0,150)
 pylab.ylim(0,150)
 pylab.show()
 pylab.close()
+"""

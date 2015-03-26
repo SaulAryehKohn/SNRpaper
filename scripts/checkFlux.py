@@ -14,7 +14,9 @@ if Green:
     
     name = []
     expected = []
+    e_expected=[]
     measured = []
+    e_measured=[]
     major = []
     c=0
     for i in range(GreenVus['SNR'].shape[0]):
@@ -67,13 +69,18 @@ if Green:
     	else: pylab.scatter(measured[j],expected[j],s=major,c='red')
     """
     
-    
-    pylab.scatter(measured,expected,s=2.*major,c='green')
+    bound=40.#arcmins
+    boundit=True
+    if boundit:
+    	pylab.scatter(measured[major>bound],expected[major>bound],s=2.*major[major>bound],c='white',label=r"$>\,20'$ diameter")
+    	pylab.scatter(measured[major<bound],expected[major<bound],s=2.*major[major<bound],c='green',label=r"$<\,20'$ diameter")
+    else: pylab.scatter(measured,expected,s=2.*major,c='green')
     pylab.plot(np.arange(100),np.arange(100),'k-')
-    pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$')
-    pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$')
+    pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
+    pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
     pylab.xlim(0,60)
     pylab.ylim(0,600)
+    pylab.legend(loc='best',numpoints=1)
     pylab.show()
     pylab.close()
 
@@ -84,7 +91,9 @@ if Paladini:
     interest_list = [400, 324, 39, 22, 21, 314, 20, 16, 19, 312, 426, 23, 427, 8, 9, 308, 302, 425, 1, 0]
     
     expected = []
+    e_expected=[]
     measured = []
+    e_measured=[]
     diameter = []
     c=0
     for i in range(PalVus['Gname'].shape[0]):
@@ -92,6 +101,7 @@ if Paladini:
         Gaus_id = PalVus['Gaus_id'][i]
         diam= PalVus['theta'][i]
         S_27GHz = PalVus['S2_7GHz'][i]
+        eS_27GHz = PalVus['e_S2_7GHz'][i]
         #u_S_1GHz=PalVus['u_S_1GHz_'][i]
         #SpIndex =PalVus['Sp-Index'][i]
         #u_SpIndex=PalVus['u_Sp-Index'][i]
@@ -102,7 +112,9 @@ if Paladini:
         if Gaus_id not in interest_list: continue
         
         expected.append(S_27GHz*(2.7E9/145.E6)**(0.1))
+        e_expected.append(eS_27GHz*(2.7E9/145.E6)**(0.1))
         measured.append(PalVus['Total_flux'][i])
+        e_measured.append(PalVus['E_Total_flux'][i])
         diameter.append(diam)
         c+=1
     print c,'/',PalVus['Gname'].shape[0]
@@ -112,7 +124,7 @@ if Paladini:
     measured = np.array(measured)
     major = np.array(diameter)
 
-    pylab.plot(measured,expected,'yo')
+    pylab.errorbar(measured,expected,xerr=e_measured,yerr=e_expected,fmt='yo')
     pylab.plot(np.arange(100),np.arange(100),'k-')
     pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$')
     pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$')
@@ -124,11 +136,12 @@ if Paladini:
     pylab.scatter(measured,expected,s=diameter,c='yellow')
     pylab.show()
     pylab.close()
-
+    
+    pylab.errorbar(measured,expected,xerr=e_measured,yerr=e_expected,linestyle='None',c='black')
     pylab.scatter(measured,expected,s=5.*major,c='yellow')
     pylab.plot(np.arange(100),np.arange(100),'k-')
-    pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$')
-    pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$')
+    pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
+    pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
     pylab.xlim(0,150)
     pylab.ylim(0,150)
     pylab.show()

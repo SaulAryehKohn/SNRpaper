@@ -2,38 +2,40 @@ import pyfits
 import numpy as np
 import os
 
-hdulist0=pyfits.open('PyBDSM_catalog.fits')
+hdulist0=pyfits.open('../catalogs_plain/PyBDSM_catalog.fits')
 Us = hdulist0[1].data
 
-hdulist=pyfits.open('Matches/PyBDSM_vs_Green14.fits')
+hdulist=pyfits.open('../catalogs_matched/Green_vs_PyBDSM.fits')
 Green = hdulist[1].data
 
-hdulist2=pyfits.open('Matches/PyBDSM_vs_Jacobs.fits')
+hdulist2=pyfits.open('../catalogs_matched/Jacobs_vs_PyBDSM.fits')
 Jacobs = hdulist2[1].data
 
-hdulist3 = pyfits.open('Matches/PyBDSM_vs_MOSTSNRCAT.fits')
+hdulist3 = pyfits.open('../catalogs_matched/MOSTSNRCAT_vs_PyBDSM.fits')
 MSCAT = hdulist3[1].data
 
-hdulist4 = pyfits.open('Matches/PyBDSM_vs_Paladini03.fits')
+hdulist4 = pyfits.open('../catalogs_matched/Paladini_vs_PyBDSM.fits')
 Paladini = hdulist4[1].data
 
-hdulist5 = pyfits.open('Matches/PyBDSM_vs_MGPS.fits')
+hdulist5 = pyfits.open('../catalogs_matched/MGPS_vs_PyBDSM.fits')
 MGPS = hdulist5[1].data
 
+hdulist6 = pyfits.open('../catalogs_matched/MGPS-Green_vs_PyBDSM.fits')
+AliceGreen = hdulist6[1].data
 
 test=False
 
 """
-BLUE = PyBDSM
-GREEN = D. A. GREEN (2014)
-YELLOW= MOSTSNRCAT
-RED = PALADINI+ (2013)
-CYAN= JACOBS+ (2011)
+BLUE CIRCLE = PyBDSM
+GREEN CIRCLE = D. A. GREEN (2014) (name has 'D') and A. J. GREEN+ (2014) (name has 'A')
+RED CIRCLE = MOSTSNRCAT
+YELLOW CIRCLE = PALADINI+ (2013)
+CYAN (/GREEN? WEIRD.) BOX = JACOBS+ (2011)
 """
 
 if test==False:
-    os.system('rm ForDs9.reg')
-    F = open('ForDs9.reg','w')
+    os.system('rm MEGAREG.reg')
+    F = open('MEGAREG.reg','w')
 
 if test==False: print >> F, '# Region file format: DS9 version 4.1 \nglobal color=green dashlist=8 3 width=1 font="helvetica 10 normal roman" select=1 highlite=1 dash=0 fixed=0 edit=1 move=1 delete=1 include=1 source=1 \nfk5'
 else: print '# Region file format: DS9 version 4.1 \nglobal color=green dashlist=8 3 width=1 font="helvetica 10 normal roman" select=1 highlite=1 dash=0 fixed=0 edit=1 move=1 delete=1 include=1 source=1 \nfk5'
@@ -42,29 +44,30 @@ if test==False: print >> F, 'global color=blue'
 else: print 'global color=blue'
 
 for i in range(Us.shape[0]):#Us: no ellipse -- just give 20arcmin circle
-    if test==False: print >> F, 'circle('+str(Us['XY2RA'][i])+','+str(Us['XY2DEC'][i])+',600") # text={'+str(Us['Gaus_id'][i])+'}'
-    else:print 'circle('+str(Us['XY2RA'][i])+','+str(Us['XY2DEC'][i])+',600") # text={'+str(Us['Gaus_id'][i])+'}'
+    if test==False: print >> F, 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'") # text={'+str(Us['Gaus_id'][i])+'}'
+    else:print 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'") # text={'+str(Us['Gaus_id'][i])+'}'
 
 if test==False:
     print >> F, 'global color=green'
     for i in range(Green.shape[0]):#Green et al. 2014
-        print >> F, 'circle('+str(Green['XY2RA'][i])+','+str(Green['XY2DEC'][i])+','+str(int(Green['Dmaj'][i]*60))+'") # text={'+Green['SNR'][i]+'}'
-
-
-    print >> F, 'global color=yellow'
-    for i in range(MSCAT.shape[0]):#MOSTSNRCAT
-        majax = str(int(MSCAT['major_axis'][i]*60))
-        if majax > 0: print >> F, 'circle('+str(MSCAT['XY2RA'][i])+','+str(MSCAT['XY2DEC'][i])+','+majax+'")'
+        print >> F, 'circle('+str(Green['_RAJ2000'][i])+','+str(Green['_DEJ2000'][i])+','+str(Green['MajDiam'][i]*60.)+'") # text={D'+Green['SNR'][i]+'}'
 
     print >> F, 'global color=red'
+    for i in range(MSCAT.shape[0]):#MOSTSNRCAT
+        majax = str(MSCAT['DMaj'][i]*60.)
+        if majax > 0: print >> F, 'circle('+str(MSCAT['_RAJ2000'][i])+','+str(MSCAT['_DEJ2000'][i])+','+majax+'")'
+
+    print >> F, 'global color=yellow'
     for i in range(Paladini.shape[0]):#Paladini et al. 2003
-        print >> F, 'box('+str(Paladini['XY2RA'][i])+','+str(Paladini['XY2DEC'][i])+',1000",1000") # text={'+Paladini['Gname'][i]+'}'
+        print >> F, 'circle('+str(Paladini['_RAJ2000'][i])+','+str(Paladini['_DEJ2000'][i])+','+str(Paladini['theta'][i]*30.)+'") # text={'+Paladini['Gname'][i]+'}'
 
     print >> F, 'global color=cyan'
-    for i in range(Jacobs.shape[0]):#Paladini et al. 2003
-        print >> F, 'box('+str(Jacobs['XY2RA'][i])+','+str(Jacobs['XY2DEC'][i])+',1000",1000") # text={'+Jacobs['Cul'][i]+'}'
+    for i in range(Jacobs.shape[0]):#Jacobs et al. 2011
+        print >> F, 'box('+str(Jacobs['_RAJ2000'][i])+','+str(Jacobs['_DEJ2000'][i])+',900",900") # text={MRC '+Jacobs['MRC'][i]+'}'
 
-
+	print >> F, 'global color=green'
+	for i in range(AliceGreen.shape[0]):
+		print >> F, 'circle('+str(AliceGreen['RA_deg'][i])+','+str(AliceGreen['DEC_deg'][i])+','+str(AliceGreen['Major'][i]*60.)+'") # text={A'+AliceGreen['#Source'][i]+'}'
 
 
 F.close()

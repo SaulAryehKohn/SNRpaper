@@ -27,7 +27,7 @@ $^{4}$ a lot of other places\\
 \pubyear{2015}
 \maketitle
 \begin{abstract}
-Present astrophysical understanding of high-mass stars allows for predictions of their formation rates.  High-mass stars explode in supernovae, which leave behind Supernova Remnants (SNRs) that serve as records of the stars; however the $\sim$300 observed SNRs is far fewer than the $>1000$ predicted.  This gap could implicate the understanding of high-mass stars if confirmed. 
+Present astrophysical understanding of high-mass stars allows for predictions of their formation rates.  High-mass stars explode in supernovae, which leave behind Supernova Remnants (SNRs) that serve as records of the stars; however the $\sim$300 observed SNRs is far fewer than the $>1000$ predicted.  This ``SNR Defect" could implicate the understanding of high-mass stars if confirmed. 
 Meanwhile, there is presently a dearth of low-frequency radio measurements ($\nu\aplt$200\,MHz) of sources in the Southern Galactic Plane (SGP).
 This study reports on a search for SNRs as well as measurements of sources in the SGP using low-frequency radio maps produced at 145\,MHz by Precision Array for Probing the Epoch of Reionization (PAPER).
 {\color{red} VERY BRIEF SUMMARY OF FINDINGS:} For several known SNR positions we do not detect significant flux above background, suggesting a synchrotron self-absorption mechanism at play for these particular SNRs. The implications of our SNR detection rate is discussed with a focus on the SNR Defect. We also detect several H{\sc ii} regions, which are largely unexpected at low frequencies due to the sharp spectral fall-off of free-free emission.
@@ -130,7 +130,7 @@ Our map of the SGP is shown in Figure~{\color{red}[NUMBER]... DETAILS}.
 
 Source identification and extraction was performed using PyBDSM\footnote{\url{http://www.lofar.org/wiki/doku.php?id=public:user software:pybdsm}}, which identified all sources $\geq3\sigma$ above their local background, accounting for possible sidelobe confusion \citep{PyBDSM.15}. To each detected source we fit a two-dimensional, 20' FWHM Gaussian to approximate the PAPER beam \citep{Parsons.10} in order to extract the source flux. 
 
-We detected $393$ individual sources, the properties of which are shown in Table~{\color{red}[NUMBER]... DETAILS}. In order to identify each detected source, we checked if any known sources were within the 20' PAPER beam at that position in the Galactic radio catalogues described in the introduction: MGPS, MOSTSNRCAT, the \cite{DAGreen.14} SNR catalogue and the \cite{Paladini.03} H{\sc ii} region catalogue. We also matched to the MRC sources detected in \cite{Jacobs.11}, a few of which (35) overlapped with our SGP cut (discussed in Section~\ref{subsec:pscal}). For the detected sources that were not within 20' of any objects in these catalogues (53), we queried the SIMBAD astronomical database \citep{Wegner.00} for any other SNRs,  H{\sc ii} regions, {\color{red}OB stars} or undetected radio sources within the semi-major axis of the source.
+We detected $393$ individual sources, the properties of which are shown in Table~{\color{red}[NUMBER]... DETAILS}. In order to identify each detected source, we checked if any known sources were within the 20' PAPER beam at that position in the Galactic radio catalogues described in the introduction: MGPS, MOSTSNRCAT, the \cite{DAGreen.14} SNR catalogue and the \cite{Paladini.03} H{\sc ii} region catalogue. We also matched to the MRC sources detected in \cite{Jacobs.11}, a few of which (35) overlapped with our SGP cut (discussed in Section~\ref{subsec:pscal}). For the detected sources that were not within 20' of any objects in these catalogues (53 -- {\color{red}[CHANGE TO NUMBER WORTH INVESTIGATING]} ), we queried the SIMBAD astronomical database \citep{Wegner.00} for any other SNRs,  IR bubbles, H{\sc ii} regions or undetected radio sources within the semi-major axis of the source.
 
 \subsection{Comparison of Green SNR Fluxes with PAPER}
 
@@ -165,7 +165,7 @@ synchrotron self-absorption??  Need to look at the expected flux at
 \end{figure*}
 
 \subsection{Detection of {H\sc{ii}} regions at low frequencies}
-We detect 20 {H\sc{ii}} regions that are listed in \cite{Paladini.03} at positions that do not appear in any other surveys we position-matched to. This is surprising, given that the expected emission mechanism, bremsstrahlung radiation, should be negligible at these frequencies. See Table~\ref{tab:hii} for a summary of our measurements for these regions. Using a spectral index $\alpha=0.1$, typical of bremsstrahlung emission, we scale the 2.7\,GHz fluxes reported by \cite{Paladini.03} to those expected at 145\,MHz. The comparison is shown in Figure~\ref{fig:comparisonscatters}
+We detect 20 {H\sc{ii}} regions that are listed in \cite{Paladini.03} at positions that do not appear in any other surveys we position-matched to. This is surprising, given that the expected emission mechanism, bremsstrahlung radiation, should be negligible at these frequencies. See Table~\ref{tab:hii} for a summary of our measurements for these regions. Using a spectral index $\alpha=0.1$, typical of bremsstrahlung emission, we scale the 2.7\,GHz fluxes reported by \cite{Paladini.03} to those expected at 145\,MHz. The comparison is shown in Figure~\ref{fig:comparisonscatters} -- we see no apparent pattern between the fluxes we measure compared to those expected at our frequencies.
 
 \begin{table*}
 \caption{Measured properties of {H\sc{ii}} regions}
@@ -178,7 +178,6 @@ Name &  $\alpha$   &  $\delta$  &  PAPER Maj   &  Paladini Maj &  S$_{145}$  &  
 006.0-01.3 & 271.06547 & -24.443156 & 30 $\pm$ 6 & 4.4 $\pm$ 1.1 & 14 $\pm$ 3 & 45 $\pm$ 5 \\
 006.0+00.1 & 269.75844 & -23.693369 & 17 $\pm$ 2 & 3.5 $\pm$ 0.3 & 5 $\pm$ 3 & 38 $\pm$ 2 \\
 006.1-00.1 & 270.08439 & -23.671484 & 49 $\pm$ 6 & 3.0 $\pm$ 0.8 & 35 $\pm$ 2 & 18 $\pm$ 2 \\
-
 006.3+02.0 & 268.13537 & -22.548133 & 20 $\pm$ 3 & 3.7 $\pm$ 1.2 & 9 $\pm$ 3 & 1.2 $\pm$ 0.7 \\
 006.6-00.3 & 270.34451 & -23.396542 & {\color{red}21.0 $\pm$ 0.0} & 3.3 $\pm$ 0.9 & 35.8 $\pm$ 2.9 & 54 $\pm$ 5 \\
 006.6-00.1 & 270.26962 & -23.259306 & 17 $\pm$ 1 & 1.1 $\pm$ 1.0 & 11 $\pm$ 3 & 11 $\pm$ 3 \\

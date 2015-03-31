@@ -129,25 +129,40 @@ list_of_lists = [toWill_list,DGSNR_list,MSSNR_list,AGSNR_list,exgal_list,mgps_li
 name_of_lists = ['toWill_list','DGSNR_list','MSSNR_list','AGSNR_list','exgal_list','mgps_list','hii_list','multSNRlist_list','hii_in_SNR','other_mult_lists']
 
 #to first order, what catalog contains their info (ie neglecting double+ matches)
-nada = []
+nada = np.array([])
 source_cats = [nada,Green,MSCAT,A_Green,Jacobs,MGPS,Paladini,nada,nada,nada]
 
 print ''
 
-for k in range(len(list_of_lists)):
+for k in range(len(list_of_lists)): #for each list
 	listname = name_of_lists[k]
 	list = list_of_lists[k]
+	sourceCat = source_cats[k]
 	print '\n',listname,len(list),'\n'
 	
 	print 'ID RA DEC Maj EMaj Flux EFlux'
-	for m in range(len(list)):
+	for m in range(len(list)): #for each entry in each list
 		ID = list[m]
-		for p in range(Us['Gaus_id'].shape[0]):
+		for p in range(Us['Gaus_id'].shape[0]): #for each ID in the master list
 			IDcat = Us['Gaus_id'][p]
-			if IDcat == ID:
-				print ID,Us['PyRA'][m],Us['PyDEC'][m],Us['Maj'][m],Us['E_Maj'][m],Us['Total_flux'][m],Us['E_Total_flux'][m]
-
-
+			if IDcat == ID: #if the master ID matches with the ID in the list in question
+				if sourceCat.shape[0]== 0: #if it does NOT come from a single catalog
+					continue 
+					#print ID,Us['PyRA'][m],Us['PyDEC'][m],Us['Maj'][m],Us['E_Maj'][m],Us['Total_flux'][m],Us['E_Total_flux'][m]
+				else: #if it DOES
+					if k == 1: #D. Green 2014
+						print 'Green info + ours'
+					if k == 2: #MOSTSNRCAT
+						print 'MSCAT info + ours'
+					if k == 3: #A. Green et al.
+						print 'A. Green info + ours'
+					if k ==4: #Jacobs et al. 2011
+						print 'hi Danny!'
+					if k == 5: #MGPS
+						print 'MGPS info + ours'
+					if k == 6: #Paladini et al. 2003
+						print 'Paladini info +ours'
+					
 
 ####################################################
 

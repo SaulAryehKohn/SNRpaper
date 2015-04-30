@@ -84,65 +84,103 @@ if Green:
     pylab.show()
     pylab.close()
 
+###############
+chisquared=True
+plotting=False
+###############
+
 if Paladini:
-    hdulist=pyfits.open('../catalogs_matched/Paladini_vs_PyBDSM.fits')
-    PalVus = hdulist[1].data
-    
-    interest_list = [400, 324, 39, 22, 21, 314, 20, 16, 19, 312, 426, 23, 427, 8, 9, 308, 302, 425, 1, 0]
-    
-    expected = []
-    e_expected=[]
-    measured = []
-    e_measured=[]
-    diameter = []
-    c=0
-    for i in range(PalVus['Gname'].shape[0]):
-        Pal_name = PalVus['Gname'][i]
-        Gaus_id = PalVus['Gaus_id'][i]
-        diam= PalVus['theta'][i]
-        S_27GHz = PalVus['S2_7GHz'][i]
-        eS_27GHz = PalVus['e_S2_7GHz'][i]
-        #u_S_1GHz=PalVus['u_S_1GHz_'][i]
-        #SpIndex =PalVus['Sp-Index'][i]
-        #u_SpIndex=PalVus['u_Sp-Index'][i]
+	"""
+	Trying to minimize the chi-squared:
 
-        #if u_S_1GHz=='?' or u_SpIndex=='?' or maj>5.: continue #i.e. throw out uncertain or diffuse data
-        #if u_S_1GHz=='?' or u_SpIndex=='?': continue #i.e. throw out uncertain data
-        
-        if Gaus_id not in interest_list: continue
-        
-        expected.append(S_27GHz*(2.7E9/145.E6)**(0.1))
-        e_expected.append(eS_27GHz*(2.7E9/145.E6)**(0.1))
-        measured.append(PalVus['Total_flux'][i])
-        e_measured.append(PalVus['E_Total_flux'][i])
-        diameter.append(diam)
-        c+=1
-    print c,'/',PalVus['Gname'].shape[0]
+	chi^2 = | (Fmeas - Fexp)|^2/eFmeas^2 <-- is this the correct noise level to use?
+
+	where the free parameter to sweep over is the 
+	alpha in Fexpected=Fmeas*(2.7E9/145E6)^alpha
+	"""
 
 
-    expected = np.array(expected)
-    measured = np.array(measured)
-    major = np.array(diameter)
+	hdulist=pyfits.open('../catalogs_matched/Paladini_vs_PyBDSM.fits')
+	PalVus = hdulist[1].data
 
-    pylab.errorbar(measured,expected,xerr=e_measured,yerr=e_expected,fmt='yo')
-    pylab.plot(np.arange(100),np.arange(100),'k-')
-    pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$')
-    pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$')
-    pylab.xlim(0,150)
-    pylab.ylim(0,150)
-    pylab.show()
-    pylab.close()
+	interest_list = [400, 324, 39, 22, 21, 314, 20, 16, 19, 312, 426, 23, 427, 8, 9, 308, 302, 425, 1, 0]
 
-    pylab.scatter(measured,expected,s=diameter,c='yellow')
-    pylab.show()
-    pylab.close()
-    
-    pylab.errorbar(measured,expected,xerr=e_measured,yerr=e_expected,linestyle='None',c='black')
-    pylab.scatter(measured,expected,s=5.*major,c='yellow')
-    pylab.plot(np.arange(100),np.arange(100),'k-')
-    pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
-    pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
-    pylab.xlim(0,150)
-    pylab.ylim(0,150)
-    pylab.show()
-    pylab.close()
+	expected = []
+	e_expected=[]
+	measured = []
+	e_measured=[]
+	diameter = []
+	c=0
+
+	chisq_master = []
+
+	for i in range(PalVus['Gname'].shape[0]):
+	
+		chisq_indiv = []
+	
+		Pal_name = PalVus['Gname'][i]
+		Gaus_id = PalVus['Gaus_id'][i]
+		diam= PalVus['theta'][i]
+		S_27GHz = PalVus['S2_7GHz'][i]
+		eS_27GHz = PalVus['e_S2_7GHz'][i]
+		#u_S_1GHz=PalVus['u_S_1GHz_'][i]
+		#SpIndex =PalVus['Sp-Index'][i]
+		#u_SpIndex=PalVus['u_Sp-Index'][i]
+
+		#if u_S_1GHz=='?' or u_SpIndex=='?' or maj>5.: continue #i.e. throw out uncertain or diffuse data
+		#if u_S_1GHz=='?' or u_SpIndex=='?': continue #i.e. throw out uncertain data
+	
+		if Gaus_id not in interest_list: continue
+		
+		if chisquared:
+			for alpha in np.arange(-1.,1.,0.001):
+				EXPC = S_27GHz*(2.7E9/145.E6)**(alpha)
+				eEXPC = eS_27GHz*(2.7E9/145.E6)**(alpha)
+				MEAS = PalVus['Total_flux'][i]
+				eMEAS= PalVus['E_Total_flux'][i]
+		
+				#cSQ_nosig = np.absolute(MEAS - EXPC)**2.
+				cSQ_sig = (np.absolute(MEAS - EXPC)**2.)/(eEXPC**2. + eMEAS**2.)
+				chisq_indiv.append(cSQ_sig)
+	
+			chisq_master.append(chisq_indiv)
+	
+		#expected.append(S_27GHz*(2.7E9/145.E6)**(0.1))
+		#e_expected.append(eS_27GHz*(2.7E9/145.E6)**(0.1))
+		
+		expected.append(S_27GHz*(2.7E9/145.E6)**(0.0))
+		e_expected.append(eS_27GHz*(2.7E9/145.E6)**(0.0))
+		measured.append(PalVus['Total_flux'][i])
+		e_measured.append(PalVus['E_Total_flux'][i])
+		diameter.append(diam)
+		c+=1
+	print c,'/',PalVus['Gname'].shape[0]
+
+
+	expected = np.array(expected)
+	measured = np.array(measured)
+	major = np.array(diameter)
+	if plotting:
+		pylab.errorbar(measured,expected,xerr=e_measured,yerr=e_expected,fmt='yo')
+		pylab.plot(np.arange(100),np.arange(100),'k-')
+		pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$')
+		pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$')
+		pylab.xlim(0,150)
+		pylab.ylim(0,150)
+		pylab.show()
+		pylab.close()
+
+		pylab.scatter(measured,expected,s=diameter,c='yellow')
+		pylab.show()
+		pylab.close()
+
+		pylab.errorbar(measured,expected,xerr=e_measured,yerr=e_expected,linestyle='None',c='black')
+		pylab.scatter(measured,expected,s=5.*major,c='yellow')
+		pylab.plot(np.arange(100),np.arange(100),'k-')
+		pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
+		pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
+		pylab.xlim(0,150)
+		pylab.ylim(0,150)
+		pylab.show()
+		pylab.close()
+	

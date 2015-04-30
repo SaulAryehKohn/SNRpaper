@@ -24,13 +24,14 @@ hdulist6 = pyfits.open('../catalogs_matched/MGPS-Green_vs_PyBDSM.fits')
 AliceGreen = hdulist6[1].data
 
 test=False
-
+TEXT=True
 """
 BLUE CIRCLE = PyBDSM
-GREEN CIRCLE = D. A. GREEN (2014) (name has 'D') and A. J. GREEN+ (2014) (name has 'A')
+GREEN CIRCLE = D. A. GREEN (2014) #(name has 'D')
 RED CIRCLE = MOSTSNRCAT
 YELLOW CIRCLE = PALADINI+ (2013)
 CYAN (/GREEN? WEIRD.) BOX = JACOBS+ (2011)
+MAGENTA A. J. GREEN+ (2014) #(name has 'A')
 """
 
 if test==False:
@@ -44,31 +45,56 @@ if test==False: print >> F, 'global color=blue'
 else: print 'global color=blue'
 
 for i in range(Us.shape[0]):#Us: no ellipse -- just give 20arcmin circle
-    if test==False: print >> F, 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'") # text={'+str(Us['Gaus_id'][i])+'}'
-    else:print 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'") # text={'+str(Us['Gaus_id'][i])+'}'
+	if TEXT:
+		if test==False: print >> F, 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'") # text={'+str(Us['Gaus_id'][i])+'}'
+		else:print 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'") # text={'+str(Us['Gaus_id'][i])+'}'
 
-if test==False:
-    print >> F, 'global color=green'
-    for i in range(Green.shape[0]):#Green et al. 2014
-        print >> F, 'circle('+str(Green['_RAJ2000'][i])+','+str(Green['_DEJ2000'][i])+','+str(Green['MajDiam'][i]*60.)+'") # text={D'+Green['SNR'][i]+'}'
+		if test==False:
+			print >> F, 'global color=green'
+			for i in range(Green.shape[0]):#Green et al. 2014
+				print >> F, 'circle('+str(Green['_RAJ2000'][i])+','+str(Green['_DEJ2000'][i])+','+str(Green['MajDiam'][i]*60.)+'") # text={D'+Green['SNR'][i]+'}'
 
-    print >> F, 'global color=red'
-    for i in range(MSCAT.shape[0]):#MOSTSNRCAT
-        majax = str(MSCAT['DMaj'][i]*60.)
-        if majax > 0: print >> F, 'circle('+str(MSCAT['_RAJ2000'][i])+','+str(MSCAT['_DEJ2000'][i])+','+majax+'")'
+			print >> F, 'global color=red'
+			for i in range(MSCAT.shape[0]):#MOSTSNRCAT
+				majax = str(MSCAT['DMaj'][i]*60.)
+				if majax > 0: print >> F, 'circle('+str(MSCAT['_RAJ2000'][i])+','+str(MSCAT['_DEJ2000'][i])+','+majax+'")'
 
-    print >> F, 'global color=yellow'
-    for i in range(Paladini.shape[0]):#Paladini et al. 2003
-        print >> F, 'circle('+str(Paladini['_RAJ2000'][i])+','+str(Paladini['_DEJ2000'][i])+','+str(Paladini['theta'][i]*30.)+'") # text={'+Paladini['Gname'][i]+'}'
+			print >> F, 'global color=yellow'
+			for i in range(Paladini.shape[0]):#Paladini et al. 2003
+				print >> F, 'circle('+str(Paladini['_RAJ2000'][i])+','+str(Paladini['_DEJ2000'][i])+','+str(Paladini['theta'][i]*30.)+'") # text={'+Paladini['Gname'][i]+'}'
 
-    print >> F, 'global color=cyan'
-    for i in range(Jacobs.shape[0]):#Jacobs et al. 2011
-        print >> F, 'box('+str(Jacobs['_RAJ2000'][i])+','+str(Jacobs['_DEJ2000'][i])+',900",900") # text={MRC '+Jacobs['MRC'][i]+'}'
+			print >> F, 'global color=cyan'
+			for i in range(Jacobs.shape[0]):#Jacobs et al. 2011
+				print >> F, 'box('+str(Jacobs['_RAJ2000'][i])+','+str(Jacobs['_DEJ2000'][i])+',900",900") # text={MRC '+Jacobs['MRC'][i]+'}'
 
-	print >> F, 'global color=green'
-	for i in range(AliceGreen.shape[0]):
-		print >> F, 'circle('+str(AliceGreen['RA_deg'][i])+','+str(AliceGreen['DEC_deg'][i])+','+str(AliceGreen['Major'][i]*60.)+'") # text={A'+AliceGreen['#Source'][i]+'}'
+			print >> F, 'global color=green'
+			for i in range(AliceGreen.shape[0]):
+				print >> F, 'circle('+str(AliceGreen['RA_deg'][i])+','+str(AliceGreen['DEC_deg'][i])+','+str(AliceGreen['Major'][i]*60.)+'") # text={A'+AliceGreen['#Source'][i]+'}'
+	else:
+		if test==False: print >> F, 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'")'
+		else:print 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'")'
 
+		if test==False:
+			print >> F, 'global color=green'
+			for i in range(Green.shape[0]):#Green et al. 2014
+				print >> F, 'circle('+str(Green['_RAJ2000'][i])+','+str(Green['_DEJ2000'][i])+','+str(Green['MajDiam'][i]*60.)+'")'
+
+			print >> F, 'global color=red'
+			for i in range(MSCAT.shape[0]):#MOSTSNRCAT
+				majax = str(MSCAT['DMaj'][i]*60.)
+				if majax > 0: print >> F, 'circle('+str(MSCAT['_RAJ2000'][i])+','+str(MSCAT['_DEJ2000'][i])+','+majax+'")'
+
+			print >> F, 'global color=yellow'
+			for i in range(Paladini.shape[0]):#Paladini et al. 2003
+				print >> F, 'circle('+str(Paladini['_RAJ2000'][i])+','+str(Paladini['_DEJ2000'][i])+','+str(Paladini['theta'][i]*30.)+'")'
+
+			print >> F, 'global color=cyan'
+			for i in range(Jacobs.shape[0]):#Jacobs et al. 2011
+				print >> F, 'box('+str(Jacobs['_RAJ2000'][i])+','+str(Jacobs['_DEJ2000'][i])+',900",900")'
+
+			print >> F, 'global color=green'
+			for i in range(AliceGreen.shape[0]):
+				print >> F, 'circle('+str(AliceGreen['RA_deg'][i])+','+str(AliceGreen['DEC_deg'][i])+','+str(AliceGreen['Major'][i]*60.)+'")'
 
 F.close()
 """

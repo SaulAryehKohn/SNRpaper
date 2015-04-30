@@ -1,0 +1,9 @@
+VALUE OF ALPHA FAVOURED BY CHI-SQUARED w/ PALADINI IS > 0 ?
+
+In [17]: index = np.where(sum(chisq_master) == sum(chisq_master).min() )
+
+In [18]: index
+Out[18]: (array([1021]),)
+
+In [19]: np.arange(-1.,1.,0.001)[1021]
+Out[19]: 0.021000000000000796

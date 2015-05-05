@@ -1,3 +1,3 @@
 # SNRpaper
 
-Survey of SNRs in PAPER SGP
+Survey of SNRs (and other objects) in PAPER SGP

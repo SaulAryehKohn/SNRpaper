@@ -103,7 +103,7 @@ if Paladini:
 	hdulist=pyfits.open('../catalogs_matched/Paladini_vs_PyBDSM.fits')
 	PalVus = hdulist[1].data
 
-	interest_list = [400, 324, 39, 22, 21, 314, 20, 16, 19, 312, 426, 23, 427, 8, 9, 308, 302, 425, 1, 0]
+	interest_list = [0, 1, 8, 9, 16, 18, 19, 20, 32, 33, 42, 46, 49, 52, 53, 61, 67, 75, 78, 79, 80, 89, 92, 99, 103, 107, 108, 111, 113, 116, 123, 125, 126, 131, 132, 133, 141, 144, 149, 150, 152, 153, 154, 166, 167, 168, 170, 174, 176, 179, 180, 181, 184, 187, 188, 189, 191, 192, 199, 202, 203, 204, 212]
 
 	expected = []
 	e_expected=[]
@@ -119,7 +119,7 @@ if Paladini:
 		chisq_indiv = []
 	
 		Pal_name = PalVus['Gname'][i]
-		Gaus_id = PalVus['Gaus_id'][i]
+		Source_id = PalVus['Source_id'][i]
 		diam= PalVus['theta'][i]
 		S_27GHz = PalVus['S2_7GHz'][i]
 		eS_27GHz = PalVus['e_S2_7GHz'][i]
@@ -130,7 +130,7 @@ if Paladini:
 		#if u_S_1GHz=='?' or u_SpIndex=='?' or maj>5.: continue #i.e. throw out uncertain or diffuse data
 		#if u_S_1GHz=='?' or u_SpIndex=='?': continue #i.e. throw out uncertain data
 	
-		if Gaus_id not in interest_list: continue
+		if Source_id not in interest_list: continue
 		
 		if chisquared:
 			for alpha in np.arange(-1.,1.,0.001):

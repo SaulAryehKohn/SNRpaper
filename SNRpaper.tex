@@ -83,7 +83,10 @@ Some larger SNRs, such as W28 (18h01m22.7s -23$^{\circ}$17'20") and W30 (18h03m 
 
 % \cite{Stupar_cat.11} searched for H$\alpha$ emission coming from known radio-detected SNRs in order to better resolve detailed structure.  %X-ray surveys have also been successful in observing SNRs, but usually require supplemental information due to known limitations {\color{red}[for example...?]} \citep{Bandiera.01}.
 
-This work presents measurements of sources in the SGP using the Precision Array for Probing the Epoch of Reionization (PAPER), a low-frequency radio telescope that observes at a central frequency of 145\,MHz. The paper is laid out as follows. In section~\ref{sec:obs} we discuss the acquisition and reduction of PAPER's measurements of the SGP. Section~\ref{sec:res} presents our map of the SGP, with detections of SNRs, H{\sc ii} regions and extragalactic sources cross-matched with the many of the catalogs listed above. We investigate those sources which do not match with any of the catalogs. In Section~\ref{sec:disc} we {\color{red} DISCUSS THINGS}. We summarize and conclude our study in Section~\ref{sec:conc}.%, with an eye towards future imaging surveys with PAPER and its successor low-frequency instrument, the Hydrogen Epoch of Reionization Array (HERA).
+This work presents measurements of sources in the SGP using the Precision Array for Probing the Epoch of Reionization (PAPER), a low-frequency radio telescope that observes at a central frequency of 145\,MHz. The paper is laid out as follows. In section~\ref{sec:obs} we discuss the acquisition and reduction of PAPER's measurements of the SGP. Section~\ref{sec:res} presents our map of the SGP, with detections of SNRs, H{\sc ii} regions and extragalactic sources cross-matched with the many of the catalogs listed above. We investigate those sources which do not match with any of the catalogs. In Section~\ref{sec:disc} we {\color{red} DISCUSS THINGS}. We summarize and conclude our study in Section~\ref{sec:conc}.
+
+\section{Observations and data reduction}
+\label{sec:obs}
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{psa64imageconfig.png}
@@ -92,36 +95,30 @@ This work presents measurements of sources in the SGP using the Precision Array 
 \label{fig:config}
 \end{figure}
 
-\section{Observations}
-\label{sec:obs}
-
 The Precision Array for Probing the Epoch of Reionization (PAPER) is an experiment designed to set the strongest limits on, and possibly detect, the 21\,cm signal of neutral hydrogen at redshifts $z \geq 7.5$. It is operated in the Karoo, South Africa (-30:43:17.5 N, 21:25:41.9 E). To be able to set the strong limits it has to date \citep{Parsons.14, Jacobs.14, Ali.15, Moore.15}, it requires a highly redundant configuration to maximise its sensitivity to a few discrete uvw voxels \citep{Parsons.12}. However, in July and September 2011 the array was briefly reconfigured into an imaging array in order to do image-based analysis of the low-frequency radio sky \citep[e.g.][]{Jacobs.11, Stefan.13}. The imaging configuration and its instantaneous uv coverage is shown in Figure~\ref{fig:config}. Antennae were arranged in a pseudo-random scatter within a 300\,m-diameter circle, granting resolutions between 15' and 25' across the band.
 Drift-scan visibilities were measured every 10.7 s, and divided into datasets about 10 minutes in length. PAPER antennae cannot point. However, within each dataset we are able to phase to the median zenith post-data-acquisition, and image accordingly. In this work we present single-polarization measurements made overnight July 4--5th 2011.
 
-\section{Data reduction}
-\label{sec:reduc}
-
 %All calibration was performed using the Astronomical Interferometry in PYthon ({\sc{aipy}}) package\footnote{\url{https://github.com/AaronParsons/aipy}}.
-Cross-talk removal was performed, and RFI removal masked channels that persistently showed large deviations from smooth-spectrum foregrounds (mainly due to known communications satellite bands). This removed approximately 30\% of the available bandwidth, and most removal occurred at the high and low ends of the band -- PAPER's excellent RFI environment allows most of the contiguous band to be used. Visibilities of bright extragalactic radio sources (e.g. Virgo A, Cygnus A) and the Sun were modelled and removed from the data. 
+Cross-talk removal was performed, and RFI removal masked channels that persistently showed large deviations from smooth-spectrum foregrounds (mainly due to known communications satellite bands). This removed approximately 30\% of the available bandwidth, and most removal occurred at the high and low ends of the band -- PAPER's excellent RFI environment allows most of the contiguous band to be used. Visibilities of bright extragalactic radio sources (e.g. Virgo A, Centaurus A) and the Sun were modelled and removed from the data. 
 
 The data sets were self-calibrated to obtain complex gain solutions for each antenna, and then imaged, averaging over the whole 100\,MHz-wide band. Each image (dataset) was w-projected with a uv matrix resolution of 0.4 and a w-plane resolution of 0.1, and CLEANed \citep{Clark.80} to one part in $10^4$. These images were then used as `facets' and gridded to a HEALPix \citep{Gorski.05, Gorski.11} sphere with pixel size of 1 arcmin, subsequently convolved with a 2D Gaussian (FWHM=6 arcmins) to reduce pixelization effects. Finally, a cut in Galactic coordinates was made to extract the SGP ($25<l<230$, $-7.5<b<7.5$).
 
-\subsection{Point-source calibration}
-\label{subsec:pscal}
-We were able to check the calibration described in Section~\ref{sec:reduc} against the extragalactic Molonglo Reference Catalogue \citep[MRC;][]{Large.81} sources measured by PAPER that are reported in \cite{Jacobs.11}. This comparison is shown in Figure~\ref{fig:PScal}, which exhibits a linear relation of
+%\subsection{Point-source calibration}
+%\label{subsec:pscal}
+%We were able to check the calibration described in Section~\ref{sec:reduc} against the extragalactic Molonglo Reference Catalogue \citep[MRC;][]{Large.81} sources measured by PAPER that are reported in \cite{Jacobs.11}. This comparison is shown in Figure~\ref{fig:PScal}, which exhibits a linear relation of
 
-\begin{equation}
-S^{145\,\rm{MHz}}_{\rm{Jacobs\,et\,al.}} = (0.9\pm0.2) S^{145\,\rm{MHz}}_{\rm{This\,work}} + (7\pm3)
-\label{eq:PScal}
-\end{equation}
+%\begin{equation}
+%S^{145\,\rm{MHz}}_{\rm{Jacobs\,et\,al.}} = (0.9\pm0.2) S^{145\,\rm{MHz}}_{\rm{This\,work}} + (7\pm3)
+%\label{eq:PScal}
+%\end{equation}
 
-This relation is within $2.5\sigma$ of direct proportionality alone, and taking into account the corrections to the \cite{Jacobs.11} flux scale, presented in \cite{Jacobs.13}, the margin closes to a direct proportionality.
+%This relation is within $2.5\sigma$ of direct proportionality alone, and taking into account the corrections to the \cite{Jacobs.11} flux scale, presented in \cite{Jacobs.13}, the margin closes to a direct proportionality.
 
-\begin{figure}
-\includegraphics[width=\columnwidth]{us_and_danny_cal.png}
-\caption{A comparison of the fluxes of extragalactic MRC sources measured by \protect\cite{Jacobs.11} at 145\,MHz, compared to our own. The measurements are consistent to within 1$\sigma$. The offset from direct proportionality is accounted for by corrections in \protect\cite[][see Section 3 of their paper]{Jacobs.13}.  A line of best fit is shown (solid line) along with $\pm1\sigma$ on the best fit parameters (shaded region).}
-\label{fig:PScal}
-\end{figure}
+%\begin{figure}
+%\includegraphics[width=\columnwidth]{us_and_danny_cal.png}
+%\caption{A comparison of the fluxes of extragalactic MRC sources measured by \protect\cite{Jacobs.11} at 145\,MHz, compared to our own. The measurements are consistent to within 1$\sigma$. The offset from direct proportionality is accounted for by corrections in \protect\cite[][see Section 3 of their paper]{Jacobs.13}.  A line of best fit is shown (solid line) along with $\pm1\sigma$ on the best fit parameters (shaded region).}
+%\label{fig:PScal}
+%\end{figure}
 
 \section{Results}
 \label{sec:res}
@@ -156,13 +153,13 @@ Category 1: interesting, we provide the first flux.  Category 2:
 synchrotron self-absorption??  Need to look at the expected flux at
 150\,MHz relative to detection threshold.  
 
-\begin{figure*}
-\centering
-\includegraphics[scale=.4]{GreenScatter.png}
-\includegraphics[scale=.4]{PaladiniScatter.png}
-\caption{\textit{Left:} The fluxes of compact SNRs (Maj $<$ 3 degrees; PAPER does not have sufficient resolution to detect larger ones) that we measure compared to those expected at 145\,MHz given the \protect\cite{DAGreen.14} 1\,GHz fluxes and spectral indices. We highlight in green those SNRs which are compact enough to be completely resolved by the PAPER beam. \textit{Right:} The same comparison as on the left, but for the H{\sc{ii}} region fluxes reported by \protect\cite{Paladini.03} and using a typical spectral index for free-free emission $\alpha=0.1$. In both plots, the size of the point is illustrative of the diameter of the region (as reported by their respective studies, not PAPER), and a black line showing a 1:1 relation is overlaid.}
-\label{fig:comparisonscatters}
-\end{figure*}
+%\begin{figure*}
+%\centering
+%\includegraphics[scale=.4]{GreenScatter.png}
+%\includegraphics[scale=.4]{PaladiniScatter.png}
+%\caption{\textit{Left:} The fluxes of compact SNRs (Maj $<$ 3 degrees; PAPER does not have sufficient resolution to detect larger ones) that we measure compared to those expected at 145\,MHz given the \protect\cite{DAGreen.14} 1\,GHz fluxes and spectral indices. We highlight in green those SNRs which are compact enough to be completely resolved by the PAPER beam. \textit{Right:} The same comparison as on the left, but for the H{\sc{ii}} region fluxes reported by \protect\cite{Paladini.03} and using a typical spectral index for free-free emission $\alpha=0.1$. In both plots, the size of the point is illustrative of the diameter of the region (as reported by their respective studies, not PAPER), and a black line showing a 1:1 relation is overlaid.}
+%\label{fig:comparisonscatters}
+%\end{figure*}
 
 \subsection{Detection of {H\sc{ii}} regions at low frequencies}
 We detect 20 {H\sc{ii}} regions that are listed in \cite{Paladini.03} at positions that do not appear in any other surveys we position-matched to. This is surprising, given that the expected emission mechanism, bremsstrahlung radiation, should be negligible at these frequencies. See Table~\ref{tab:hii} for a summary of our measurements for these regions. Using a spectral index $\alpha=0.1$, typical of bremsstrahlung emission, we scale the 2.7\,GHz fluxes reported by \cite{Paladini.03} to those expected at 145\,MHz. The comparison is shown in Figure~\ref{fig:comparisonscatters} -- we see no apparent pattern between the fluxes we measure compared to those expected at our frequencies.
@@ -174,27 +171,7 @@ We detect 20 {H\sc{ii}} regions that are listed in \cite{Paladini.03} at positio
 Name &  $\alpha$   &  $\delta$  &  PAPER Maj   &  Paladini Maj &  S$_{145}$  &  S$_{2700}$\\
  & J2000  &  J2000  &  arcmin  &  arcmin  &  Jy  &  Jy\\
 \hline
-000.3-00.5 & 266.83303 & -29.185684 & 10 $\pm$ 1 & 1.4 $\pm$ 0.9 & {\color{red}2.0 $\pm$ 2.3} & 2.5 $\pm$ 0.7 \\
-006.0-01.3 & 271.06547 & -24.443156 & 30 $\pm$ 6 & 4.4 $\pm$ 1.1 & 14 $\pm$ 3 & 45 $\pm$ 5 \\
-006.0+00.1 & 269.75844 & -23.693369 & 17 $\pm$ 2 & 3.5 $\pm$ 0.3 & 5 $\pm$ 3 & 38 $\pm$ 2 \\
-006.1-00.1 & 270.08439 & -23.671484 & 49 $\pm$ 6 & 3.0 $\pm$ 0.8 & 35 $\pm$ 2 & 18 $\pm$ 2 \\
-006.3+02.0 & 268.13537 & -22.548133 & 20 $\pm$ 3 & 3.7 $\pm$ 1.2 & 9 $\pm$ 3 & 1.2 $\pm$ 0.7 \\
-006.6-00.3 & 270.34451 & -23.396542 & {\color{red}21.0 $\pm$ 0.0} & 3.3 $\pm$ 0.9 & 35.8 $\pm$ 2.9 & 54 $\pm$ 5 \\
-006.6-00.1 & 270.26962 & -23.259306 & 17 $\pm$ 1 & 1.1 $\pm$ 1.0 & 11 $\pm$ 3 & 11 $\pm$ 3 \\
-007.0-01.1 & 271.53982 & -23.228174 & 32 $\pm$ 11 & 1.4 $\pm$ 0.9 & 10 $\pm$ 2 & 0.3 $\pm$ 0.1 \\
-007.0-00.3 & 270.95456 & -23.058232 & 32 $\pm$ 11 & 2.6 $\pm$ 0.9 & 8 $\pm$ 3 & 13 $\pm$ 4 \\
-007.5+00.7 & 270.01042 & -21.80791 & 51 $\pm$ 14 & {\color{red}1.1 $\pm$ 3.4} & 32 $\pm$ 2 & 5.1 $\pm$ 0.5 \\
-011.9+02.2 & 270.86104 & -17.556856 & 20 $\pm$ 5 & {\color{red}0.2 $\pm$ 0.6} & 6 $\pm$ 3 & 1.0 $\pm$ 0.3 \\
-015.0-00.7 & 275.14558 & -16.205096 & 22 $\pm$ 3 & 2.9 $\pm$ 0.9 & 12 $\pm$ 3 & 489 $\pm$ 75 \\
-017.0+00.8 & 274.65543 & -13.772783 & 24 $\pm$ 4 & 7.9 $\pm$ 0.3 & 14 $\pm$ 3 & 107 $\pm$ 11 \\
-021.0+02.0 & 275.5934 & -9.6672018 & 24 $\pm$ 7 & 0.9 $\pm$ 0.3 & 6 $\pm$ 3 & 4 $\pm$ 2 \\
-030.1+01.4 & 280.28398 & -1.9022821 & 28 $\pm$ 7 & 0.6 $\pm$ 0.2 & 11 $\pm$ 3 & 1.1 $\pm$ 0.1 \\
-034.1+00.5 & 282.91848 & 1.285108 & 56 $\pm$ 9 & 0.4 $\pm$ 0.1 & 34 $\pm$ 2 & 0.7 $\pm$ 0.1 \\
-035.5-00.8 & 284.58448 & 1.6469897 & 36 $\pm$ 8 & 7.2 $\pm$ 3.8 & 15 $\pm$ 2 & 9 $\pm$ 3 \\
-037.0-00.2 & 284.64053 & 3.7048426 & 40 $\pm$ 10 & 7 $\pm$ 4 & 18 $\pm$ 2 & 2 $\pm$ 1 \\
-243.2+00.4 & 118.14421 & -26.419824 & 18 $\pm$ 4 & {\color{red}3.8 $\pm$ 5.3} & 5 $\pm$ 3 & 15 $\pm$ 2 \\
-353.2+00.7 & 261.28827 & -34.278429 & 22 $\pm$ 4 & 5 $\pm$ 1 & 7 $\pm$ 3 & 228 $\pm$ 46 \\
-\hline
+
 \end{tabular}
 \label{tab:hii}
 \end{table*}

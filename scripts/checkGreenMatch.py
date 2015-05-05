@@ -2,7 +2,7 @@ import pyfits
 import numpy as np
 #import pylab
 
-hdulist0=pyfits.open('../catalogs_plain/PyBDSM_catalog.fits')
+hdulist0=pyfits.open('../catalogs_plain/newPyBDSM_catalog.fits')
 Us = hdulist0[1].data
 
 hdulist=pyfits.open('../catalogs_matched/Green_vs_PyBDSM.fits')

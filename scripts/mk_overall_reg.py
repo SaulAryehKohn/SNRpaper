@@ -2,7 +2,7 @@ import pyfits
 import numpy as np
 import os
 
-hdulist0=pyfits.open('../catalogs_plain/PyBDSM_catalog.fits')
+hdulist0=pyfits.open('../catalogs_plain/newPyBDSM_catalog.fits')
 Us = hdulist0[1].data
 
 hdulist=pyfits.open('../catalogs_matched/Green_vs_PyBDSM.fits')
@@ -38,7 +38,7 @@ if test==False:
     os.system('rm MEGAREG.reg')
     F = open('MEGAREG.reg','w')
 
-if test==False: print >> F, '# Region file format: DS9 version 4.1 \nglobal color=green dashlist=8 3 width=1 font="helvetica 10 normal roman" select=1 highlite=1 dash=0 fixed=0 edit=1 move=1 delete=1 include=1 source=1 \nfk5'
+if test==False: print >> F, '# Region file format: DS9 version 4.1 \nglobal dashlist=8 3 width=1 font="helvetica 10 normal roman" select=1 highlite=1 dash=0 fixed=0 edit=1 move=1 delete=1 include=1 source=1 \nfk5'
 else: print '# Region file format: DS9 version 4.1 \nglobal color=green dashlist=8 3 width=1 font="helvetica 10 normal roman" select=1 highlite=1 dash=0 fixed=0 edit=1 move=1 delete=1 include=1 source=1 \nfk5'
 
 if test==False: print >> F, 'global color=blue'
@@ -46,8 +46,8 @@ else: print 'global color=blue'
 
 for i in range(Us.shape[0]):#Us: no ellipse -- just give 20arcmin circle
 	if TEXT:
-		if test==False: print >> F, 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'") # text={'+str(Us['Gaus_id'][i])+'}'
-		else:print 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'") # text={'+str(Us['Gaus_id'][i])+'}'
+		if test==False: print >> F, 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'") # text={'+str(Us['Source_id'][i])+'}'
+		else:print 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'") # text={'+str(Us['Source_id'][i])+'}'
 
 		if test==False:
 			print >> F, 'global color=green'
@@ -69,7 +69,7 @@ for i in range(Us.shape[0]):#Us: no ellipse -- just give 20arcmin circle
 
 			print >> F, 'global color=green'
 			for i in range(AliceGreen.shape[0]):
-				print >> F, 'circle('+str(AliceGreen['RA_deg'][i])+','+str(AliceGreen['DEC_deg'][i])+','+str(AliceGreen['Major'][i]*60.)+'") # text={A'+AliceGreen['#Source'][i]+'}'
+				print >> F, 'circle('+str(AliceGreen['RA_deg'][i])+','+str(AliceGreen['DEC_deg'][i])+','+str(AliceGreen['Size_1'][i]*60.)+'") # text={A'+AliceGreen['#Source'][i]+'}'
 	else:
 		if test==False: print >> F, 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'")'
 		else:print 'circle('+str(Us['PyRA'][i])+','+str(Us['PyDEC'][i])+','+str(Us['Maj'][i]*3600.)+'")'

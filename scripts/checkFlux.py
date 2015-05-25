@@ -2,15 +2,39 @@ import pyfits
 import numpy as np
 import pylab
 
-Green = False
-Paladini = True
+Green = True
+Paladini = False
+
+GoodSources = [3,4,5,6,7,8,9,
+10,11,12,13,14,15,19,
+20,21,22,23,24,27,28,29,
+30,31,33,34,35,36,37,38,39,
+40,45,
+54,56,58,59,
+60,61,62,
+71,72,73,
+81,83,84,87,88,89,
+91,92,95,96,99,
+102,103,106,107,109,
+112,113,114,
+120,121,122,125,127,
+134,135,136,139,
+145,146,147,148,149,
+150,151,152,154,155,157,158,159,
+163,164,165,166,167,168,169,
+173,177,178,179,
+183,184,185,186,187,
+190,191,192,193,194,195,196,197,198,199,
+200,201,202,203,204,208,
+217,218,219,220]
+
 
 if Green:
     hdulist=pyfits.open('../catalogs_matched/Green_vs_PyBDSM.fits')
     GreenVus = hdulist[1].data
-    hdudub=pyfits.open('../data/GSNRdoubles.fits')
-    GreenDoubles = hdudub[1].data
-    DubNames = GreenDoubles['Green_SNR']
+    #hdudub=pyfits.open('../data/GSNRdoubles.fits')
+    #GreenDoubles = hdudub[1].data
+    #DubNames = GreenDoubles['Green_SNR']
     
     name = []
     expected = []
@@ -20,6 +44,7 @@ if Green:
     major = []
     c=0
     for i in range(GreenVus['SNR'].shape[0]):
+    	PyID = GreenVus['Source_id'][i]
         Green_name = GreenVus['SNR'][i]
         ra = GreenVus['_RAJ2000'][i]
         dec= GreenVus['_DEJ2000'][i]
@@ -30,12 +55,13 @@ if Green:
         u_SpIndex=GreenVus['u_Sp-Index'][i]
 
         if u_S_1GHz=='?' or u_SpIndex=='?' or maj>180.: continue #i.e. throw out uncertain or diffuse data -- JEA's "Gold Standard"
-        #if u_S_1GHz=='?' or u_SpIndex=='?': continue
+        if PyID not in GoodSources: continue
         name.append(Green_name)
         expected.append(S_1GHz*(1.E9/145.E6)**(SpIndex))
         measured.append(GreenVus['Total_flux'][i])
         major.append(maj)
         c+=1
+        print Green_name, GreenVus['Names'][i], ra, dec, maj, S_1GHz, SpIndex, GreenVus['Maj'][i]*60., GreenVus['E_Maj'][i]*60., GreenVus['Total_flux'][i], GreenVus['E_Total_flux'][i]
     print c, '/', GreenVus['SNR'].shape[0]
 
 
@@ -69,8 +95,9 @@ if Green:
     	else: pylab.scatter(measured[j],expected[j],s=major,c='red')
     """
     
-    bound=40.#arcmins
+    bound=20.#arcmin diameter
     boundit=True
+    
     if boundit:
     	pylab.scatter(measured[major>bound],expected[major>bound],s=2.*major[major>bound],c='white',label=r"$>\,20'$ diameter")
     	pylab.scatter(measured[major<bound],expected[major<bound],s=2.*major[major<bound],c='green',label=r"$<\,20'$ diameter")
@@ -85,8 +112,8 @@ if Green:
     pylab.close()
 
 ###############
-chisquared=True
-plotting=False
+chisquared=False
+plotting=True
 ###############
 
 if Paladini:
@@ -155,12 +182,26 @@ if Paladini:
 		diameter.append(diam)
 		c+=1
 	print c,'/',PalVus['Gname'].shape[0]
+	
+	bound = 20.
 
 
 	expected = np.array(expected)
 	measured = np.array(measured)
 	major = np.array(diameter)
 	if plotting:
+		pylab.scatter(measured[major<bound], expected[major<bound], s=5.*major[major<bound], c='yellow')
+		pylab.plot(np.arange(100),np.arange(100),'k-')
+		pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
+		pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
+		pylab.xlim(0,60)
+		pylab.ylim(0,600)
+		pylab.legend(loc='best',numpoints=1)
+		pylab.show()
+		pylab.close()
+	
+	
+	
 		pylab.errorbar(measured,expected,xerr=e_measured,yerr=e_expected,fmt='yo')
 		pylab.plot(np.arange(100),np.arange(100),'k-')
 		pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$')

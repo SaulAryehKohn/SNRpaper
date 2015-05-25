@@ -104,6 +104,13 @@ A.~J. {Green}, L.~E. {Cram}, M.~I. {Large}, and T.~{Ye}.
 \newblock \emph{ApJS}, 122:\penalty0 207--219, May 1999.
 \newblock \doi{10.1086/313208}.
 
+\bibitem[{Green} et~al.(2014){Green}, {Reeves}, and {Murphy}]{AGreen.14}
+A.~J. {Green}, S.~N. {Reeves}, and T.~{Murphy}.
+\newblock {The Second Epoch Molonglo Galactic Plane Survey: Images and
+  Candidate Supernova Remnants}.
+\newblock \emph{PASA}, 31:\penalty0 e042, November 2014.
+\newblock \doi{10.1017/pasa.2014.37}.
+
 \bibitem[{Green}(1991)]{Green.91}
 D.~A. {Green}.
 \newblock {Limitations imposed on statistical studies of Galactic supernova
@@ -136,18 +143,6 @@ D.~C. {Jacobs}, J.~E. {Aguirre}, A.~R. {Parsons}, J.~C. {Pober}, R.~F.
 \newblock \emph{ApJL}, 734:\penalty0 L34, June 2011.
 \newblock \doi{10.1088/2041-8205/734/2/L34}.
 
-\bibitem[{Jacobs} et~al.(2013){Jacobs}, {Parsons}, {Aguirre}, {Ali}, {Bowman},
-  {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Klima}, {MacMahon},
-  {Manley}, {Moore}, {Pober}, {Stefan}, and {Walbrugh}]{Jacobs.13}
-D.~C. {Jacobs}, A.~R. {Parsons}, J.~E. {Aguirre}, Z.~{Ali}, J.~{Bowman}, R.~F.
-  {Bradley}, C.~L. {Carilli}, D.~R. {DeBoer}, M.~R. {Dexter}, N.~E.
-  {Gugliucci}, P.~{Klima}, D.~H.~E. {MacMahon}, J.~R. {Manley}, D.~F. {Moore},
-  J.~C. {Pober}, I.~I. {Stefan}, and W.~P. {Walbrugh}.
-\newblock {A Flux Scale for Southern Hemisphere 21 cm Epoch of Reionization
-  Experiments}.
-\newblock \emph{ApJ}, 776:\penalty0 108, October 2013.
-\newblock \doi{10.1088/0004-637X/776/2/108}.
-
 \bibitem[{Jacobs} et~al.(2014){Jacobs}, {Pober}, {Parsons}, {Aguirre}, {Ali},
   {Bowman}, {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Klima},
   {Liu}, {MacMahon}, {Manley}, {Moore}, {Stefan}, and {Walbrugh}]{Jacobs.14}
@@ -157,13 +152,6 @@ D.~C. {Jacobs}, J.~C. {Pober}, A.~R. {Parsons}, J.~E. {Aguirre}, Z.~{Ali},
   {Manley}, D.~F. {Moore}, I.~I. {Stefan}, and W.~P. {Walbrugh}.
 \newblock {Multi-redshift limits on the 21cm power spectrum from PAPER}.
 \newblock \emph{ArXiv e-prints}, August 2014.
-
-\bibitem[{Large} et~al.(1981){Large}, {Mills}, {Little}, {Crawford}, and
-  {Sutton}]{Large.81}
-M.~I. {Large}, B.~Y. {Mills}, A.~G. {Little}, D.~F. {Crawford}, and J.~M.
-  {Sutton}.
-\newblock {The Molonglo Reference Catalogue of Radio Sources}.
-\newblock \emph{MNRAS}, 194:\penalty0 693, February 1981.
 
 \bibitem[{Li} et~al.(1991){Li}, {Wheeler}, {Bash}, and {Jefferys}]{Li.91}
 Z.~{Li}, J.~C. {Wheeler}, F.~N. {Bash}, and W.~H. {Jefferys}.
@@ -272,6 +260,32 @@ S.~J. {Vessey} and D.~A. {Green}.
   equal to 5.5 deg}.
 \newblock \emph{MNRAS}, 294:\penalty0 607, March 1998.
 \newblock \doi{10.1046/j.1365-8711.1998.01142.x}.
+
+\bibitem[{Wayth} et~al.(2015){Wayth}, {Lenc}, {Bell}, {Callingham},
+  {Dwarakanath}, {Franzen}, {For}, {Gaensler}, {Hancock}, {Hindson},
+  {Hurley-Walker}, {Jackson}, {Johnston-Hollitt}, {Kapinska}, {McKinley},
+  {Morgan}, {Offringa}, {Procopio}, {Staveley-Smith}, {Wu}, {Zheng}, {Trott},
+  {Bernardi}, {Bowman}, {Briggs}, {Cappallo}, {Corey}, {Deshpande}, {Emrich},
+  {Goeke}, {Greenhill}, {Hazelton}, {Kaplan}, {Kasper}, {Kratzenberg},
+  {Lonsdale}, {Lynch}, {McWhirter}, {Mitchell}, {Morales}, {Morgan}, {Oberoi},
+  {Ord}, {Prabu}, {Rogers}, {Roshi}, {Udaya Shankar}, {Srivani},
+  {Subrahmanyan}, {Tingay}, {Waterson}, {Webster}, {Whitney}, {Williams}, and
+  {Williams}]{Wayth.15}
+R.~B. {Wayth}, E.~{Lenc}, M.~E. {Bell}, J.~R. {Callingham}, K.~S.
+  {Dwarakanath}, T.~M.~O. {Franzen}, B.-Q. {For}, B.~{Gaensler}, P.~{Hancock},
+  L.~{Hindson}, N.~{Hurley-Walker}, C.~A. {Jackson}, M.~{Johnston-Hollitt},
+  A.~D. {Kapinska}, B.~{McKinley}, J.~{Morgan}, A.~R. {Offringa},
+  P.~{Procopio}, L.~{Staveley-Smith}, C.~{Wu}, Q.~{Zheng}, C.~M. {Trott},
+  G.~{Bernardi}, J.~D. {Bowman}, F.~{Briggs}, R.~J. {Cappallo}, B.~E. {Corey},
+  A.~A. {Deshpande}, D.~{Emrich}, R.~{Goeke}, L.~J. {Greenhill}, B.~J.
+  {Hazelton}, D.~L. {Kaplan}, J.~C. {Kasper}, E.~{Kratzenberg}, C.~J.
+  {Lonsdale}, M.~J. {Lynch}, S.~R. {McWhirter}, D.~A. {Mitchell}, M.~F.
+  {Morales}, E.~{Morgan}, D.~{Oberoi}, S.~M. {Ord}, T.~{Prabu}, A.~E.~E.
+  {Rogers}, A.~{Roshi}, N.~{Udaya Shankar}, K.~S. {Srivani}, R.~{Subrahmanyan},
+  S.~J. {Tingay}, M.~{Waterson}, R.~L. {Webster}, A.~R. {Whitney},
+  A.~{Williams}, and C.~L. {Williams}.
+\newblock {GLEAM: The GaLactic and Extragalactic All-sky MWA survey}.
+\newblock \emph{ArXiv e-prints}, May 2015.
 
 \bibitem[{Wenger} et~al.(2000){Wenger}, {Ochsenbein}, {Egret}, {Dubois},
   {Bonnarel}, {Borde}, {Genova}, {Jasniewicz}, {Lalo{\"e}}, {Lesteven}, and

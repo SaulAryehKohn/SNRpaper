@@ -2,8 +2,8 @@ import pyfits
 import numpy as np
 import pylab
 
-Green = True
-Paladini = False
+Green = False
+Paladini = True
 
 GoodSources = [3,4,5,6,7,8,9,
 10,11,12,13,14,15,19,
@@ -32,9 +32,6 @@ GoodSources = [3,4,5,6,7,8,9,
 if Green:
     hdulist=pyfits.open('../catalogs_matched/Green_vs_PyBDSM.fits')
     GreenVus = hdulist[1].data
-    #hdudub=pyfits.open('../data/GSNRdoubles.fits')
-    #GreenDoubles = hdudub[1].data
-    #DubNames = GreenDoubles['Green_SNR']
     
     name = []
     expected = []
@@ -158,6 +155,7 @@ if Paladini:
 		#if u_S_1GHz=='?' or u_SpIndex=='?': continue #i.e. throw out uncertain data
 	
 		if Source_id not in interest_list: continue
+		if Source_id not in GoodSources: continue
 		
 		if chisquared:
 			for alpha in np.arange(-1.,1.,0.001):
@@ -196,12 +194,11 @@ if Paladini:
 		pylab.ylabel(r'expected SNR S$_{145\,\rm{MHz}}$ (Jy)',size=15)
 		pylab.xlim(0,60)
 		pylab.ylim(0,600)
-		pylab.legend(loc='best',numpoints=1)
 		pylab.show()
 		pylab.close()
 	
 	
-	
+		"""
 		pylab.errorbar(measured,expected,xerr=e_measured,yerr=e_expected,fmt='yo')
 		pylab.plot(np.arange(100),np.arange(100),'k-')
 		pylab.xlabel(r'measured SNR S$_{145\,\rm{MHz}}$')
@@ -224,4 +221,5 @@ if Paladini:
 		pylab.ylim(0,150)
 		pylab.show()
 		pylab.close()
+		"""
 	

@@ -30,7 +30,7 @@ $^{4}$ a lot of other places\\
 Present astrophysical understanding of high-mass stars allows for predictions of their formation rates.  High-mass stars explode in supernovae, which leave behind Supernova Remnants (SNRs) that serve as records of the stars; however the $\sim$300 observed SNRs is far fewer than the $>1000$ predicted.  This ``SNR Defect" could implicate the understanding of high-mass stars if confirmed. 
 Meanwhile, there is presently a dearth of low-frequency radio measurements ($\nu\aplt$200\,MHz) of sources in the Southern Galactic Plane (SGP).
 This study reports on a search for SNRs as well as measurements of other sources in the SGP using low-frequency radio maps produced at 145\,MHz by Precision Array for Probing the Epoch of Reionization (PAPER).
-For several known SNR positions we do not detect significant flux above background, suggesting a synchrotron self-absorption mechanism at play for these particular SNRs. The implications of our SNR detection rate is discussed with a focus on the SNR Defect. We also detect several H{\sc ii} regions, which are largely unexpected at low frequencies due to the sharp spectral fall-off of free-free emission. 
+For several known SNR positions we do not detect significant flux above background, suggesting a synchrotron self-absorption mechanism at play for these particular SNRs. The implications of our SNR detection rate is discussed with a focus on the SNR Defect. We also detect several H{\sc ii} regions, which are unexpected at these low frequencies due to the sharp spectral fall-off of free-free emission. 
 \end{abstract}
 
 \begin{keywords}
@@ -38,10 +38,10 @@ ISM: molecular clouds -- stars: formation
 \end{keywords}
 
 \section{Introduction}
+\label{sec:intro}
+The Southern Galactic Plane (SGP) has been measured at various radio frequencies, including the Molonglo Galactic Plane Surveys \citep[MGPS-1 and 2;][]{Green.99,Murphy.07} and the Molonglo Observatory Synthesis Telescope SNR Catalog \citep[MOSTSNRCAT;][]{Whiteoak.96} at 843\,MHz and the Southern Galactic Plane Survey \citep[SGPS;][]{Haverkorn.06} at 1.4\,GHz. Synthetic catalogs of SNRs at 1\,GHz \citep[][hereafter G14]{DAGreen.14} and H{\sc ii} regions at 2.7\,GHz \citep{Paladini.03} also cover the SGP, and infrared measurements were made by, e.g., the Midcourse Space Experiment \citep[MSX;][operating at 8.28--21.3\,$\mu$m (36.23--14.08\,THz)]{Egan.03}. 
 
-The Southern Galactic Plane (SGP) has been measured at various radio frequencies, including the Molonglo Galactic Plane Surveys \citep[MGPS-1 and 2;][]{Green.99,Murphy.07} and the Molonglo Observatory Synthesis Telescope SNR Catalog \citep[MOSTSNRCAT;][]{Whiteoak.96} at 843\,MHz and the Southern Galactic Plane Survey \citep[SGPS;][]{Haverkorn.06} at 1.4\,GHz. Synthetic catalogs of SNRs at 1\,GHz \citep{DAGreen.14} and H{\sc ii} regions at 2.7\,GHz \citep{Paladini.03} also cover the SGP, and infrared measurements were made by, e.g., the Midcourse Space Experiment \citep[MSX;][operating at 8.28--21.3\,$\mu$m (36.23--14.08\,THz)]{Egan.03}. 
-
-However, there is a dearth of measurements of the SGP at low radio frequencies ($\nu\aplt$200\,MHz). In this work, we present measurements of the SGP at a central frequency of 145\,MHz, averaged over a 190\,MHz band.  Currently the only counterparts to such measurements were presented in the 7C(G) survey of the Northern Galactic Plane \citep{Vessey.98} which was conducted at 151\,MHz, and the GaLactic Extragalactic All-sky MWA\footnote{\url{www.mwatelescope.org}} (GLEAM) survey, which is currently processing its data in five 30\,MHz bands centered at 88, 118, 154, 185 and 216\,MHz \citep{Wayth.15}.
+However, there is a dearth of measurements of the SGP at low radio frequencies ($\nu\aplt$200\,MHz). In this work, we present measurements of the SGP at a central frequency of 145\,MHz as measured by the Precision Array for Probing the Epoch of Reionization (PAPER\footnote{\url{eor.berkeley.edu}}). Currently the only counterparts to such measurements were presented in the 7C(G) survey of the Northern Galactic Plane \citep{Vessey.98} which was conducted at 151\,MHz, and the GaLactic Extragalactic All-sky MWA\footnote{\url{www.mwatelescope.org}} (GLEAM) survey, which is currently processing its data in five 30\,MHz bands centered at 88, 118, 154, 185 and 216\,MHz \citep{Wayth.15}.
 
 \subsection{Supernova Remnants}
 The major classification difference between high-mass ($M > 8M_{\odot}$ ) and low-mass ($M < 8 M_\odot$) stars is the end of their life, for which the latter explode in supernovae (SNe), which is precipitated by accumulated inert iron in the core \citep{Arnett.73}.  
@@ -52,43 +52,39 @@ The SNR shock releases high-velocity particles, including a barrage of electrons
 SNRs are relatively short-lived ($\sim10^5$ yr), which means that they can serve as a record of recent star formation rates of high-mass stars -- by counting SNRs, one can hope chart recent star formation.
 Measuring the star formation rates through iron abundance allows for a reasonable prediction of the number of galactic SNRs; however, these predictions imply that there should be far more SNRs than currently detected \citep[e.g.][]{Brogan.06}.  
 
-To date, 294 SNRs have been catalogued \citep{DAGreen.14} despite the prediction based on the Galactic star formation rate that $\sim10^3$ galactic SNRs exist \citep{Li.91,Pavlovic.13}.  
+To date, 294 SNRs have been catalogued G14 despite the prediction based on the Galactic star formation rate that $\sim10^3$ galactic SNRs exist \citep{Li.91,Pavlovic.13}.  
 Additionally, \cite{Brogan.06} made estimates based on known limitations of radio surveys in order to predict the number of SNRs that are observable at all.
 Their study yielded a result of 460 observable SNRs; this is still less than half of the observed value. 
 This “SNR Defect” has thus far been attributed to selection effects including: 
 \begin{itemize}
-\item[(i)] SNRs occur in dusty regions, where the dust may absorb and/or deflect SNR emissions;
-\item[(ii)] since the vast majority of stars are located along the galactic plane, so are most SNRs, increasing potential source confusion \citep[e.g.][]{Gao_v.11,Gao_vi.11};
-\item[(iii)] due to the inverse square law of observed luminosity,% doubling the distance to an object reduces its apparent brightness by one-fourth. 
+\item SNRs occur in dusty regions, where the dust may absorb and/or deflect SNR emissions;
+\item since the vast majority of stars are located along the galactic plane, so are most SNRs, increasing potential source confusion \citep[e.g.][]{Gao_v.11,Gao_vi.11};
+\item due to the inverse square law of observed luminosity,% doubling the distance to an object reduces its apparent brightness by one-fourth. 
 the light from SNRs located 50,000 ly away, for example, is diminished by a factor of $\sim$300  \citep{Green.91};
-\item[(iv)] superpositioning along the Earth’s line of sight, by which nearby, young  and inherently dense SNRs block or severely inhibit the entire field of view behind them, making surveys of the SNR population more difficult. 
+\item superpositioning along the Earth’s line of sight, by which nearby, young  and inherently dense SNRs block or severely inhibit the entire field of view behind them, making surveys of the SNR population more difficult. 
 \end{itemize}
 
 Radio observations should be able to resolve some of these selection effects. Dust neither attenuates nor scatters at radio frequencies. Young SNRs, which are compact and have close-to-blackbody emission spectra are more easily detected by optical surveys, whereas older SNRs, which are more diffuse and emit mostly at lower frequencies, are better detected with radio surveys.
 
 \subsection{H{\sc ii} regions and misidentification}
-While observing at radio frequencies mitigates most of the confusion when observing the Galactic plane, H{\sc ii} regions pose a more significant problem.  H{\sc ii} regions, opposed to SNRs, thermally emit from heating caused by nearby OB stars. % Recent discoveries {\color{red}[CITE!!!]} that some SNRs were actually galactic H{\sc ii} regions have increased the push for surveys to better differentiate them {\color{red}[for example (survey, rather than single one below)?]}.  
+While observing at radio frequencies mitigates most of the confusion when observing the Galactic plane, H{\sc ii} regions pose a more significant problem.  H{\sc ii} regions, opposed to SNRs, thermally emit from heating caused by nearby OB stars.
 For example, SNR G166.2+2.5 was discovered to be an H{\sc ii} region heated by O7.5V star BD+41 1144 \citep{Foster.06}.  
 
 Some larger SNRs, such as W28 (18h01m22.7s -23$^{\circ}$17'20") and W30 (18h03m -21$^{\circ}$30'), have positioned within them H{\sc ii} regions and other sources of thermal emissions, which increase the likelihood of misidentification \citep{Andrews.85}. \cite{Brogan.06} showed that the small likelihood of actual proximity notwithstanding, the apparent proximity interferes with detection of SNRs.  As a result, much has been invested in finding a method to mitigate the selection effects.\\
 
-This work presents measurements of sources in the SGP using the Precision Array for Probing the Epoch of Reionization (PAPER\footnote{\url{eor.berkeley.edu}}), a low-frequency radio telescope that observes at a central frequency of 145\,MHz. The paper is laid out as follows. In section~\ref{sec:obs} we discuss the acquisition and reduction of PAPER's measurements of the SGP. Section~\ref{sec:res} presents our map of the SGP, with detections of SNRs, H{\sc ii} regions and extragalactic sources cross-matched with the many of the catalogs listed above. We also investigate those sources which do not match with any of the catalogs. In Section~\ref{sec:disc} we discuss our findings, with a focus on the SNR Defect. We summarize and conclude our study in Section~\ref{sec:conc}.
+This work presents measurements of sources in the SGP using PAPER, a low-frequency radio telescope that observes at a central frequency of 145\,MHz. The paper is laid out as follows. In section~\ref{sec:obs} we discuss the acquisition and reduction of PAPER's measurements of the SGP. Section~\ref{sec:res} presents our map of the SGP, with detections of SNRs, H{\sc ii} regions and extragalactic sources cross-matched with the many of the catalogs listed above. We also investigate those sources which do not match with any of the catalogs. In Section~\ref{sec:disc} we discuss our findings, with a focus on the SNR Defect. We summarize and conclude our study in Section~\ref{sec:conc}.
 
 \section{Observations and data reduction}
 \label{sec:obs}
 
-\begin{figure}
-\includegraphics[width=\columnwidth]{figs/psa64imageconfig.png}
-\includegraphics[width=\columnwidth]{figs/psa64uvcoverage.png}
-\caption{\textit{Above}: The PAPER-64 single-polarization configuration that took the measurements we report on in this paper. The antennae were arranged in a pseudo-random scatter in order to optimize uv-coverage. \textit{Below}: The resultant instantaneous uv-coverage, masking the very-short baselines ($\aplt 10 \lambda$). Maximum voxel occupancy is $\sim10$.}
-\label{fig:config}
-\end{figure}
-
-The Precision Array for Probing the Epoch of Reionization (PAPER) is an experiment designed to set the strongest limits on, and possibly detect, the 21\,cm signal of neutral hydrogen at redshifts $z \geq 7.5$. It is operated in the Karoo, South Africa (-30:43:17.5 N, 21:25:41.9 E). To be able to set the strong limits it has to date \citep{Parsons.14, Jacobs.14, Ali.15, Moore.15}, it requires a highly redundant configuration to maximise its sensitivity to a few discrete uvw voxels \citep{Parsons.12}. However, in July and September 2011 the array was briefly reconfigured into an imaging array in order to do image-based analysis of the low-frequency radio sky \citep[e.g.][]{Jacobs.11, Stefan.13}. The imaging configuration and its instantaneous uv coverage is shown in Figure~\ref{fig:config}. Antennae were arranged in a pseudo-random scatter within a 300\,m-diameter circle, granting resolutions between 15' and 25' across the band.
+The Precision Array for Probing the Epoch of Reionization (PAPER) is an experiment designed to set the strongest limits on, and possibly detect, the 21\,cm signal of neutral hydrogen at redshifts $z \geq 7.5$. It is operated in the Karoo, South Africa (-30:43:17.5 N, 21:25:41.9 E). To be able to set the strong limits it has to date \citep{Parsons.14, Jacobs.14, Ali.15, Moore.15}, it requires a highly redundant configuration to maximise its sensitivity to a few discrete uvw voxels \citep{Parsons.12}. However, in July and September 2011 the array was briefly reconfigured into an imaging (i.e. maximally non-redundant) array in order to do image-based analysis of the low-frequency radio sky \citep[e.g.][]{Jacobs.11, Stefan.13}. The imaging configuration and its instantaneous uv coverage is shown in Figure~\ref{fig:config}. Antennae were arranged in a pseudo-random scatter within a 300\,m-diameter circle, granting resolutions between 15' and 25' across the band.
 Drift-scan visibilities were measured every 10.7 s, and divided into datasets about 10 minutes in length. PAPER antennae cannot point. However, within each dataset we are able to phase to the median zenith post-data-acquisition, and image accordingly. In this work we present single-polarization measurements made overnight July 4--5th 2011.
 
 All calibration was performed using the Astronomical Interferometry in PYthon ({\sc{aipy}}) package\footnote{\url{https://github.com/AaronParsons/aipy}}.
-Cross-talk removal was performed, and RFI removal masked channels that persistently showed large deviations from smooth-spectrum foregrounds (mainly due to known communications satellite bands). This removed approximately 30\% of the available bandwidth, and most removal occurred at the high and low ends of the band -- PAPER's excellent RFI environment allows most of the contiguous band to be used. Visibilities of bright extragalactic radio sources (e.g. Virgo A, Centaurus A) were modelled and removed from the data. 
+Cross-talk removal was performed, and RFI removal masked channels that persistently showed large deviations from smooth-spectrum foregrounds (mainly due to known communications satellite bands). This removed approximately 30\% of the available bandwidth, and most removal occurred at the high and low ends of the band -- PAPER's excellent RFI environment allows most of the contiguous band to be used. Visibilities of bright extragalactic radio sources (e.g. Virgo A, Cygnus A) were modelled and removed from the data. 
+
+XXX FROM FOLIO ARCHAEOLOGY -- WOULD LIKE CONFIRMATION FROM AARON XXX
+Absolute calibration was achieved by phasing to Pictor A, and adjusting the overall gain and phase of the array accordingly \citep{Jacobs.13}.
 
 The data sets were self-calibrated to obtain complex gain solutions for each antenna, and then imaged, averaging over the whole 100\,MHz-wide band. Each image (dataset) was w-projected with a uv matrix resolution of 0.4 and a w-plane resolution of 0.1, and CLEANed \citep{Clark.80} to one part in $10^4$. These images were then used as `facets' and gridded to a HEALPix \citep{Gorski.05, Gorski.11} sphere with pixel size of 1 arcmin, subsequently convolved with a 2D Gaussian (FWHM=6 arcmins) to reduce pixelization effects. Finally, a cut in Galactic coordinates was made to extract the SGP ($25<l<230$, $-7.5<b<7.5$).
 
@@ -97,73 +93,205 @@ The data sets were self-calibrated to obtain complex gain solutions for each ant
 %We were able to check the calibration described in Section~\ref{sec:reduc} against the extragalactic Molonglo Reference Catalogue \citep[MRC;][]{Large.81} sources measured by PAPER that are reported in \cite{Jacobs.11}. This comparison is shown in Figure~\ref{fig:PScal}, which exhibits a linear relation of
 
 %\begin{equation}
-%S^{145\,\rm{MHz}}_{\rm{Jacobs\,et\,al.}} = (0.9\pm0.2) S^{145\,\rm{MHz}}_{\rm{This\,work}} + (7\pm3)
+%S^{145\,\rm{MHz}}_{\rm{Jacobs\,et\,al.}} = (0.8\pm0.3) S^{145\,\rm{MHz}}_{\rm{This\,work}} + (8\pm4)
 %\label{eq:PScal}
 %\end{equation}
 
-%This relation is within $2.5\sigma$ of direct proportionality alone, and taking into account the corrections to the \cite{Jacobs.11} flux scale, presented in \cite{Jacobs.13}, the margin closes to a direct proportionality.
+%This relation is within $2\sigma$ of direct proportionality alone, and taking into account the corrections to the \cite{Jacobs.11} flux scale, presented in \cite{Jacobs.13}, the margin closes to a direct proportionality.
 
 %\begin{figure}
-%\includegraphics[width=\columnwidth]{us_and_danny_cal.png}
+%\includegraphics[width=\columnwidth]{Jacobs_comparisonl.png}
 %\caption{A comparison of the fluxes of extragalactic MRC sources measured by \protect\cite{Jacobs.11} at 145\,MHz, compared to our own. The measurements are consistent to within 1$\sigma$. The offset from direct proportionality is accounted for by corrections in \protect\cite[][see Section 3 of their paper]{Jacobs.13}.  A line of best fit is shown (solid line) along with $\pm1\sigma$ on the best fit parameters (shaded region).}
 %\label{fig:PScal}
 %\end{figure}
 
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/psa64imageconfig.png}
+\includegraphics[width=\columnwidth]{figs/psa64uvcoverage.png}
+\caption{\textit{Above}: The PAPER-64 single-polarization configuration that took the measurements we report on in this paper. The antennae were arranged in a pseudo-random scatter in order to optimize uv-coverage. \textit{Below}: The resultant instantaneous uv-coverage, masking the very-short baselines ($\aplt 10 \lambda$). Maximum voxel occupancy is $\sim10$.}
+\label{fig:config}
+\end{figure}
+
 \section{Results}
 \label{sec:res}
 
-Our map of the SGP is shown in Figure~{\color{red}[NUMBER]}. Contours are at XXX, XXX... Jy\,beam$^{-1}$.
+Our map of the SGP is shown in Figure~{\color{red}[NUMBER]}. Contours are at XXX, XXX... Jy\,beam$^{-1}$. 
 
-Source identification and extraction was performed using PyBDSM\footnote{\url{http://www.lofar.org/wiki/doku.php?id=public:user software:pybdsm}}, which identified all sources $\geq3\sigma$ above their local background, accounting for possible sidelobe confusion \citep{PyBDSM.15}. To each detected source we fit a two-dimensional, 20' FWHM Gaussian to approximate the PAPER beam \citep{Parsons.10} in order to extract the source flux. 
+Source identification and extraction was performed using PyBDSM\footnote{\url{http://www.lofar.org/wiki/doku.php?id=public:user software:pybdsm}}, which identified all sources $\geq5\sigma$ above their local background, accounting for possible sidelobe confusion \citep{PyBDSM.15}. The average background noise is $\sim$1\,Jy, so our detection threshold is $\sim$5\,Jy. To each detected source we XXX fit (not the right word) XXX a two-dimensional, 20' FWHM Gaussian to approximate the PAPER beam \citep{Parsons.10} in order to extract the integrated source flux, size, and uncertainties on these. 
 
-We detected 230 individual sources, 120 of which were resolved to sufficient quality that we can report their flux with certainty, and 21 of which were flagged as ``uncertain" but worth reporting. The remaining 89 were too confused, largely in the most crowded areas of the SGP ({\bf COORDS, FIG NUM \& LETTER}). In order to identify each source, we checked if any known sources were within the 20' PAPER beam at that position in the Galactic radio catalogues described in the introduction: MGPS, MOSTSNRCAT, the \cite{AGreen.14} and \cite{DAGreen.14} SNR catalogues and the \cite{Paladini.03} H{\sc ii} region catalogue. We also matched to the MRC sources detected in \cite{Jacobs.11}, a few of which (XXX) overlapped with our SGP cut. For the detected sources that were not within 20' of any objects in these catalogues (XXX), we queried the SIMBAD astronomical database \citep{Wegner.00} for any other SNRs,  IR bubbles, H{\sc ii} regions or undetected radio sources within the semi-major axis of the source.
+We detected 230 individual sources, 120 of which were resolved to sufficient quality that we can report their flux with confidence, XXX and 21 of which were flagged as ``uncertain" but worth reporting XXX. The remaining 89 were too confused; largely in the most crowded areas of the SGP ({\bf COORDS, FIG NUM \& LETTER}). In order to identify each source, we checked if any known sources were within the 20' PAPER beam at that position in the Galactic radio catalogues described in the introduction: MGPS, MOSTSNRCAT, the \cite{AGreen.14} and G14 SNR catalogues and the \cite{Paladini.03} H{\sc ii} region catalogue. We also matched to the MRC sources detected in \cite{Jacobs.11}, a few of which (28) overlapped with our SGP cut. 
 
-\subsection{Comparison of Green SNR Fluxes with PAPER}
+In the case of double-matches...
 
-PAPER is not able to reconstruct flux on scales greater than $\sim3$
-degrees due to missing baselines.  There is also the problem of source
-confusion.  Basically, we have to look at the map to convince
-ourselves that matches make sense; See Figure~{\color{red}[NUMBER]}.
+For the detected sources that were not within 20' of any objects in these catalogues (23), we queried the SIMBAD astronomical database \citep{Wegner.00} for any other SNRs,  IR bubbles, H{\sc ii} regions or undetected radio sources within the semi-major axis of the source.
 
-{\color{red} The gold standard sources for source fluxes.}
-For {\bf 26} Green sources which are relatively compact
-and isolated, and with well-determined previous radio continuum
-measurements, we construct the spectral index with PAPER and previous
-measurements.  (Many are measured at 843\,MHz, etc ...; need to
-reconsult literature to find original measurements.  Green presents a
-synthetic point at 1\,GHz, and a spectral index.)
+PAPER is not able to reconstruct flux on scales greater than $\sim3$ degrees due to missing baselines.  There is also the problem of source confusion -- due to PAPER's low resolution, we can only be confident of our measurements if a source isolated.
 
-We also consider the classes of 1) Green SNRs with no previous or very
-uncertain radio continuum detection (are there any?) ... do we see
-them?  2) Green SNRs that are radio detected and smaller than $\sim3$
-degrees, but PAPER does not detect.
+\subsection{Comparison of SNR catalogues with PAPER measurements}
+\label{subsec:G14}
 
-Category 1: interesting, we provide the first flux.  Category 2:
-synchrotron self-absorption??  Need to look at the expected flux at
-150\,MHz relative to detection threshold.  
+We cross-matched our detections with SNR catalogues MOSTSNRCAT, \cite{AGreen.14} and G14. There is a large degree of degeneracy between the MOSTSNRCAT and G14 catalogues. We only detect one MOSTSNRCAT source not listed in the G14 catalogue (G315.4-2.3), but in a confused region -- it is not isolated enough to reliably calculate a flux density for. \cite{AGreen.14} find 23 new SNRs identified in MGPS (843\,MHz) that are not in the G14 catalogue. Of these 23 we detect 7 (which is expected given the relatively low fluxes of many of the SNRs found in their survey, requiring unrealistically large spectral indices to be detectable by PAPER), and of the 7 we detect there are 3 that are isolated enough to perform analyses.
+
+XXX ALICE GREEN 3 GOOD ONES ANALYSIS NEEDS TO GO SOMEWHERE XXX
+
+We detect 79 SNRs out of the 294 listed in G14. Of these, 26 are compact, isolated and have well-determined previous radio continuum measurements. Ten are compact and isolated but do not have well-determined previous radio continuum measurements. The remaining 43 are too confused with other sources in the SGP to confidently report their individual fluxes. Higher-resolution low-frequency surveys such as GLEAM, mentioned in Section~\ref{sec:intro}, are required to constrain the nature of SNRs in these crowded regions of the SGP. Meanwhile, there are a further 31 SNRs in the G14 catalogue that are compact, have well-determined previous radio continuum measurements, and have an extrapolated flux $\geq$5\, Jy -- sources that PAPER should detect -- that we do not see. For these sources, synchrotron self-absorption is likely decreasing the low-frequency radio emission.
+
+Here we discuss the different selections of SNRs mentioned above. We discuss what our numbers mean in terms of the SNR Defect in Section~\ref{sec:disc}.
+
+\subsubsection{SNRs with well-constrained properties}
+
+Twenty six G14 sources are relatively compact and isolated in our SGP map, and have well-determined previous radio continuum measurements. These SNRs are listed in Table~\ref{tab:G14comparison}. For almost all of these sources, our measurements represent the first reported fluxes and sizes at frequencies $<300\,{\rm MHz}$ (the only exception being G008.7-00.1, which was measured at 57.5\,MHz by \citealt{Odegard.86}).
+
+\begin{table*}
+\caption{Compact and isolated SNRs from G14 compared with our own measurements.}
+\begin{tabular}{llllccccc}
+\hline
+SNR	&	Other	&	R.A.	&	Dec	&	SMA$^a$ (G14)	&	$S_{1\,{\rm GHz}}$ &	$\alpha$ 	&	SMA$^a$  (This work)			&	$S_{145\,{\rm MHz}}$			\\
+	&	Names	&	(deg)	&	(deg)	&	arcmin	&	Jy	&		&	arcmin			&	Jy			\\
+\hline																					
+G004.5+06.8	&	SN1604	&	262.67	&	-21.48	&	3	&	19	&	0.64	&	16.1	$\pm$	0.7	&	16	$\pm$	3	\\
+G005.5+00.3	&		&	269.26	&	-24	&	15	&	5.5	&	0.7	&	29	$\pm$	6	&	12	$\pm$	3	\\
+G007.7-03.7	&	1814-24	&	274.35	&	-24.06	&	22	&	11	&	0.32	&	18	$\pm$	3	&	8	$\pm$	3	\\
+G008.7-00.1	&	W30	&	271.37	&	-21.43	&	45	&	80	&	0.5	&	36	$\pm$	3	&	54	$\pm$	2	\\
+G011.2-00.3	&		&	272.86	&	-19.41	&	4	&	22	&	0.5	&	22	$\pm$	2	&	13	$\pm$	3	\\
+G018.1-00.1	&		&	276.14	&	-13.18	&	8	&	4.6	&	0.5	&	20	$\pm$	4	&	7	$\pm$	3	\\
+G018.8+00.3	&	Kes 67	&	275.99	&	-12.38	&	17	&	33	&	0.46	&	20	$\pm$	1	&	21	$\pm$	3	\\
+G018.9-01.1	&		&	277.45	&	-12.96	&	33	&	37	&	0.39	&	28	$\pm$	4	&	22	$\pm$	2	\\
+G021.8-00.6	&	Kes 69	&	278.18	&	-10.13	&	20	&	65	&	0.56	&	18.3	$\pm$	0.9	&	23	$\pm$	3	\\
+G023.3-00.3	&	W41	&	278.68	&	-8.8	&	27	&	70	&	0.5	&	23	$\pm$	3	&	14	$\pm$	3	\\
+G292.0+01.8	&		&	171.15	&	-59.26	&	12	&	15	&	0.4	&	17.9	$\pm$	0.9	&	24	$\pm$	3	\\
+G296.7-00.9	&		&	178.87	&	-63.13	&	15	&	3	&	0.5	&	18	$\pm$	3	&	5	$\pm$	3	\\
+G296.8-00.3	&	1156-62	&	179.62	&	-62.58	&	20	&	9	&	0.6	&	22	$\pm$	1	&	29	$\pm$	3	\\
+G304.6+00.1	&	Kes 17	&	196.49	&	-62.7	&	8	&	14	&	0.5	&	20.7	$\pm$	0.9	&	33	$\pm$	3	\\
+G309.8+00.0	&		&	207.62	&	-62.08	&	25	&	17	&	0.5	&	23	$\pm$	1	&	38	$\pm$	3	\\
+G315.4-00.3	&		&	218.97	&	-60.6	&	24	&	8	&	0.4	&	27	$\pm$	3	&	22	$\pm$	3	\\
+G326.3-01.8	&	MSH 15-56	&	238.25	&	-56.16	&	38	&	145	&	0	&	25.3	$\pm$	0.7	&	125	$\pm$	6	\\
+G337.3+01.0	&	Kes 40	&	248.16	&	-46.6	&	15	&	16	&	0.55	&	15.4	$\pm$	0.7	&	16	$\pm$	3	\\
+G340.4+00.4	&		&	251.62	&	-44.65	&	10	&	5	&	0.4	&	18	$\pm$	2	&	11	$\pm$	3	\\
+G343.1-00.7	&		&	255.1	&	-43.23	&	27	&	7.8	&	0.55	&	23	$\pm$	3	&	15	$\pm$	3	\\
+G349.7+00.2	&		&	259.49	&	-37.43	&	2.5	&	20	&	0.5	&	14.8	$\pm$	0.8	&	11	$\pm$	3	\\
+G350.0-02.0	&		&	261.95	&	-38.53	&	45	&	26	&	0.4	&	42	$\pm$	7	&	32	$\pm$	2	\\
+G352.7-00.1	&		&	261.91	&	-35.11	&	8	&	4	&	0.6	&	20	$\pm$	4	&	8	$\pm$	3	\\
+G355.9-02.5	&		&	266.47	&	-33.71	&	13	&	8	&	0.5	&	19	$\pm$	2	&	12	$\pm$	3	\\
+G356.2+04.5	&		&	259.75	&	-29.66	&	25	&	4	&	0.7	&	22	$\pm$	4	&	9	$\pm$	3	\\
+G357.7-00.1	&	MSH 17-39	&	265.12	&	-30.96	&	8	&	37	&	0.4	&	12.9	$\pm$	0.3	&	22	$\pm$	3	\\
+\hline
+\end{tabular}
+\\
+$^a$ Semi-Major Axis
+\label{tab:G14comparison}
+\end{table*}
+
+The left panel of Figure~\ref{fig:comparisonscatters} shows, for the SNRs in Table~\ref{tab:G14comparison}, the expected 145\,MHz flux calculated by extrapolating the G14 1\,GHz flux by the spectral index reported by that study, highlighting in green those SNRs that G14 report to be compact enough that PAPER should reconstruct all the flux of the SNR. Most of the points lie close to a 1:1 relation (shown in black). However, there appears to be either significant amounts of flux missing i.e. we expect to measure higher fluxes than we actually do. 
+
+XXX INTERPRETATION??? XXX
 
 \begin{figure*}
 \centering
 \includegraphics[scale=.4]{figs/GreenScatter.png}
 \includegraphics[scale=.4]{figs/PaladiniScatter.png}
-\caption{\textit{Left:} The fluxes of compact SNRs (Maj $<$ 3 degrees; PAPER does not have sufficient resolution to detect larger ones) that we measure compared to those expected at 145\,MHz given the \protect\cite{DAGreen.14} 1\,GHz fluxes and spectral indices. We highlight in green those SNRs which are compact enough to be completely resolved by the PAPER beam (Maj $<$ 20 arcmin). \textit{Right:} The same comparison as on the left, but for the H{\sc{ii}} region fluxes reported by \protect\cite{Paladini.03} and using a typical spectral index for free-free emission $\alpha=0.1$. All the detected H{\sc{ii}} regions are compact enough to be completely resolved. In both plots, the size of the point is illustrative of the diameter of the region (as reported by their respective studies, not PAPER), and a black line showing a 1:1 relation is overlaid.}
+\caption{\textit{Left:} The fluxes of compact SNRs (Maj $<$ 3 degrees; PAPER does not have sufficient resolution to detect larger ones) that we measure compared to those expected at 145\,MHz given the G14 1\,GHz fluxes and spectral indices. We highlight in green those SNRs which are compact enough to be completely resolved by the PAPER beam (Maj $<$ 20 arcmin). \textit{Right:} The same comparison as on the left, but for the H{\sc{ii}} region fluxes reported by \protect\cite{Paladini.03} and using a typical spectral index for free-free emission $\alpha=0.1$. All the detected H{\sc{ii}} regions are compact enough to be completely resolved. In both plots, the size of the point is illustrative of the diameter of the region (as reported by their respective studies, not PAPER), and a black line showing a 1:1 relation is overlaid.}
 \label{fig:comparisonscatters}
 \end{figure*}
 
-\subsection{Detection of {H\sc{ii}} regions at low frequencies}
-We detect 20 {H\sc{ii}} regions that are listed in \cite{Paladini.03} at positions that do not appear in any other surveys we position-matched to. This is surprising, given that the expected emission mechanism, bremsstrahlung radiation, should be negligible at these frequencies. See Table~\ref{tab:hii} for a summary of our measurements for these regions. Using a spectral index $\alpha=0.1$, typical of bremsstrahlung emission, we scale the 2.7\,GHz fluxes reported by \cite{Paladini.03} to those expected at 145\,MHz. The comparison is shown in Figure~\ref{fig:comparisonscatters} -- we see no apparent pattern between the fluxes we measure compared to those expected at our frequencies.
+\subsubsection{SNRs with uncertain properties}
+
+We detect 10 other SNRs that are isolated and compact in our SGP map, but G14 list as having uncertain radio continuum detection. These sources are often elongated and/or incomplete arcs and shells, or have complex geometries, and are therefore difficult to determine a definite integrated flux for. However, PAPER's resolution is much lower than that of any of the previous studies of these objects. Therefore, the 145\,MHz flux densities of those objects listed in Table~\ref{tab:G14uncertain} may be considered the first fully integrated flux measurements of these SNRs and the regions around them. None of these objects have been observed at frequencies lower than 400\, MHz.
 
 \begin{table*}
-\caption{Measured properties of {H\sc{ii}} regions}
-\begin{tabular}{llllllll}
+\caption{Compact and isolated SNRs that G14 flag as having uncertain radio continuum detections.$^*$}
+\begin{tabular}{llllccccc}
 \hline
-Name &  $\alpha$   &  $\delta$  &  PAPER Maj   &  Paladini Maj &  S$_{145}$  &  S$_{2700}$\\
- & J2000  &  J2000  &  arcmin  &  arcmin  &  Jy  &  Jy\\
+SNR	&	Other	&	R.A.	&	Dec	&	SMA$^a$ (G14)	&	$S_{1\,{\rm GHz}}$ &	$\alpha$ 	&	SMA$^a$ (This work)			&	$S_{145\,{\rm MHz}}$			\\
+	&	Names	&	(deg)	&	(deg)	&	(arcmin)	&	(Jy)	&		&	(arcmin)			&	(Jy)			\\
+\hline			
+G013.5+00.2	&		&	273.55	&	-17.2	&	5	&	3.5	&	1.0	&	28	$\pm$	5	&	15	$\pm$	3	\\
+G284.3-01.8	&	MSH 10-53	&	154.56	&	-59	&	24	&	11	&	0.3	&	30	$\pm$	2	&	36	$\pm$	3	\\
+G289.7-00.3	&		&	165.31	&	-60.3	&	18	&	6.2	&	0.2	&	21	$\pm$	3	&	13	$\pm$	3	\\
+G302.3+00.7	&		&	191.47	&	-62.13	&	17	&	5	&	0.4	&	21	$\pm$	2	&	15	$\pm$	3	\\
+G312.5-03.0	&		&	215.25	&	-64.2	&	20	&	3.5	&	?	&	25	$\pm$	4	&	15	$\pm$	3	\\
+G318.9+00.4$^b$	&		&	224.62	&	-58.48	&	30	&	4	&	0.2	&	21	$\pm$	3	&	11	$\pm$	3	\\
+G327.1-01.1	&		&	238.6	&	-55.15	&	18	&	7	&	?	&	18	$\pm$	3	&	6	$\pm$	3	\\
+G327.4+00.4	&	Kes 27	&	237.08	&	-53.81	&	21	&	30	&	0.6	&	19	$\pm$	1	&	37	$\pm$	3	\\
+G330.2+01.0	&		&	240.27	&	-51.56	&	11	&	5	&	0.3	&	20	$\pm$	2	&	16	$\pm$	3	\\
+G351.2+00.1	&		&	260.61	&	-36.18	&	7	&	5	&	0.4	&	21	$\pm$	4	&	8	$\pm$	3	\\
 \hline
-
 \end{tabular}
-\label{tab:hii}
+\\
+$^*$ Therefore, while $S_{1\,{\rm GHz}}$ and	$\alpha$ are included for completeness, their values should not be considered accurate.\\
+$^a$ Semi-Major Axis\\
+$^b$ May not be an SNR: \url{http://www.mrao.cam.ac.uk/surveys/snrs/snrs.G318.9+0.4.html}\\
+\label{tab:G14uncertain}
 \end{table*}
+
+\subsubsection{Evidence of synchrotron self-absorption?}
+
+There are 31 SNRs in the G14 catalogue that are compact, isolated, and extrapolating the listed 1\,GHz flux give expected values $S_{145\,{\rm MHz}}>$5\,Jy, that we do not detect. Given these properties, we would expect PAPER to have detected them. These SNRs, whose properties are listed in Table~\ref{tab:IGNO}, are candidates for XXX synchrotron self-absorption... things?  and merit follow-up observations? XXX
+
+\begin{table*}
+\caption{Properties of SNRs from G14 that meet our detection criteria, but are not detected in our SGP map.}
+\begin{tabular}{llllcccc}
+\hline
+SNR	&	Other	&	R.A.	&	Dec	&	SMA$^a$ (G14)	&	$S_{1\,{\rm GHz}}$ &	$\alpha$ 	&	$S^{\rm Extrapolated}_{145\,{\rm MHz}}$			\\
+	&	Names	&	(deg)	&	(deg)	&	(arcmin)	&	(Jy)	&			&	(Jy)			\\
+\hline
+G000.3+00.0	&		&	266.56	&	-28.63	&	15	&	22	&	0.6	&	70	\\
+G003.7-00.2	&		&	268.85	&	-25.83	&	14	&	2.3	&	0.65	&	8	\\
+G004.8+06.2	&		&	263.35	&	-21.56	&	18	&	3	&	0.6	&	10	\\
+G006.1+00.5	&		&	269.37	&	-23.41	&	18	&	4.5	&	0.9	&	26	\\
+G006.5-00.4	&		&	270.54	&	-23.56	&	18	&	27	&	0.6	&	86	\\
+G007.2+00.2	&		&	270.27	&	-22.63	&	12	&	2.8	&	0.6	&	9	\\
+G008.7-05.0	&		&	276.04	&	-23.8	&	26	&	4.4	&	0.3	&	8	\\
+G008.9+00.4	&		&	270.99	&	-21.05	&	24	&	9	&	0.6	&	29	\\
+G009.7-00.0	&		&	271.84	&	-20.58	&	15	&	3.7	&	0.6	&	12	\\
+G009.8+00.6	&		&	271.28	&	-20.23	&	12	&	3.9	&	0.5	&	10	\\
+G009.9-00.8	&		&	272.67	&	-20.71	&	12	&	6.7	&	0.4	&	15	\\
+G011.1-01.0	&		&	273.51	&	-19.76	&	18	&	5.8	&	0.5	&	15	\\
+G011.4-00.1	&		&	272.69	&	-19.08	&	8	&	6	&	0.5	&	16	\\
+G012.0-00.1	&		&	273.04	&	-18.61	&	7	&	3.5	&	0.7	&	14	\\
+G015.4+00.1	&		&	274.5	&	-15.45	&	15	&	5.6	&	0.62	&	19	\\
+G015.9+00.2	&		&	274.71	&	-15.03	&	7	&	5	&	0.63	&	17	\\
+G016.0-00.5	&		&	275.48	&	-15.23	&	15	&	2.7	&	0.6	&	9	\\
+G016.2-02.7	&		&	277.41	&	-16.13	&	17	&	2.5	&	0.4	&	5	\\
+G016.7+00.1	&		&	275.23	&	-14.33	&	4	&	3	&	0.6	&	10	\\
+G017.8-02.6	&		&	278.2	&	-14.65	&	24	&	5	&	0.5	&	13	\\
+G019.1+00.2	&		&	276.23	&	-12.11	&	27	&	10	&	0.5	&	26	\\
+G020.0-00.2	&		&	277.02	&	-11.58	&	10	&	10	&	0.1	&	12	\\
+G021.5-00.9	&		&	278.38	&	-10.58	&	5	&	7	&	0	&	7	\\
+G022.7-00.2	&		&	278.31	&	-9.21	&	26	&	33	&	0.6	&	105	\\
+G024.7-00.6	&		&	279.67	&	-7.53	&	15	&	8	&	0.5	&	21	\\
+G027.4+00.0	&	4C-04.71	&	280.32	&	-4.93	&	4	&	6	&	1	&	22	\\
+G027.8+00.6	&		&	279.95	&	-4.4	&	50	&	30	&	0	&	30	\\
+G029.7-00.3	&	Kes 75	&	281.6	&	-2.98	&	3	&	10	&	1	&	34	\\
+G030.7+01.0	&		&	281	&	-1.53	&	24	&	6	&	0.4	&	13	\\
+G031.9+00.0	&	3C391	&	282.35	&	-0.91	&	7	&	25	&	0	&	25	\\
+G296.5+10.0	&	PKS 1209-51/52	&	182.41	&	-52.41	&	90	&	48	&	1	&	126	\\
+G327.6+14.6	&	SN1006, PKS 1459-41	&	225.7	&	-41.93	&	30	&	19	&	1	&	61	\\
+G332.4+00.1	&	MSH 16-51, Kes 32	&	243.83	&	-51	&	15	&	26	&	1	&	68	\\
+G359.0-00.9	&		&	266.7	&	-30.26	&	23	&	23	&	0.5	&	60	\\
+\hline
+\end{tabular}
+\\
+$^a$ Semi-Major Axis\\
+\label{tab:IGNO}
+\end{table*}
+
+\subsection{Detection of {H\sc{ii}} regions at low frequencies}
+\label{subsec:hii}
+We detect 20 {H\sc{ii}} regions that are listed in \cite{Paladini.03} at positions that do not appear in any other surveys we position-matched to. This is surprising, given that the expected emission mechanism, bremsstrahlung radiation, should be negligible at these frequencies. See Table~\ref{tab:hii} for a summary of our measurements for these regions. Using a spectral index $\alpha=0.1$, typical of bremsstrahlung emission, we scale the 2.7\,GHz fluxes reported by \cite{Paladini.03} to those expected at 145\,MHz. The comparison is shown in Figure~\ref{fig:comparisonscatters} -- we see no apparent pattern between the fluxes we measure compared to those expected at our frequencies. 
+
+Minimizing $\chi^2(\alpha) = \frac{|S_{\rm measured} - S_{\rm expected}|^2}{\sigma_{\rm measured}^2 + \sigma_{\rm expected}^2}$, where $S_{\rm measured}$ is the PAPER measurement at 145\,MHz,  $S_{\rm expected}=S_{\rm HII}\left(\frac{2.7\,{\rm GHz}}{145\,{\rm MHz}}\right)^{\alpha}$ and $S_{\rm HII}$ is the synthetic 2.7\,GHz flux of the H{\sc ii} region reported by \cite{Paladini.03}, we recover an average favoured value of $\alpha=0.11$.
+
+%\begin{table*}
+%\caption{Measured properties of {H\sc{ii}} regions}
+%\begin{tabular}{llllllll}
+%
+%\end{tabular}
+%\label{tab:hii}
+%\end{table*}
+
+
+\subsection{Extragalactic sources}
 
 
 \section{Discussion}
@@ -182,7 +310,8 @@ In this work we have presented a low-resolution survey of the SGP at low frequen
 The data presented here was correlated using only one of the two instrumental polarizations PAPER is capable of measuring. Dual-polarization measurements, and the intrinsic polarization of SNRs \citep[e.g.][]{Gao_v.11} should allow the steadfast confirmation of the nature of these regions in the SGP. Work on these measurements is currently in progress, and will be presented in a future study. Meanwhile, the HERA\footnote{\url{www.reionization.org}} instrument is currently under construction at the PAPER site in South Africa. This instrument will have far superior sensitivity ($\sim\times40$ per antenna) and resolution at low-frequencies (50--250\,MHz), and the authors look forward to presenting sky survey data with it.
 
 \section*{Acknowledgements}
-We thank SKA-SA for their efforts in ensuring the smooth running of PAPER. PAPER is supported through the NSF-AST program (awards 0804508, 1129258, and 1125558), the Mt. Cuba Astronomical Association, and by significant efforts by staff at NRAO. This research has made use of the SIMBAD database, operated at CDS, Strasbourg, France.
+This work made use of the TOPCAT package\footnote{\url{http://www.star.bristol.ac.uk/~mbt/topcat/}} and the SIMBAD database, operated at CDS, Strasbourg, France.
+We thank SKA-SA for their efforts in ensuring the smooth running of PAPER. PAPER is supported through the NSF-AST program (awards 0804508, 1129258, and 1125558), the Mt. Cuba Astronomical Association, and by significant efforts by staff at NRAO. 
 
 \bibliographystyle{plainnat}
 \bibliography{snrbib_MNRAS_version}{}

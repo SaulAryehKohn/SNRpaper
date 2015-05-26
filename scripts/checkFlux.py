@@ -2,8 +2,8 @@ import pyfits
 import numpy as np
 import pylab
 
-Green = False
-Paladini = True
+Green = True
+Paladini = False
 
 GoodSources = [3,4,5,6,7,8,9,
 10,11,12,13,14,15,19,
@@ -51,14 +51,19 @@ if Green:
         SpIndex =GreenVus['Sp-Index'][i]
         u_SpIndex=GreenVus['u_Sp-Index'][i]
 
-        if u_S_1GHz=='?' or u_SpIndex=='?' or maj>180.: continue #i.e. throw out uncertain or diffuse data -- JEA's "Gold Standard"
+        #if u_S_1GHz=='?' or u_SpIndex=='?' or maj>180.: continue #i.e. throw out uncertain or diffuse data -- JEA's "Gold Standard"
+        if maj>180.: continue
         if PyID not in GoodSources: continue
+        
+        if u_S_1GHz=='?' or u_SpIndex=='?': st = '!!!'
+        else: st = ''
+        
         name.append(Green_name)
         expected.append(S_1GHz*(1.E9/145.E6)**(SpIndex))
         measured.append(GreenVus['Total_flux'][i])
         major.append(maj)
         c+=1
-        print Green_name, GreenVus['Names'][i], ra, dec, maj, S_1GHz, SpIndex, GreenVus['Maj'][i]*60., GreenVus['E_Maj'][i]*60., GreenVus['Total_flux'][i], GreenVus['E_Total_flux'][i]
+        print Green_name, GreenVus['Names'][i], ra, dec, maj, S_1GHz, SpIndex, GreenVus['Maj'][i]*60., GreenVus['E_Maj'][i]*60., GreenVus['Total_flux'][i], GreenVus['E_Total_flux'][i],st
     print c, '/', GreenVus['SNR'].shape[0]
 
 
@@ -127,6 +132,7 @@ if Paladini:
 	hdulist=pyfits.open('../catalogs_matched/Paladini_vs_PyBDSM.fits')
 	PalVus = hdulist[1].data
 
+	#only HII -- not doubly matched
 	interest_list = [0, 1, 8, 9, 16, 18, 19, 20, 32, 33, 42, 46, 49, 52, 53, 61, 67, 75, 78, 79, 80, 89, 92, 99, 103, 107, 108, 111, 113, 116, 123, 125, 126, 131, 132, 133, 141, 144, 149, 150, 152, 153, 154, 166, 167, 168, 170, 174, 176, 179, 180, 181, 184, 187, 188, 189, 191, 192, 199, 202, 203, 204, 212]
 
 	expected = []
@@ -173,8 +179,8 @@ if Paladini:
 		#expected.append(S_27GHz*(2.7E9/145.E6)**(0.1))
 		#e_expected.append(eS_27GHz*(2.7E9/145.E6)**(0.1))
 		
-		expected.append(S_27GHz*(2.7E9/145.E6)**(0.0))
-		e_expected.append(eS_27GHz*(2.7E9/145.E6)**(0.0))
+		expected.append(S_27GHz*(2.7E9/145.E6)**(0.1))
+		e_expected.append(eS_27GHz*(2.7E9/145.E6)**(0.1))
 		measured.append(PalVus['Total_flux'][i])
 		e_measured.append(PalVus['E_Total_flux'][i])
 		diameter.append(diam)

@@ -3,7 +3,28 @@ import numpy as np
 import pyfits
 from scipy.optimize import curve_fit
 
-RA,DEC,Flux,errFlux,Maj,errMaj = np.loadtxt('nicelist.txt',unpack=True)
+GoodSources = [3,4,5,6,7,8,9,
+10,11,12,13,14,15,19,
+20,21,22,23,24,27,28,29,
+30,31,33,34,35,36,37,38,39,
+40,45,
+54,56,58,59,
+60,61,62,
+71,72,73,
+81,83,84,87,88,89,
+91,92,95,96,99,
+102,103,106,107,109,
+112,113,114,
+120,121,122,125,127,
+134,135,136,139,
+145,146,147,148,149,
+150,151,152,154,155,157,158,159,
+163,164,165,166,167,168,169,
+173,177,178,179,
+183,184,185,186,187,
+190,191,192,193,194,195,196,197,198,199,
+200,201,202,203,204,208,
+217,218,219,220]
 
 hdu = pyfits.open('../catalogs_plain/Jacobs.fits')
 Jacobs = hdu[1].data
@@ -15,6 +36,7 @@ Green_matched = hdu[1].data
 
 
 hist=False
+
 scat=True
 if scat==True: linfit=True
 table = False
@@ -35,6 +57,7 @@ if hist==True:
 ###
 
 if scat==True:
+	#ID = Jacobs_matched[]
     MASK = Jacobs_matched['S145']<100.
     us = Jacobs_matched['Total_flux'][MASK]
     us_err = Jacobs_matched['E_Total_flux'][MASK]
@@ -59,19 +82,19 @@ if scat==True:
 
         print 'LINEAR FIT: JACOBS=(%f+-%f)US + (%f+-%f)'%(fitParams[0],sigma[0],fitParams[1],sigma[1])
 
-        pylab.plot(us,fitFunc(us,fitParams[0],fitParams[1]),'k-')
+        pylab.plot(np.linspace(0,50),fitFunc(np.linspace(0,50),fitParams[0],fitParams[1]),'k-')
         pylab.plot(us,fitFunc(us,fitParams[0]+sigma[0],fitParams[1]+sigma[1]),'k:')
         pylab.plot(us,fitFunc(us,fitParams[0]-sigma[0],fitParams[1]-sigma[1]),'k:')
 
-        y1 = (fitParams[0]+sigma[0])*np.sort(us) + fitParams[1]+sigma[1]
-        y2 = (fitParams[0]-sigma[0])*np.sort(us) + fitParams[1]-sigma[1]
+        y1 = (fitParams[0]+sigma[0])*np.linspace(0,50) + fitParams[1]+sigma[1]
+        y2 = (fitParams[0]-sigma[0])*np.linspace(0,50) + fitParams[1]-sigma[1]
 
-        pylab.fill_between(np.sort(us),y2,y1,color='black',alpha=0.3)
+        pylab.fill_between(np.linspace(0,50),y2,y1,color='black',alpha=0.3)
 
-        pylab.text(5,32,r'$S^{145\,\rm{MHz}}_{\rm{Jacobs\,et\,al.}} \propto (0.9\pm0.2)\,S^{145\,\rm{MHz}}_{\rm{This\,work}}$',fontsize=16)#,bbox=dict(facecolor='red', alpha=0.5))
+        pylab.text(5,40,r'$S_{\rm{Jacobs\,et\,al.}} \propto (0.8\pm0.3)\,S_{\rm{This\,work}}$',fontsize=16)#,bbox=dict(facecolor='red', alpha=0.5))
 
-        pylab.xlim(2.5,30.)
-        pylab.ylim(2.4,37.)
+        pylab.xlim(2.,32.)
+        pylab.ylim(2.6,51.)
     pylab.xlabel('This Work (Jy)',size=15)
     pylab.ylabel('Jacobs et al. 2011 (Jy)',size=15)
     #pylab.suptitle('145 MHz flux of MRC extragalactic sources',size=15)

@@ -11,10 +11,8 @@ GreenVus = hdulist[1].data
 hdulist_G = pyfits.open('../Green2014_TEST.fits')
 G = hdulist_G[1].data
 
-print G['S']
-
-print 'GREEN SEES IT, WE DO NOT'
-print '#Name RA DEC Maj ExpectedFlux Should_we_see_it?'
+print 'GREEN SEES IT, WE DO NOT, AND SHOULD'
+print '#Name aka RA DEC Maj 1GHzFlux SpIndex Expected145MHzFlux'
 c = 0
 ycount = 0
 for i in range(G['SNR'].shape[0]):
@@ -27,6 +25,7 @@ for i in range(G['SNR'].shape[0]):
     u_S_1GHz=G['u_S_1GHz_'][i]
     SpIndex =G['Sp-Index'][i]
     u_SpIndex=G['u_Sp-Index'][i]
+    aka = G['Names'][i]
 
     if Green_name in GreenVus['SNR']: continue
     else:
@@ -40,7 +39,7 @@ for i in range(G['SNR'].shape[0]):
 					ycount+=1
 				else: strng = 'N'
 				
-				print Green_name,ra,dec,maj,expected,strng
+				if strng=='Y': print Green_name,aka,ra,dec,maj,S_1GHz,SpIndex,expected
 
 print 'Num in Green 2014:',G['SNR'].shape[0]
 print 'Num we detect:',GreenVus['SNR'].shape[0]

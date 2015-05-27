@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: SNRpaper.aux
 The style file: plainnat.bst
 Database file #1: snrbib_MNRAS_version.bib
-You've used 36 entries,
+You've used 37 entries,
             2773 wiz_defined-function locations,
-            852 strings with 15247 characters,
-and the built_in function-call counts, 26491 in all, are:
-= -- 2058
-> -- 2807
+            859 strings with 15419 characters,
+and the built_in function-call counts, 27045 in all, are:
+= -- 2102
+> -- 2855
 < -- 11
-+ -- 940
-- -- 903
-* -- 2665
-:= -- 4415
-add.period$ -- 134
-call.type$ -- 36
-change.case$ -- 409
-chr.to.int$ -- 35
-cite$ -- 72
-duplicate$ -- 731
-empty$ -- 1296
-format.name$ -- 951
-if$ -- 5214
++ -- 956
+- -- 918
+* -- 2719
+:= -- 4505
+add.period$ -- 137
+call.type$ -- 37
+change.case$ -- 417
+chr.to.int$ -- 36
+cite$ -- 74
+duplicate$ -- 752
+empty$ -- 1332
+format.name$ -- 967
+if$ -- 5325
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 34
-newline$ -- 214
-num.names$ -- 144
-pop$ -- 743
+missing$ -- 35
+newline$ -- 219
+num.names$ -- 148
+pop$ -- 757
 preamble$ -- 1
-purify$ -- 373
+purify$ -- 380
 quote$ -- 0
-skip$ -- 708
+skip$ -- 724
 stack$ -- 0
-substring$ -- 474
-swap$ -- 73
+substring$ -- 485
+swap$ -- 75
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 396
+type$ -- 407
 warning$ -- 0
-while$ -- 130
+while$ -- 134
 width$ -- 0
-write$ -- 521
+write$ -- 534

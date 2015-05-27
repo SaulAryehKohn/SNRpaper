@@ -1,4 +1,4 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{37}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -164,6 +164,13 @@ D.~C. {Jacobs}, J.~C. {Pober}, A.~R. {Parsons}, J.~E. {Aguirre}, Z.~{Ali},
   {Manley}, D.~F. {Moore}, I.~I. {Stefan}, and W.~P. {Walbrugh}.
 \newblock {Multi-redshift limits on the 21cm power spectrum from PAPER}.
 \newblock \emph{ArXiv e-prints}, August 2014.
+
+\bibitem[{Large} et~al.(1981){Large}, {Mills}, {Little}, {Crawford}, and
+  {Sutton}]{Large.81}
+M.~I. {Large}, B.~Y. {Mills}, A.~G. {Little}, D.~F. {Crawford}, and J.~M.
+  {Sutton}.
+\newblock {The Molonglo Reference Catalogue of Radio Sources}.
+\newblock \emph{MNRAS}, 194:\penalty0 693, February 1981.
 
 \bibitem[{Li} et~al.(1991){Li}, {Wheeler}, {Bash}, and {Jefferys}]{Li.91}
 Z.~{Li}, J.~C. {Wheeler}, F.~N. {Bash}, and W.~H. {Jefferys}.

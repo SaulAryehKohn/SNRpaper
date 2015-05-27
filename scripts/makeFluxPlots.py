@@ -91,7 +91,7 @@ if scat==True:
 
         pylab.fill_between(np.linspace(0,50),y2,y1,color='black',alpha=0.3)
 
-        pylab.text(5,40,r'$S_{\rm{Jacobs\,et\,al.}} \propto (0.8\pm0.3)\,S_{\rm{This\,work}}$',fontsize=16)#,bbox=dict(facecolor='red', alpha=0.5))
+        #pylab.text(5,40,r'$S_{\rm{Jacobs\,et\,al.}} \propto (0.8\pm0.3)\,S_{\rm{This\,work}}$',fontsize=16)#,bbox=dict(facecolor='red', alpha=0.5))
 
         pylab.xlim(2.,32.)
         pylab.ylim(2.6,51.)

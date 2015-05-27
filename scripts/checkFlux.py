@@ -2,8 +2,8 @@ import pyfits
 import numpy as np
 import pylab
 
-Green = True
-Paladini = False
+Green = False
+Paladini = True
 
 GoodSources = [3,4,5,6,7,8,9,
 10,11,12,13,14,15,19,
@@ -153,13 +153,7 @@ if Paladini:
 		diam= PalVus['theta'][i]
 		S_27GHz = PalVus['S2_7GHz'][i]
 		eS_27GHz = PalVus['e_S2_7GHz'][i]
-		#u_S_1GHz=PalVus['u_S_1GHz_'][i]
-		#SpIndex =PalVus['Sp-Index'][i]
-		#u_SpIndex=PalVus['u_Sp-Index'][i]
-
-		#if u_S_1GHz=='?' or u_SpIndex=='?' or maj>5.: continue #i.e. throw out uncertain or diffuse data
-		#if u_S_1GHz=='?' or u_SpIndex=='?': continue #i.e. throw out uncertain data
-	
+		
 		if Source_id not in interest_list: continue
 		if Source_id not in GoodSources: continue
 		
@@ -175,9 +169,6 @@ if Paladini:
 				chisq_indiv.append(cSQ_sig)
 	
 			chisq_master.append(chisq_indiv)
-	
-		#expected.append(S_27GHz*(2.7E9/145.E6)**(0.1))
-		#e_expected.append(eS_27GHz*(2.7E9/145.E6)**(0.1))
 		
 		expected.append(S_27GHz*(2.7E9/145.E6)**(0.1))
 		e_expected.append(eS_27GHz*(2.7E9/145.E6)**(0.1))
@@ -185,7 +176,13 @@ if Paladini:
 		e_measured.append(PalVus['E_Total_flux'][i])
 		diameter.append(diam)
 		c+=1
-	print c,'/',PalVus['Gname'].shape[0]
+		
+		if PalVus['n_theta'][i]!='**':
+			print Pal_name, PalVus['_RAJ2000'][i], PalVus['_DEJ2000'][i], diam/2., PalVus['e_theta'][i]/2., S_27GHz, eS_27GHz, PalVus['Maj'][i], PalVus['E_Maj'][i], PalVus['Total_flux'][i], PalVus['E_Total_flux'][i]
+		else:
+			print Pal_name, PalVus['_RAJ2000'][i], PalVus['_DEJ2000'][i], '<', PalVus['e_theta'][i], S_27GHz, eS_27GHz, PalVus['Maj'][i], PalVus['E_Maj'][i], PalVus['Total_flux'][i], PalVus['E_Total_flux'][i]
+		
+	print c,'/',PalVus['Gname'].shape[0], ',above "<" represents a 2 sigma limit'
 	
 	bound = 20.
 

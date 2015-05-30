@@ -364,6 +364,37 @@ We detect 23 objects that were isolated enough to confidently measure their flux
 
 \begin{itemize}
 \item SNR defect -- {\bf WILL'S CALCULATIONS}
+
+As mentioned in Section~\ref{sec:intro}, the SNR Defect refers to the as yet undetected, yet predicted galactic remnants from calculations based on star formation rates and evolution \citep{Li.91,Pavlovic.13}.  Selection effects are the most likely cause of the \"missing" remnants, as described in \sitet{Brogan.06}, which would imply that PAPER should find all the SNRs that are not restricted by the limitations of the survey itself.  We test this with David Green's 294 SNRs \sitep{G14}.  
+
+In order to analyse the ability of PAPER to detect these SNRs, we remove those PAPER could not reasonably fnd due to its own limitations, which allows for a comparison between the 79 of Green’s detected (26.9\%) and the number that we should have found.  
+
+Starting with the range limitation, PAPER covers galactic latitudes 0 < \ell < 40 \& 200 < \ell < 360 \degree.  We applied cuts at 24 \degree and 232 \degree given the nature of PyBDSM to detect image artifacts instead of object candidates beyond these bounds.  The effective range of PAPER (|\b| < 7.5 \degree, 0 < \ell < 24 & 232 < l < 360 \degree) contains 189 of Green’s SNRs.  With only the range limitation, PyBDSM detected 41.8\% of the remnants.  This limitation is by far the most physically relevant since no remnant outside these bounds has any detections. 
+
+Due to the 5\σ requirement for PyBDSM peak spectral flux detection, objects with a peak flux below 10 Jy are highly unlikely to be considered candidates, leading to the second limitation on PAPER.  We scaled Green’s given fluxes at 1GHz to PAPER’s 145 MHz for comparison.  There are 200 of Green’s SNRs with fluxes above 10 Jy, so PyBDSM detected 39.5\% of Green’s with this limitation.  Combining the flux and range limitations results in 129 of Green’s remaining, since there is limited overlap between the two limitation.  In this regime, pyBDSM detects 61.2\%.  
+
+The final limitation is that of object angular size.  PAPER does not resolve objects with a radius greater than 1 \degree, which leaves 251 of Green’s remaining, meaning PyBDSM found 31.5\% of them.  
+
+Combining all three limitations yields a total of 125 of Green’s 294 SNRs that PAPER could detect, resulting in a 62.3\% detection rate and 46 remnants that were missed by PyBDSM.  Table~\ref{Defect} \Defect below summarizes this analysis. 
+
+\begin{table*}
+\caption{Summary of PAPER Limitations Applied to Green's SNRs.}
+\begin{tabular}{lcccc}
+\hline
+PAPER Limitation &	Number of Green’s &	Percentage of Green’s & PyBDSM Detection Rate (79 detected) & Green's PyBDSM Missed & \\
+\hline
+Range 					&	189	&	64.3\%	&	41.8\%	&	110 	\\
+Size 					&	251	&	85.4\%	&	31.5\%	&	172		\\
+flux 					&	200 &	68.0\% 	& 	39.5\%	&	121     \\
+Range and Size 			&   181 &   61.6\%  &   43.6\%  &   102  	\\
+Range and Flux 			&   129 &   43.9\%  &   61.2\%  &   50      \\
+Size and flux   		&   165 &   56.1\%  &   47.9\%  &   86      \\
+All Three limitations   &   125 &   42.5\%  &   63.2\%  &   46      \\
+\hline
+\end{tabular}
+\label{tab:Defect}
+\end{table*}
+
 \item We see HII regions?!
 \end{itemize}
 
